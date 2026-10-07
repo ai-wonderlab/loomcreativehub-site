@@ -1,0 +1,2324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LOOM Creative Hub · Athens — play that works</title>
+<meta name="description" content="A creative hub in Athens for strategic ideas, communication &amp; culture: creative consulting, content, PR, lab projects and cultural research. Pull the thread.">
+<link rel="canonical" href="https://loomcreativehub.com/">
+<meta name="theme-color" content="#FF66C4">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LOOM Creative Hub">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="LOOM Creative Hub · Athens">
+<meta property="og:description" content="Psst — there&#x27;s a loose thread. Pull it. A creative hub for strategic ideas, communication &amp; culture.">
+<meta property="og:url" content="https://loomcreativehub.com/">
+<meta property="og:image" content="https://loomcreativehub.com/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The LOOM logo woven into pink cloth, with a loose orange thread and the words: psst, there is a loose thread. Pull it.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LOOM Creative Hub · Athens">
+<meta name="twitter:description" content="Psst — there&#x27;s a loose thread. Pull it. A creative hub for strategic ideas, communication &amp; culture.">
+<meta name="twitter:image" content="https://loomcreativehub.com/og.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "LOOM Creative Hub", "url": "https://loomcreativehub.com/", "description": "A creative hub in Athens for strategic ideas, communication & culture.", "email": "hello@loomcreativehub.com", "address": {"@type": "PostalAddress", "addressLocality": "Athens", "addressCountry": "GR"}, "founder": {"@type": "Person", "name": "Angie Simon"}, "sameAs": ["https://www.instagram.com/loomcreativehub__/", "https://www.linkedin.com/company/loom-creative-hub/"]}</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oi&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400;1,600&family=Covered+By+Your+Grace&family=Mynerve&display=swap">
+<style>
+/* layout: one continuous cloth. Full-bleed woven bands scroll up out of a loom fixed to the foot of the viewport;
+   the opening is a single pinned stage where the cloth is unravelled, goes to chaos, and is strung again. */
+:root{
+  --pink:#FF66C4; --hot:#E3127A; --yellow:#FFDE59; --orange:#FF914D; --red:#FF5A36;
+  --blue:#2F7BEA; --teal:#19C3CE; --lime:#93FF45; --ink:#17110F; --cream:#F3EEE3; --night:#1A1033;
+  --f-loud:'Oi','Roboto Flex','Arial Black',Impact,sans-serif;
+  --f-flex:'Roboto Flex','Helvetica Neue',Arial,sans-serif;
+  --f-serif:'Noto Serif Display','Times New Roman',Times,serif;
+  --f-hand:'Covered By Your Grace','Mynerve','Bradley Hand','Comic Sans MS',cursive;
+  --vh:1vh; --pitch:12px; --gut:clamp(16px,4.2vw,64px); --band:20vh;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{background:var(--pink);color:var(--ink);font-family:var(--f-flex);font-size:16px;line-height:1.4;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit}
+img,video,canvas{display:block}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+html.pulling,html.pulling *{user-select:none;-webkit-user-select:none;cursor:grabbing!important}
+html.cangrab body{cursor:grab}
+/* the fixed drawing surface: threads, strings, shuttle */
+#ink{position:fixed;left:0;top:0;z-index:5;pointer-events:none}
+#grain{position:fixed;inset:0;z-index:7;pointer-events:none;background-size:220px 220px}
+
+/* ── hud ── */
+.hud{position:fixed;z-index:9;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(14px,var(--gut));display:flex;gap:10px;align-items:center}
+.hud button{font-family:var(--f-hand);font-size:22px;line-height:1;padding:8px 14px 9px;background:var(--cream);color:var(--ink);border:2px solid var(--ink);border-radius:999px;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.hud button:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.hud button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.hud button[aria-pressed="false"]{background:var(--ink);color:var(--cream)}
+
+/* ── act one: words fixed over the stage ── */
+#w{position:fixed;inset:0;z-index:6;pointer-events:none;overflow:hidden}
+#w .b{position:absolute;opacity:0;will-change:transform,opacity}
+#pull{position:relative;height:760vh;background:var(--pink)}
+#pull .still{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-items:center}
+#pull .still img{width:min(74vw,1000px);height:auto;transform:translateY(-3vh)}
+
+.hint{right:clamp(40px,7vw,130px);bottom:calc(env(safe-area-inset-bottom,0px) + 7vh);text-align:right;color:var(--ink);transform-origin:100% 100%}
+.hint .h1{font-family:var(--f-hand);font-size:clamp(26px,3vw,46px);line-height:.95;letter-spacing:.01em}
+.hint .h2{font-family:var(--f-loud);font-size:clamp(44px,6.2vw,100px);line-height:.9;color:var(--yellow);text-shadow:3px 3px 0 var(--ink);margin-top:.14em;letter-spacing:-.01em}
+.hint .h3{font-family:var(--f-flex);font-variation-settings:'wdth' 120;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:1.2em}
+
+/* a care label: the page's small print lives on these */
+.care{font-family:var(--f-flex);background:var(--cream);color:var(--ink);padding:14px 16px 13px;max-width:330px;box-shadow:0 1px 0 rgba(0,0,0,.25),0 10px 22px -12px rgba(40,0,30,.55);position:relative;
+  background-image:repeating-linear-gradient(0deg,rgba(23,17,15,.05) 0 1px,transparent 1px 3px)}
+.care::before,.care::after{content:"";position:absolute;left:10px;right:10px;height:0;border-top:2px dashed var(--hot)}
+.care::before{top:5px}.care::after{bottom:5px}
+.care .k{font-variation-settings:'wdth' 130;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+.care .v{font-family:var(--f-serif);font-style:italic;font-size:19px;line-height:1.18;margin:.35em 0 .45em}
+.care .s{font-variation-settings:'wdth' 110;font-weight:500;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+#w .care0{left:max(16px,var(--gut));bottom:calc(env(safe-area-inset-bottom,0px) + 5.5vh);transform:rotate(-3deg);transform-origin:0 100%}
+
+/* chaos */
+.c1{left:6vw;top:16vh;font-family:var(--f-hand);font-size:clamp(46px,9.6vw,170px);line-height:.86;color:var(--ink);transform-origin:0 50%}
+.c2{left:0;right:0;top:50%;text-align:center;color:var(--ink)}
+.c2 .a{font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:900;font-size:clamp(20px,3.3vw,54px);letter-spacing:-.01em;text-transform:uppercase;line-height:1}
+.c2 .bb{font-family:var(--f-loud);font-size:clamp(46px,10.4vw,176px);line-height:.92;color:var(--hot);text-shadow:.035em .035em 0 var(--ink);margin-top:.05em}
+.noun{font-size:clamp(20px,3.1vw,50px);line-height:1;color:var(--ink);white-space:nowrap;left:0;top:0;padding:.14em .36em .2em;background:var(--cream);box-shadow:.09em .11em 0 var(--ink)}
+.noun.n1{font-family:var(--f-serif);font-style:italic;background:#fff}
+.noun.n2{font-family:var(--f-flex);font-variation-settings:'wdth' 25;font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(28px,4.6vw,76px);background:var(--pink)}
+.noun.n3{font-family:var(--f-hand);background:var(--lime);padding-bottom:.08em}
+.noun.n4{font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:800;text-transform:uppercase;font-size:clamp(13px,1.9vw,30px);background:var(--teal)}
+.noun.n5{font-family:var(--f-loud);color:var(--yellow);background:var(--ink);box-shadow:.09em .11em 0 var(--hot)}
+.c3{left:0;right:0;top:50%;text-align:center;font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:clamp(40px,8vw,132px);line-height:.98;color:var(--ink);padding:0 var(--gut)}
+.c4a{left:0;right:0;top:15vh;text-align:center;font-family:var(--f-hand);font-size:clamp(28px,4.4vw,70px);color:var(--ink)}
+.c4b{left:50%;top:50%;margin-left:-50vw;width:100vw;text-align:center;font-family:var(--f-loud);font-size:10vw;line-height:1.1;color:var(--hot);text-shadow:.03em .03em 0 var(--ink);white-space:nowrap}
+.c4b span{display:inline-block}
+.c4c{left:50%;bottom:9vh;width:min(86vw,470px)}
+.c4c .care{max-width:none;transform:rotate(1.6deg)}
+.c5{left:0;right:0;top:50%;text-align:center;font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:1000;font-size:clamp(40px,9.4vw,160px);letter-spacing:-.02em;line-height:.9;text-transform:uppercase;color:var(--ink)}
+.c6{left:var(--gut);right:var(--gut);top:13vh;color:var(--cream);text-align:center}
+.c6 .a{font-family:var(--f-serif);font-style:italic;font-size:clamp(34px,6vw,96px);line-height:1}
+.c6 .bb{font-family:var(--f-hand);font-size:clamp(22px,2.6vw,38px);color:var(--yellow);margin-top:.5em}
+.tag{left:0;top:0;font-family:var(--f-flex);font-variation-settings:'wdth' 118;font-weight:700;font-size:clamp(10px,1vw,13px);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--cream);padding:6px 9px 5px;white-space:nowrap;box-shadow:2px 3px 0 rgba(0,0,0,.35)}
+.tag::before{content:"";position:absolute;left:50%;top:-9px;width:2px;height:9px;background:currentColor;opacity:.5}
+.tag.y{background:var(--yellow)}.tag.p{background:var(--pink)}.tag.o{background:var(--orange)}.tag.l{background:var(--lime)}.tag.t{background:var(--teal)}
+
+/* ── the cloth (everything after the opening) ── */
+#cloth{position:relative;z-index:1}
+.bandzone{position:fixed;left:0;right:0;bottom:0;z-index:4;height:0;touch-action:pan-y}
+.band{position:relative;padding-block:clamp(90px,16vh,190px);background-color:var(--weft);color:var(--ink);--loud:var(--yellow);--shadow:var(--ink);overflow:clip}
+.band.dark{color:var(--cream)}
+.band[data-weft="pink"]{--weft:var(--pink);--loud:var(--yellow)}
+.band[data-weft="cream"]{--weft:var(--cream);--loud:var(--hot)}
+.band[data-weft="teal"]{--weft:var(--teal);--loud:var(--yellow)}
+.band[data-weft="night"]{--weft:var(--night);--loud:var(--yellow);--shadow:#000}
+.band[data-weft="orange"]{--weft:var(--orange);--loud:var(--cream)}
+.band[data-weft="lime"]{--weft:var(--lime);--loud:var(--hot)}
+.band[data-weft="hot"]{--weft:var(--hot);--loud:var(--yellow)}
+.band[data-weft="blue"]{--weft:var(--blue);--loud:var(--yellow)}
+.band[data-weft="yellow"]{--weft:var(--yellow);--loud:var(--hot)}
+.band::before{content:"";position:absolute;left:0;right:0;top:0;height:var(--seam-h,0px);background-image:var(--seam);background-size:var(--tw,288px) var(--seam-h,0px);pointer-events:none;z-index:1}
+.wrap{max-width:1340px;margin-inline:auto;padding-inline:var(--gut);position:relative}
+.after{margin-top:clamp(50px,9vh,110px)}
+
+.eyebrow{font-family:var(--f-flex);font-variation-settings:'wdth' 125;font-weight:700;font-size:clamp(10.5px,.84vw,12.5px);letter-spacing:.17em;text-transform:uppercase;display:flex;align-items:center;gap:.8em}
+.spool{flex:none;width:1.5em;height:1.5em;border-radius:50%;background:var(--loud);border:2px solid currentColor;box-shadow:inset 0 0 0 .22em var(--weft),inset 0 0 0 .5em currentColor}
+.ser{font-family:var(--f-serif);font-style:italic;font-weight:400}
+.loud{font-family:var(--f-loud);font-weight:400;color:var(--loud);text-shadow:.035em .035em 0 var(--shadow)}
+.fit{display:block;white-space:nowrap;width:max-content;max-width:none}
+.wide{font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:900;text-transform:uppercase;letter-spacing:-.015em}
+.tight{font-family:var(--f-flex);font-variation-settings:'wdth' 25;font-weight:900;text-transform:uppercase}
+.hand{font-family:var(--f-hand)}
+.lede{font-size:clamp(17px,1.5vw,23px);line-height:1.42;max-width:36em;font-weight:430}
+.lede b{font-variation-settings:'wdth' 118;font-weight:800}
+
+/* thread headers */
+.th h2{margin-top:.38em}
+.th h2 .ser{display:block;font-size:clamp(34px,5.6vw,96px);line-height:.98;text-wrap:balance}
+.th h2 .loud{display:block;font-size:clamp(34px,6.5vw,116px);line-height:1;margin-top:.04em;text-wrap:balance}
+.th .role{font-size:clamp(24px,2.8vw,44px);margin-top:.45em;transform:rotate(-2deg);transform-origin:0 50%;display:inline-block}
+.shout .wide{display:block;font-size:clamp(28px,5.3vw,90px);line-height:.94}
+.shout .hand{display:inline-block;font-size:clamp(22px,2.5vw,38px);margin-top:.35em;transform:rotate(-1.5deg)}
+.shout .loud{display:block;font-size:clamp(40px,7.6vw,132px);line-height:.95}
+
+/* stitched labels: what you can actually ask us for */
+.offer{display:flex;flex-wrap:wrap;gap:13px 15px;margin-top:clamp(28px,4.4vh,52px)}
+.offer li{font-family:var(--f-flex);font-variation-settings:'wdth' 112;font-weight:650;font-size:clamp(14px,1.28vw,18.5px);line-height:1.15;background:var(--cream);color:var(--ink);padding:.7em 1.05em .66em;position:relative;box-shadow:2px 3px 0 rgba(23,17,15,.9);transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.offer li::before{content:"";position:absolute;inset:4px;border:1.5px dashed var(--hot);pointer-events:none;opacity:.85}
+.offer li:nth-child(odd){transform:rotate(-1.3deg)}.offer li:nth-child(even){transform:rotate(1deg)}
+.offer li:hover{transform:rotate(0) translateY(-3px)}
+
+/* a hand, drawing on the cloth */
+[data-doodle]{position:relative;display:inline-block}
+[data-doodle]>canvas{position:absolute;pointer-events:none;z-index:0}
+/* photos */
+figure img{width:100%;height:auto}
+.jq,.pic,.pol,.peg{position:relative;background:var(--cream);padding:7px;box-shadow:3px 5px 0 rgba(23,17,15,.88);transform:rotate(var(--r,0deg));color:var(--ink)}
+.jq canvas{position:absolute;left:7px;top:7px;width:calc(100% - 14px);height:calc(100% - 14px);image-rendering:pixelated;transition:opacity 1.1s ease,clip-path 1.1s cubic-bezier(.6,0,.2,1);clip-path:inset(0 0 0 0)}
+.jq.dev canvas{opacity:0;clip-path:inset(100% 0 0 0)}
+.jq figcaption,.pol figcaption{font-family:var(--f-hand);font-size:20px;line-height:1.05;padding:7px 4px 2px;text-align:center}
+.pol{padding:9px 9px 6px}
+.patch{position:absolute;width:clamp(120px,15vw,220px)}
+
+/* ── the hub ── */
+#hub{padding:0;height:290vh}
+#hub .pin{position:sticky;top:0;height:100vh;height:100svh;padding:clamp(64px,10vh,110px) var(--gut) calc(var(--bandpx,160px) + 22px);display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,2vh,24px);overflow:hidden}
+.hub-pre{font-size:clamp(24px,2.7vw,42px);transform:rotate(-2deg);transform-origin:0 50%}
+.hub-h .ser{display:block;font-size:clamp(40px,7vw,122px);line-height:.92}
+.hub-h .loud{font-size:clamp(40px,9.3vw,164px);line-height:.98}
+.weave-mq{margin-inline:calc(var(--gut)*-1);overflow:hidden;position:relative;background:var(--ink);color:var(--cream);transform:rotate(-1.2deg) scaleX(1.02);margin-block:clamp(4px,1.2vh,14px)}
+.mq-row{display:flex;white-space:nowrap;will-change:transform;font-family:var(--f-flex);font-variation-settings:'wdth' 140;font-weight:850;text-transform:uppercase;font-size:clamp(17px,2.4vw,38px);line-height:1;padding:.42em 0 .4em}
+.mq-row i{font-style:normal;color:var(--yellow);padding:0 .5em}
+.weave-mq::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent 0 calc(var(--pitch)*2 - 3px),var(--pink) calc(var(--pitch)*2 - 3px) calc(var(--pitch)*2));opacity:.92;pointer-events:none}
+.hub-go{font-size:clamp(22px,2.3vw,34px);align-self:flex-end;transform:rotate(-2deg)}
+
+/* ── five threads ── */
+.five-h .wide{display:block;font-size:clamp(40px,9vw,160px);line-height:.86;margin-top:.2em}
+.five-h .ser{text-wrap:balance;display:block;font-size:clamp(22px,3vw,48px);line-height:1.05;margin-top:.5em;max-width:18em}
+.yarns{display:grid;gap:clamp(11px,1.8vh,20px);margin-top:clamp(30px,6vh,70px)}
+.yarns li{--p:1}
+.yarns a{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.1em 1em;padding:.5em 1.2em .56em;border-radius:999px;background-color:var(--c);background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.26) 0 3px,rgba(255,255,255,0) 3px 9px,rgba(0,0,0,.09) 9px 12px,rgba(0,0,0,0) 12px 18px);text-decoration:none;border:2.5px solid var(--ink);box-shadow:0 4px 0 var(--ink);clip-path:inset(-6px calc((1 - var(--p))*100%) -8px -6px round 999px);transition:transform .2s}
+.yarns a:hover{transform:translateX(10px)}
+.yarns b{font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:900;text-transform:uppercase;font-size:clamp(17px,3vw,48px);letter-spacing:-.01em;line-height:1.05}
+.yarns i{font-family:var(--f-serif);font-weight:600;font-size:clamp(15px,1.9vw,30px);line-height:1.1}
+
+/* ── thread one: the question ── */
+.qpin{height:470vh;position:relative;margin-top:clamp(20px,4vh,50px)}
+.qstage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.qframe{position:absolute;left:var(--gut);right:var(--gut);top:clamp(70px,13vh,150px);bottom:calc(var(--bandpx,160px) + 15vh)}
+.q{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--f-serif);font-style:italic;font-size:clamp(36px,7vw,120px);line-height:.98;text-wrap:balance;clip-path:inset(0 0 100% 0);padding-inline:min(8vw,90px)}
+.qline{position:absolute;left:0;right:0;height:3px;background:var(--ink);border-radius:2px;pointer-events:none;opacity:0}
+.qline::after{content:"";position:absolute;top:50%;left:var(--sx,0%);width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--orange);border:2.5px solid var(--ink)}
+.qnote{position:absolute;left:50%;bottom:calc(var(--bandpx,160px) + 5.5vh);transform:translateX(-50%) rotate(-2deg);font-size:clamp(21px,2.5vw,38px);line-height:1;text-align:center;width:max-content;max-width:92vw;transition:opacity .25s}
+.qpic{position:absolute;right:clamp(14px,5vw,90px);top:clamp(70px,11vh,120px);width:clamp(96px,13vw,200px);background:var(--cream);padding:6px;box-shadow:3px 5px 0 rgba(23,17,15,.9);transform:rotate(6deg) scale(.6);opacity:0;transition:opacity .3s,transform .45s cubic-bezier(.3,1.6,.5,1);z-index:2}
+.qpic.on{opacity:1;transform:rotate(6deg) scale(1)}
+.qpic img{aspect-ratio:4/5;object-fit:cover}
+.qcount{position:absolute;left:var(--gut);top:clamp(70px,11vh,120px)}
+
+/* ── thread two: the direction ── */
+.mzpin{height:420vh;position:relative;margin-top:clamp(20px,4vh,50px)}
+.mzstage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#maze{position:absolute;left:0;top:0;width:100%;height:100%}
+.mzsay{position:absolute;left:0;right:0;bottom:calc(var(--bandpx,160px) + 3vh);height:1.3em;font-size:clamp(22px,3.2vw,50px);pointer-events:none}
+.mz{position:absolute;left:0;right:0;bottom:0;text-align:center;font-family:var(--f-flex);font-variation-settings:'wdth' 140;font-weight:850;font-size:1em;line-height:1.1;text-transform:uppercase;opacity:0;color:var(--cream);padding-inline:var(--gut)}
+.mz.ser{font-family:var(--f-serif);font-style:italic;font-weight:400;text-transform:none;font-size:1.25em;color:var(--yellow)}
+.mzout{position:absolute;left:0;right:0;top:0;bottom:var(--bandpx,160px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none;padding-inline:var(--gut)}
+.mzout .loud{font-size:clamp(38px,8.6vw,150px);line-height:1}
+.mzout .ser{font-size:clamp(40px,8vw,140px);line-height:1}
+.legacy{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,46px);margin-top:clamp(40px,7vh,90px)}
+.legacy li:nth-child(1) .jq{--r:-2deg}.legacy li:nth-child(2) .jq{--r:1.5deg}.legacy li:nth-child(3) .jq{--r:-1deg}
+.legacy li:nth-child(2){margin-top:clamp(0px,5vh,60px)}
+.lg-n{font-variation-settings:'wdth' 125;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(13px,1.2vw,17px);margin-top:1.2em}
+.lg-n small{font-weight:500;letter-spacing:.1em;opacity:.75;margin-left:.5em;font-size:.82em}
+.legacy .ser{font-size:clamp(20px,2.2vw,34px);font-weight:600;line-height:1.08;color:var(--yellow);margin-top:.15em}
+
+/* ── thread three: the story ── */
+.fspin{height:500vh;position:relative;margin-top:clamp(10px,3vh,40px)}
+.fsstage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.fs-big{position:absolute;left:0;top:clamp(58px,8vh,90px);font-family:var(--f-flex);font-variation-settings:'wdth' var(--wd,151);font-weight:1000;text-transform:uppercase;font-size:clamp(46px,10.6vw,196px);line-height:.8;white-space:nowrap;color:var(--hot);letter-spacing:-.03em;will-change:transform;transform-origin:0 0}
+.fstrack{position:absolute;left:0;bottom:calc(var(--bandpx,160px) + 9.5vh);display:flex;align-items:flex-end;gap:clamp(14px,2.4vw,38px);padding-left:10vw;will-change:transform}
+.reel{flex:none;--rw:min(19.5vw,calc((100svh - var(--bandpx,160px) - 318px)*.5625));width:clamp(140px,var(--rw),300px);transform:rotate(var(--r));background:var(--cream);color:var(--ink);padding:8px 8px 10px;box-shadow:4px 6px 0 rgba(23,17,15,.9)}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--ink)}
+.reel figcaption{font-size:12.5px;line-height:1.25;margin-top:8px;font-variation-settings:'wdth' 104;min-height:3.9em}
+.reel b{font-variation-settings:'wdth' 125;font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:11px}
+.fs-end{flex:none;width:clamp(260px,34vw,560px);align-self:center;padding-left:3vw}
+.fs-end .hand{font-size:clamp(34px,4.4vw,70px);line-height:1;transform:rotate(-4deg)}
+.fs-end .ser{font-size:clamp(40px,6vw,104px);line-height:.95}
+.fs-sub{position:absolute;left:var(--gut);right:var(--gut);bottom:calc(var(--bandpx,160px) + 2.2vh);display:flex;flex-wrap:wrap;gap:.2em 1em;align-items:baseline}
+.fs-sub .ser{font-size:clamp(17px,1.9vw,28px);font-weight:600}.fs-sub .hand{font-size:clamp(19px,2vw,30px)}
+.lens{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);align-items:center}
+.lens h3{font-size:clamp(40px,7vw,120px);line-height:.86;margin-top:.25em}
+.lens .ser{font-size:clamp(22px,2.5vw,38px);font-weight:600;line-height:1.12;margin-top:.6em}
+.lens .hand{font-size:clamp(22px,2.2vw,34px);margin-top:.5em;transform:rotate(-2deg);transform-origin:0 50%}
+.lens-g{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,24px)}
+.lens-g figure:nth-child(3n+2){margin-top:14%}
+
+/* ── thread four: the room ── */
+.rtpin{height:360vh;position:relative;margin-top:clamp(10px,3vh,40px)}
+.rtstage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.rt{position:absolute;left:0;top:7vh;width:100%;height:calc(100% - var(--bandpx,160px) - 9vh)}
+#rtghost{fill:none;stroke:rgba(243,238,227,.75);stroke-width:3.2;stroke-dasharray:.5 12;stroke-linecap:round}
+#rtpathb{fill:none;stroke:var(--ink);stroke-width:12;stroke-linecap:round;stroke-dasharray:0 9999}
+#rtpath{fill:none;stroke:var(--cream);stroke-width:6.5;stroke-linecap:round;stroke-dasharray:0 9999}
+.rt-pt circle{fill:var(--cream);stroke:var(--ink);stroke-width:4}
+.rt-pt text{font-family:var(--f-flex);font-variation-settings:'wdth' 151;font-weight:900;font-size:38px;fill:var(--ink)}
+#rtneedle .nd{fill:#e9e6df;stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+#rtneedle .eye{fill:var(--ink)}
+.pass{position:absolute;left:var(--gut);top:clamp(70px,12vh,130px);width:min(84vw,410px);transform:rotate(-2.5deg);opacity:0;z-index:2}
+.pass .care{max-width:none}
+.pass dl{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;margin:.75em 0 .7em}
+.pass dt{font-variation-settings:'wdth' 118;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.pass dd{margin:0;font-weight:850;font-variation-settings:'wdth' 125;font-size:16.5px;line-height:1.1}
+.rt-v,.rt-i{position:absolute;background:var(--cream);padding:7px;box-shadow:4px 6px 0 rgba(23,17,15,.9);opacity:0}
+.rt-v{right:clamp(14px,6vw,110px);bottom:calc(var(--bandpx,160px) + 4vh);width:clamp(110px,14vw,210px)}
+.rt-v video{width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--ink)}
+.rt-i{left:clamp(40vw,46vw,52vw);bottom:calc(var(--bandpx,160px) + 5vh);width:clamp(120px,15vw,230px)}
+.rt-say{position:absolute;right:var(--gut);top:clamp(64px,10vh,110px);font-size:clamp(24px,3vw,48px);transform:rotate(3deg)}
+.sfc{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,5vw,80px);align-items:center}
+.sfc-pics{position:relative;display:grid;grid-template-columns:repeat(6,1fr);align-items:center}
+.sfc-pics figure:nth-child(1){grid-column:1/4;grid-row:1;z-index:2}
+.sfc-pics figure:nth-child(2){grid-column:3/6;grid-row:1;margin-top:26%;z-index:3}
+.sfc-pics figure:nth-child(3){grid-column:5/7;grid-row:1;margin-top:-58%;z-index:1}
+.sfc h3 .ser{display:block;font-size:clamp(34px,5vw,84px);line-height:.95;margin-top:.3em}
+.sfc h3 .wide{display:block;font-size:clamp(30px,4.6vw,78px);line-height:.92}
+.sfc .lede{margin-top:1.1em}
+.sfc .hand{font-size:clamp(24px,2.6vw,40px);margin-top:.8em;transform:rotate(-2deg);transform-origin:0 50%}
+
+/* ── thread five: the what-if ── */
+.toy{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center;margin-top:clamp(30px,6vh,70px)}
+.toy-go{font-size:clamp(24px,2.6vw,40px);transform:rotate(-2deg);transform-origin:0 100%;margin-bottom:.4em}
+#draft{width:min(78vw,384px);height:auto;aspect-ratio:1;background:var(--cream);border:3px solid var(--ink);box-shadow:6px 8px 0 var(--ink);touch-action:none;cursor:crosshair;image-rendering:pixelated}
+.toy-ctl{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;max-width:384px}
+.btn,.toy-ctl button{font-family:var(--f-flex);font-variation-settings:'wdth' 118;font-weight:750;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;padding:.72em 1.05em .68em;background:var(--cream);color:var(--ink);border:2px solid var(--ink);border-radius:999px;box-shadow:2px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover,.toy-ctl button:hover{transform:translate(-1px,-1px);box-shadow:3px 4px 0 var(--ink)}
+.btn:active,.toy-ctl button:active{transform:translate(2px,3px);box-shadow:0 0 0 var(--ink)}
+.toy-say{text-wrap:balance;font-size:clamp(26px,3.6vw,58px);line-height:1.05}
+.toy-say2{font-size:clamp(22px,2.4vw,36px);margin-top:.5em;transform:rotate(-2deg);transform-origin:0 50%;opacity:0;transition:opacity .5s}
+.toy.done .toy-say2{opacity:1}
+.toy .shout{margin-top:clamp(18px,4vh,46px)}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.6vw,40px);margin-top:clamp(50px,9vh,110px)}
+.spec li:nth-child(even){margin-top:18%}
+.spec .hand{font-size:clamp(19px,1.9vw,28px);line-height:1.02;margin-top:.7em;text-align:center}
+
+/* ── the whole cloth ── */
+.wc-h .loud{font-size:clamp(46px,12.2vw,220px);line-height:1.05;margin-top:.1em}
+.wc-h .ser{display:block;font-size:clamp(22px,3vw,48px);line-height:1.05}
+.line{position:relative;margin-top:clamp(30px,6vh,70px);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-block:26px 40px}
+.line::-webkit-scrollbar{display:none}
+.line-in{display:flex;gap:clamp(16px,2.6vw,40px);padding-inline:var(--gut);width:max-content;min-width:100%;justify-content:space-between;position:relative;align-items:flex-start}
+.line-in::before{content:"";position:absolute;left:0;right:0;top:4px;height:4px;background:var(--ink);border-radius:2px;transform:rotate(-.25deg)}
+.peg{flex:none;width:clamp(150px,15.6vw,236px);transform-origin:50% 0;margin-top:calc(var(--d,0)*1px)}
+.peg::before{content:"";position:absolute;left:50%;top:-18px;width:13px;height:34px;margin-left:-6px;background:var(--orange);border:2px solid var(--ink);border-radius:3px;z-index:2}
+.peg:nth-child(2n){--d:26}.peg:nth-child(3n){--d:12}
+.five-in{display:grid;gap:10px;margin-top:clamp(34px,6vh,70px);max-width:980px}
+.five-in li{display:grid;grid-template-columns:minmax(120px,210px) 1fr;gap:6px 22px;align-items:baseline;padding:.55em 0 .6em;border-bottom:3px solid var(--c);position:relative}
+.five-in b{font-variation-settings:'wdth' 140;font-weight:900;text-transform:uppercase;font-size:clamp(13px,1.3vw,18px);letter-spacing:.02em;display:flex;align-items:center;gap:.6em}
+.five-in b::before{content:"";width:.95em;height:.95em;border-radius:50%;background:var(--c);border:2px solid var(--ink);flex:none}
+.five-in span{font-family:var(--f-serif);font-weight:600;font-size:clamp(19px,2.1vw,31px);line-height:1.12}
+.stat{display:flex;align-items:center;flex-wrap:wrap;gap:.1em clamp(14px,2.4vw,36px);margin-top:clamp(30px,6vh,70px)}
+.stat .tight{font-size:clamp(90px,19vw,330px);line-height:.8;color:var(--hot);letter-spacing:-.01em}
+.stat .ser{text-wrap:balance;font-size:clamp(26px,4vw,66px);line-height:1;max-width:8.5em}
+.credit{font-size:12.5px;letter-spacing:.04em;opacity:.7;margin-top:2.2em;font-variation-settings:'wdth' 108;max-width:60em}
+
+/* ── LOOMístas ── */
+.pp{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(26px,6vw,90px);align-items:start}
+#pp-h .loud{font-size:clamp(40px,11vw,190px);line-height:1.05;margin:.1em 0 .3em}
+.pp .care{transform:rotate(-1.5deg);max-width:400px}
+.pp-l{text-wrap:balance;font-size:clamp(22px,2.5vw,38px);font-weight:600;line-height:1.12;margin-top:1.1em}
+.pp .hand{font-size:clamp(24px,2.5vw,38px);margin-top:.7em;color:var(--yellow);transform:rotate(-2deg);transform-origin:0 50%}
+.pp-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px)}
+.pp-g{margin-top:-2.5vw}
+.pp-g figure:nth-child(2){margin-top:22%}.pp-g figure:nth-child(3){margin-top:-18%}
+.pp-g .pol img{aspect-ratio:4/5;object-fit:cover}
+
+/* the manifesto posters */
+.ili{margin-top:clamp(50px,9vh,110px)}
+.ili-h{font-size:clamp(24px,2.6vw,40px);color:var(--yellow);transform:rotate(-1.5deg);transform-origin:0 50%}
+.ili-g{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,46px);margin-top:clamp(18px,3vh,34px);align-items:start}
+.ili-g figure:nth-child(2){margin-top:9%}
+.ili .credit{opacity:.85}
+
+/* ── sharing is caring ── */
+.ed-h .ser{display:block;font-size:clamp(34px,5.6vw,96px);line-height:1;margin-top:.3em}
+.ed-h .loud{display:block;font-size:clamp(34px,6.4vw,112px);line-height:1.05}
+.ed-s{font-size:clamp(24px,2.6vw,40px);margin-top:1.4em;color:var(--yellow);transform:rotate(-1.5deg);transform-origin:0 50%}
+.log{margin-top:clamp(14px,2.5vh,28px);border-top:3px solid var(--cream)}
+.log a{display:grid;grid-template-columns:7.2em minmax(0,1fr) minmax(0,15em) 7em;gap:6px 22px;align-items:baseline;padding:1em .2em 1.05em;border-bottom:1.5px dashed rgba(243,238,227,.6);text-decoration:none;position:relative;transition:background .2s,padding .2s}
+.log a:hover{background:rgba(23,17,15,.22);padding-inline:.9em}
+.log time{font-variation-settings:'wdth' 130;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.log .what{font-family:var(--f-serif);font-weight:600;font-size:clamp(19px,2vw,30px);line-height:1.12}
+.log .host{font-variation-settings:'wdth' 112;font-weight:650;font-size:14.5px}
+.log .fmt{font-variation-settings:'wdth' 125;font-weight:600;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-align:right;opacity:.85}
+.log em{position:absolute;right:.2em;top:-.85em;font-family:var(--f-hand);font-style:normal;font-size:21px;line-height:1;background:var(--yellow);color:var(--ink);padding:3px 11px 4px;transform:rotate(3deg);box-shadow:2px 2px 0 var(--ink)}
+.ed-g{display:grid;grid-template-columns:5fr 5fr 3fr;gap:clamp(14px,2.6vw,40px);align-items:center;margin-top:clamp(40px,7vh,90px)}
+.ed-end{text-wrap:balance;font-size:clamp(24px,3.4vw,56px);font-weight:600;line-height:1.08;margin-top:clamp(30px,6vh,70px);max-width:17em;color:var(--yellow)}
+
+/* ── got loomed ── */
+.cl-h{margin-top:.3em}
+.cl-h .loud{font-size:clamp(46px,11vw,196px);line-height:1.02}
+.cl-h .hand{font-size:clamp(26px,3.4vw,54px);display:block;text-align:right;transform:rotate(-3deg);margin-top:-.15em;padding-right:3vw}
+.rack{display:flex;flex-wrap:wrap;gap:clamp(12px,1.6vw,22px) clamp(12px,1.5vw,20px);margin-top:clamp(30px,6vh,70px)}
+.rack li{font-family:var(--f-flex);font-variation-settings:'wdth' 112;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(14px,1.55vw,23px);line-height:1.1;background:var(--cream);color:var(--ink);padding:1.05em 1.3em .95em;position:relative;box-shadow:3px 4px 0 var(--ink);background-image:repeating-linear-gradient(0deg,rgba(23,17,15,.055) 0 1px,transparent 1px 3px);transform:rotate(var(--r,0deg));transition:transform .3s cubic-bezier(.3,1.7,.5,1),background-color .2s;max-width:100%}
+.rack li::before,.rack li::after{content:"";position:absolute;left:8px;right:8px;border-top:2px dashed var(--c,var(--hot))}
+.rack li::before{top:5px}.rack li::after{bottom:5px}
+.rack li:hover{transform:rotate(0deg) scale(1.07);background-color:#fff;z-index:2}
+.rack li:nth-child(5n+1){--r:-2deg;--c:var(--hot)}.rack li:nth-child(5n+2){--r:1.4deg;--c:var(--blue)}.rack li:nth-child(5n+3){--r:-.8deg;--c:var(--ink)}.rack li:nth-child(5n+4){--r:2.2deg;--c:var(--red)}.rack li:nth-child(5n){--r:-1.5deg;--c:var(--teal)}
+.rack li:nth-child(4n+2){font-family:var(--f-serif);font-style:italic;text-transform:none;letter-spacing:0;font-weight:400;font-size:clamp(18px,2vw,30px)}
+.rack li:nth-child(7n+3){font-variation-settings:'wdth' 151;font-weight:900;letter-spacing:-.01em}
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.5vw,22px);margin-top:clamp(50px,9vh,110px)}
+.sw{--r:0deg}.sw:nth-child(odd){--r:-1.5deg}.sw:nth-child(even){--r:1.5deg;margin-top:16%}
+.sw img{aspect-ratio:3/4;object-fit:cover}
+.sw figcaption{font-size:17px}
+
+/* ── the knot ── */
+#knot{padding-bottom:clamp(60px,10vh,120px)}
+.kn{text-align:center}
+.kn-q .ser{text-wrap:balance;font-size:clamp(30px,5vw,84px);line-height:1}
+.kn-q footer{justify-content:center;margin-top:1.4em}
+.kn-h{margin-top:clamp(60px,12vh,150px)}
+.kn-h .loud{font-size:clamp(40px,9.6vw,170px);line-height:1}
+.kn-s{font-size:clamp(28px,3.6vw,56px);transform:rotate(-2deg);margin-top:.1em}
+.kn-mail{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 18px;margin-top:clamp(26px,5vh,56px)}
+.mail{font-family:var(--f-flex);font-variation-settings:'wdth' 118;font-weight:800;font-size:clamp(19px,3.2vw,50px);letter-spacing:-.005em;background:var(--cream);padding:.42em .7em .44em;box-shadow:4px 5px 0 var(--ink);user-select:all;-webkit-user-select:all;overflow-wrap:anywhere;position:relative}
+.kn-links{display:flex;justify-content:center;gap:14px;margin-top:22px;flex-wrap:wrap}
+.kn-links a{font-family:var(--f-flex);font-variation-settings:'wdth' 118;font-weight:750;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.8em 1.2em .75em;background:var(--ink);color:var(--cream);border-radius:999px;display:block;transition:transform .15s}
+.kn-links a:hover{transform:translateY(-2px) rotate(-2deg)}
+#rug{width:100%;height:auto;margin-top:clamp(50px,10vh,120px);display:block}
+.kn-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font-variation-settings:'wdth' 118;font-weight:650;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;text-align:left}
+
+/* ── selvedge: where you are on the cloth ── */
+.selvedge{position:fixed;left:6px;top:50%;transform:translateY(-50%);z-index:8;display:flex;flex-direction:column;gap:3px;opacity:0;transition:opacity .4s;pointer-events:none}
+.selvedge.on{opacity:1;pointer-events:auto}
+.selvedge a{display:block;width:9px;height:22px;border:1.5px solid var(--ink);background:var(--c);position:relative;transition:width .2s;border-radius:2px}
+.selvedge a:hover,.selvedge a.cur{width:20px}
+.selvedge a span{position:absolute;left:28px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--f-flex);font-variation-settings:'wdth' 118;font-weight:750;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:5px 8px;opacity:0;pointer-events:none;transition:opacity .15s}
+.selvedge a:hover span{opacity:1}
+
+@media (max-width:900px){
+  .lens,.sfc,.pp,.toy{grid-template-columns:1fr}
+  .pp-g{margin-top:0}
+  .legacy{grid-template-columns:1fr 1fr}
+  .legacy li:nth-child(3){grid-column:1/-1;max-width:60%;margin-inline:auto}
+  .spec{grid-template-columns:1fr 1fr}
+  .swatches{grid-template-columns:repeat(3,1fr)}
+  .ed-g{grid-template-columns:1fr 1fr}
+  .ed-g figure:nth-child(3){display:none}
+  .log a{grid-template-columns:6.4em minmax(0,1fr)}
+  .log .host{grid-column:2}.log .fmt{grid-column:2;text-align:left}
+  .selvedge{display:none}
+}
+@media (max-width:700px){
+  .hint{right:22px;bottom:auto;top:62%}
+  #w .care0{bottom:calc(env(safe-area-inset-bottom,0px) + 3vh)}
+  .c1{top:20vh}
+  .care{max-width:250px;padding:12px 13px 11px}
+  .care .v{font-size:16px}
+  .five-in li{grid-template-columns:1fr}
+  .qpic{width:92px;top:64px;right:12px}
+  .qcount{top:66px}
+  .pass{top:62px;width:min(80vw,330px)}
+  .pass dd{font-size:14.5px}
+  .rt{top:62px;height:calc(100% - var(--bandpx,120px) - 70px)}
+  .rt-i{left:auto;right:38vw;width:112px}
+  .rt-say{display:none}
+  .reel{--rw:min(58vw,calc((100svh - var(--bandpx,120px) - 356px)*.5625))}
+  .fstrack{bottom:calc(var(--bandpx,120px) + 13vh)}
+  .fs-big{font-size:17vw}
+  .hud button{font-size:17px;padding:6px 11px 7px}
+  .ili-g{display:flex;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gut)*-1);padding:10px var(--gut) 18px;gap:18px}
+  .ili-g::-webkit-scrollbar{display:none}
+  .ili-g figure{flex:none;width:64vw}.ili-g figure:nth-child(2){margin-top:0}
+  .swatches{grid-template-columns:1fr 1fr}
+  .legacy{grid-template-columns:1fr}
+  .legacy li:nth-child(3){max-width:none}
+  .legacy li:nth-child(2){margin-top:0}
+  .lens-g{grid-template-columns:1fr 1fr}
+  .lens-g figure:nth-child(3n+2){margin-top:0}.lens-g figure:nth-child(2n){margin-top:16%}
+}
+@media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important;transition-duration:.01s!important} }
+
+</style>
+</head>
+<body>
+<canvas id="ink" aria-hidden="true"></canvas>
+<div id="grain" aria-hidden="true"></div>
+
+<div class="hud">
+  <button id="snd" type="button" aria-pressed="false" aria-label="Sound">tap for sound</button>
+</div>
+
+<!-- act one — its words ride over the stage -->
+<div id="w" aria-hidden="true">
+  <div class="b hint" id="hint">
+    <div class="h1">psst — there's<br>a loose thread.</div>
+    <div class="h2">pull it.</div>
+    <div class="h3">drag it · or just scroll</div>
+  </div>
+  <div class="b care0" id="care0">
+    <div class="care">
+      <div class="k">LOOM Creative Hub · Athens</div>
+      <div class="v">Made of strategic ideas, communication &amp; culture.</div>
+      <div class="s">100% play that works · do not iron out the weird</div>
+    </div>
+  </div>
+
+  <div class="b c1" id="c1">Well.<br>Now you've<br>done it.</div>
+
+  <div class="b c2" id="c2"><div class="a">this is culture</div><div class="bb">with its<br>seams out.</div></div>
+  <div class="b noun n1">art</div>
+  <div class="b noun n2">music</div>
+  <div class="b noun n3">fashion</div>
+  <div class="b noun n4">writing</div>
+  <div class="b noun n5">film</div>
+  <div class="b noun n2">memes</div>
+  <div class="b noun n1">colour</div>
+  <div class="b noun n4">material</div>
+  <div class="b noun n3">finish</div>
+
+  <div class="b c3" id="c3">Most people<br>see a mess.</div>
+
+  <div class="b c4a" id="c4a">we have a word for it.</div>
+  <div class="b c4b" id="c4b"><span>τριαλαλούμ</span></div>
+  <div class="b c4c" id="c4c">
+    <div class="care">
+      <div class="k">τριαλαλούμ · tri·a·la·LOOM</div>
+      <div class="v">noun, adjective, adverb — whatever you need it to be.</div>
+      <div class="s">1 · formerly: chaos. madness. a mind come loose.<br>2 · now: a mind let loose on purpose.</div>
+    </div>
+  </div>
+
+  <div class="b c5" id="c5">Look<br>again.</div>
+
+  <div class="b c6" id="c6"><div class="a">Every thread is somebody.</div><div class="bb" id="c6b">go on — run your hand across them.</div></div>
+  <div class="b tag">a creative</div>
+  <div class="b tag y">a rebel</div>
+  <div class="b tag p">a helper</div>
+  <div class="b tag o">a hipster</div>
+  <div class="b tag l">a bombshell</div>
+  <div class="b tag t">a strategist</div>
+  <div class="b tag">a photographer</div>
+  <div class="b tag y">an illustrator</div>
+  <div class="b tag p">a director</div>
+  <div class="b tag o">a researcher</div>
+</div>
+
+<main id="cloth">
+  <section id="pull" aria-label="Pull the thread">
+    <div class="still"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4QAAAGRCAMAAAAKFI0IAAAAkFBMVEX+2l7+3lj+q1v+2lr+vD3/AAD/fHz/9jz+6mD/fgj+lEr/7p7+kkf+kUb/AP/8qaaurl3/aqn/qv//kz5/f3+/vz//av//lD4A/wB/fwB//3//AH//kj///8wAAAD+3Vj+5Fn+kUz//wD//n3//lX+21n+3Fn////+2ln+41X+4lT+4lT+4lT+13L+3Fj+41fiblreAAAAMHRSTlMVbQiTBQECBPkCnAVb0wEEAwQDTgIEArYBAgICwQUA/vz+AQIDT8wBMFDPkLAMri9JzCUCAABIzklEQVR42u2dh4LkKs6ocZ6anrB/vBlzwDm+/9tdwK7sALZMdXeh3T07p6a7isJ8SEhCQtiKFSsvFWSnwIoVC6EVKxZCK1asWAitWPlOEpxCd5AwDKmF0IoV0wg+vRBYCK1YMSqu++vXz5//9zeXnz9/uSerCa1YMSXC8vTdn79///P7n6v85iD6XB9SC6EVK8dKiPFf99ctflfhHPIfoBZCK1YO1IKcQf/nP7Py81coObUQWrFykBqkeE4LXjH8i08WQitWjhEX5/+xjKA8HLo4DCyEVqwcchx0f/6jIL9/PetCC6EVKwDnQUUGufwKLYRWrEBLEOBfv/9RlZ+hhdCKFXD59Y+G8INhYCG0YgVSEeox+EShhdCKld3nwX805Wd4CiyEVqyAiftbF8J/fmHXQmjFCpCclP2it5EKF1MLoRUrMAzqHgjPFAahhdCKFQAJgw3G6GCQXi4ZWgitWNkugYt/bmLw1iB9ewgpl5BxCcPhf/yf/KXgCwybycGO/2NMvGSpMCyuvmf0ogoDa47S0HWThM39NUsSl33CRU2ZGPbcwGjySYf9XRXh6fRzK4T/uO8NIXV9/4xfhBAqiqJPSyE9/xN/4Tw/SeR/oiUdJr5/eXB81GKww6j5nwr+yvnr+X5iQTTyRLZ5ZcZgof+2EFIWIblCWZGmjlPXTVNlcRwTKfwPVdV1nuOUKcdRgoj8T7CiacKi4YkVaSmG3TVVfB62+EPWNF7tOKlTDM8URa4F8WhFSMOf//zeTOEDhNzCARWXsfxTLgEWJfyfeZE6dZedyRtW8VmGV37w16qmdlI5Q9FrOaRJRCV/jleLUf94HvX1q2Ri1JJEqs0ht3WhlwKXMDh0U4UfMF++ap+N3e3WqHCQ0sM1IX+in+t4QuXc9qnXZMNCjhdlWNRV45Villj4OuOZ/6Mt5LZBVkc9/IjYP/qcbzefQh3yiadf641VrdH/2MHgPz+DqyakGJVOOoo8Y6T38vjvCtIX6FNaur2XKa3kexKrxnnpt2lTYXtqjDoeRl2XWkuUYeQ4cg2kcMKXU3Hk/vXR7x/g0/cVBtD61AV4z5FQRimCiyZMWE0ejZqHf5+XZ4NIvCjWQNV5ZZ8MavvVW7EYgds7md5Svl3RXWn+q8gPQ2lXkQ2jHoZdy4OtWvAixCgj8zaB/gjk74pjdufIYQTAc8PNAz438QHiseRwa1TYo+GNOdp25AjhT6/yxPS/NoJFhRWapJLAjQ9Ffp1hQZsygAImNw5v+/ofOXSEs5eGShT2hBy0EiphTMCpRD45yCEqWmKLNEhtH3B3MfjPzyGN+/xhM1vgXhmmX5yp3Nf5Yviehnov3r6Urwu6kcdDE/5/Kj4ElR3ZPWz+H7l7qDgbKC4PWQdyGFXqYgbGYJtWe6dmdqxqDPLZ8kEhxMVBX0iu3qps8YsiV8KxL9cy0HepnF4E4o7+MiKLoHAyoGGPu4evgkB94DqoERCFLkbHjTMmhaKtsu9I+M8//+MeQpo7x30psQj6l5ikwhAFRHBcSqloNnDozuFDIjhuhGL3iFafAT3IJhpVTA9CIcNFdeAoHeWT/04IfwcyenOBkLYHTr5YBM7/YblpBrn2RU4DreM5hiVfz4d9G8qVd1HHwMMWGPIdPgrWTKz0yN046wFcW8JoPpDBrqWmIPTlbKDr5nKkKpQUYsMxHXriCFZHPC7ho8Fg55sJlwM4gmcM0ZpBQinqDqUQ7fbO5LiPjxxiilX3153O0fNNCnQz+YeqQv7lSuOxirQ66uhOqro4atRtfeCwHba6B5SHmkRNS/ftXoyi6kgGNRQhAIThXcZMcrAq5CsgNQeh+KCiiw/1NgmfOwUf9odTHWlrkapfjnbS4FBVGBMP78ri4YTUhy7UUt2TDw6hi4ujVWHVm6JQmnSEHGxgV2UE6m7i75X0WXzwqIWPcsmUPng3JnGKkx2TxId36Px0baCsqf39EJ7uIORGwrE7jNgEDblmXBlFio8W4KMhPzIjjxgYttDh8+fzBBeH7gP7joUu7g99sqTGiXJiT/4L9kwoXTPx0RT2RkzRY6NI9+u5zHft63eLH5eVoWHzA+2sCs+Pdc2IvRixYLOxgJqj9XSkPpy9EJ7oA4TH26P8VM4MmKIUp4tfZLipBGOsSuPOh2FQGNBmRi02j3kVHh1tEvG9eKtJlB/rNhLJMjQ3BuFPfBcnFPH/gzcZuZAK/OdwU/Svs7RSf8RZVzvjvSCgAHQCwWDfLCI4jFoM+wcB2TzcuWEnOI2PVoUbnQPcYD9YSzcaCZZ0302mp4yZ4c/e0daQcI0dHJ9fVigk9tKheAVCfelBLDahVfYWhqInvHSIJaS7XJgvUphUGpEg6b4gH2XnsaQ8eGQORRoQAueOCl+PgUNhlZ8OdZDmiwuIEK8YEkqH5E/UQ3xjDvbOWAX/5SXtTarhfn8SDQm4qOwghs03j3w61y852CQi3batOMDo2O1Bz3VLsfsb8CrT+VAYG7BHDzwWnvhOGS8t5vKDf00m9BYVZcvEBDj7rVJ5MNyRBxKuaG8ZU2AhxcOwxfWKvtn/qEjsTG8e0fF+8v6TKsJMJ8U8wOwn2KXey1poD4eQP3f/QAaps8iguNF2azjKS3ZtDbCem2K7nU1xsXgcFEku9CGeiCOAbCD+NPLn5s0CQu/wYNW2qTraa0GqD53A72mfZ+bneMsZ3T1btzJwKDysUARbjkxIBidTawDSgWUiwraDobt8BCPOzI30ZWequovkeec//lxCCNpiv9P+cPe9ToBCNKr/vcsanSj0lODjIdT7lpouGY8sW8J0xqroMwAKy2260F10yXBbNNl0jtxDYbJo1AM5QDYcS6iBdBKtYXG1tccenaw7muDucAiro6rpJsvea0JKHNI5Fdru93SID9gQqvCX9TBX37PVthkGSAsiXfu0eRzvHuWHrzbXZxAdnE8kTkuJ3g4KXvzXNRCjyNAxnhlu1C3uIHzLn78B6ELki22icIVB4cGY3bNoBKLCu6fjLD3aCSndkNqXKRLqfDaXxSnfoQp/4RkI48MhPMY9ylbSfcSZzV1C2HVAKNSre0GTFZOS1ItVvyIAlUVI97gvGoBQnEs0C55QmjfHbw2a++gOVfgznIHw+EDhMRCuMSjOIP7yG3zAUKhjbHNdsHz4ElsHW7HBISzSh0+hNDweQm5nu5rnjZ4YgFBvUEGwWRXOtEYzAuER5uhpxRYVR5CVmn85zvfb4oJCV2frWHGAkFXriEFcKhDnwpNhD13MLT89F93x0Uv+MLRr4GxWhT/d6SahzAyEFJ7BtYxCsv7EKUQQSupC9WGv5Giu2NDjsAH0g7BI6R2EzeEQkoZp3cVkgQEbOdZWEcFpW5fQ8SrhFITp8Xlr4QHdEdCKEhO2j8LkAiQHk0rZ3Gar8UlSY3819hiAhDk9F5uGkGhdGhLBy+PHFOtnPm3MXft1E1Y2DuEBcULWrhmSYjWrvBNIvLCYSkKZVGErOzuJVdJwqKiPBkDhBzULobw+q3N+jppPCaEwSTcYo/lN1zLjEMJnzKyXYxBx+lyJC4D4GGmUvH50veg56ZS2DpokEFF75wZ4MxA2SG27Oh9+MwMQthtuOtLgl/6BMLz5HHSfhXN0Brd2NFSFwVVzjKtfpamlCYhSqRMFg9Rla7YviUuqNFd5AmFHx+nVjjaQtSE+UvH7KW61QJpww3Xjk26tmbHA06sgBL9FkSgUoSQOPSnaPAggXUGhgjO3IVc/SBxk1Y7PLogGvwkeGYLQUS+TRamJiiUbIQx0y6659yYAunfTHw5h5cMyyBS8KYQoW8AUAxQiV4g2uQrZmdwaVZ2rCMQ501xcg4YgbNRPYEas0a0QalL4oAfNQ1jD3qynOF/fIEmjPrEuRGec1Ri7q7CkRGJXqG4PAOgJ/nBGzWQGwlgjKseOvkm4C0Ku2MJf6ufBx1sxZiEUOgK0a6tSOqG4DKRBIcDZQ+zxdGdIUiyIwKgGv+YGGIJQ/cFQnNSfGULxtH+pRSp+PTFoGkIC6xpVi1RrXeOmmAEsQOK58w2QAlfl5Ek6qjXsAuKw0A97pCkIm1Yxc+P4CxQ7IZT7t4JJ+vvXxO1QwxB6oAyqlRwRSTqB3nIGyJxJ5y0tptT4SEt/CwHU4KbM0bhXhrA0sivsgZAfDFeVoTBFn9eiYQhhi/9SpmKjEM9/wXKuZg1SqpbuSTQbzoA09CE1Mwmh6BGk6HqqPz2EIgVmGcOfv6YbhhuFcLrAxA5RaqXHn7TmnRmIJEVSzwUYaKu2wpGuaQ7RWHDAwhiEHVI1ecyMZxeEovQ7t0l/zyLoYncyVGYWwhQybZQqZvQS3TY0kMt5s6IlnWZ6XwBSvX7YJ42Zo8o+gv4rQMj1nMv/+2uCw5+/fglCp49FJiFcMNE2fWG1OgAk1oUwoK4HtZwnN3WlYWsfnxnIfTv+udQghKr2aP01IMQyAufec/ib60Dx8mzFXaMQOpCKULVY++M1HaXlXBCYsNtERClXW9/qx6Xr8w8gMru44cDMQdgpPuzqq0CIg/AkVaLrj//1JYGzBY7MQgh7qf6kenIjNdWFkB/mIHwzU01RmWohM6Lfy5GBVKUgDfJ9YxAq2qO9oeEAQChBDJ59NgtiEkIHsqOmr2qhaPtlpE4BcTVm6PFChXJTcrEcqP6cOAQkZI+MQRirdG+mJpK3ISHUFHMQkqynDNAYVc1ZJlvqgZ5AanqSxysjgXJ62QYjWnYWbCAOsz01dAbjolLok+LKQgilCOEYVL+9I27G6n9u6LYdiCq833fUu32QOtrgxHJBLoSS2qW1IQZJxfJ1BntiIYRRhCiBM0ap8rWBjc2ZQW4W8uWcsz8388uUowgK16GmKYRQhdx4MGSO8s9aT+JO6OGlj94DQkJKwPsTIVY+s63kUs8/eR9CFd7XsWTqN450CkbdnTlBwhQd8kyZowpF14zc838LCJsQsLZMoH5S3+AcPSd4xiCuxut9JKZRSYr024x3CrJgSWoMwvUiwCbKrL0FhKL8EaQx2iuPk2ytp3ECMcluE7m1nHz91hN0ATHqrpuxZ4QAr4y1b7rUKQB4PN8cQgf0HqFGUwLibCzvRqFU4Xn30Skuv7405403CMcmmXm1yroKeomsPaAFjzKJsy6L4TD81hCSBrTWKNVJ500311hkIKqwDM7f3dXYOrQqkRkKbJMq/RCtjWF14VqxhYW9i2Qpxn8Ai898awgrFICOWv3EQuJye2tgkDxu/t2DceuoNHataKP5HkCUMJ4NXTKWgJQ51fCcRXQ2x8hr8Ym5GC6U/zkgRIdASFLAVBkcUPUToUgR2F5jEaJkxDUJVCezk3jJ9jP0Mfdfz1mHFMFSKGrpLNkqsy0o+KYgSyay5A+ULvzGmpB4CNIaZTpdFPckrFIoVThqqErjl5zN00OPUYVEZrPJVQJNoYOTeUOJzWUBiXlNzmnEQMv2+0II6xkVuVkaCuqmjp/+cgbJIB2TV/XyH+/qYetO0CGqkFTueR5pknuAFC5XPkxmCtPdtrIAyy39thCK2YIsc+hrtY4SB5nNflkK0hqWZFi77+YPZ/tJNgQpdDHxFC876Qn0E8SFT3cBwulncFdKC0oVftszIalpCKgIqd4CII27XQ0zkE1J1nlMVK8wXbTnZggPqRhPyO2RgoJcuFQJ5c4VliVVe7u5Mo9YTXiMPTijCHWeP6m1euc+Ah96IKFv/F8J08tkKXe07EggGoc+z+O9AHJO6o/ZjXKmCSp5nKDUQrj0tQrQDjCU6d3WUWrxt7CcU5hHe9KtU5/umDV6wE2kp4v+gAapcJ7NHRnc6QPuQ58OChQc/Z4Qkj0ehmks9Faz0IS7nEAgqZg1DrWwILsgxBF8i7vnYpWA3h9+3pxd+swh0/OTH+AR/p5nQuIBd0KjmllZ+yAEag/L9229tknLvor1SQoR8L0DcSHsMRACmKji0JnyzDNdHEn1uKpAzg3fUxOSDsE2YXJxoWcGXaJbW4NuMAH7VI9lkWLg7tw7gB9k9BQIgbtpKxCfqdE6bWdy1XlIWOY7QkiAK24PZSdigxByPQ7jmmk0IdxXE4vSFtY185w8EKiVP1c2duc8M5PWaPaY/cFgDoXfEsJycxbyXBxa187aDSEtYmP3W+80IdtnMcBeCJwowOgC+mDnE4Qmn/fzjzOIfjjf8ky4I/dqVhFqWx07IQyMleB8tM92QUiDHnY7fVZVlMH5YEk35znoiZL1GsJ4a7+fJiQeaMHteV/ZkRCKyLd5VSgvLOybqQ/YrJkJezEBbJ47W360nFGEwZMDp7EQTi4kCuuVmfOVrQTc2M7PbIl5CHdnOMCW6pxsJUATQFU4U298OsXh+cBMoe4yfy8Id90hml1ZutYo2XGn9/Kh3heEEIOeLKbdly4Di9iTbrpG9VTfDuK5zxsCTLeKb3YmFAm/CfhoI888hJj2LzBHk93lQBjgWXamFDGcKiQxUz8STqX0MZiA7rfShLAVDq9PnWyAcLdNfMClBAVNuBPCADSlZRpCSqHyuKfLj4ZTkE+PJbEQTp2dkwB6rBvWFQiE1DEPYbsXQgqa3Tlz0R/QQepNbNpBPhEEITX+mFLKpYXw8aH5B4x1w+kMwhyFqSJoGkJOCGAw3WOTeWWAqrDCLMDPEXjy/EQnbwR8JwhhzoSqXZC1rdHqNRAat0eFOZrv3rJKwOTO2QS5DgrCZ5fnpIlJmsneXlYTTkwoPUARBvqlTWAgxA75epowBNw7FtIuUgL2EY8Pik0EKMhMmdIEph7Qt4FwsjkmhB7ccACBORPi/gWacC+ElAa1AQihSCcNTR53kYm8OHGRMMdWEyowyI6AMN/QMxkIwtZw6hrImdCFs0eXEhChaiw91RyP6MRVENJN1/0Au379TSD0XP+IL7Kp4IuAcP/5NDdtj4LUBAGsfTgPIaU9mEOdoofxT1mjKXUthApOmUP0oKyytmFWSwAIWWDYHgXIHZWqsD4cQkx9KFVY37dnYlP16YQ1ii2Ea18jSzA7YqB0Y5c6BwBC4/YoDIQ+WJFe4gQLBgqUPYruQoURLqfMrBkzPYFp3/MtIDzIMTq3MRqC8JAigstbGQSEDM5rUofzG5QLtUGlt8c9OqXHCekptRCuOWWOYlBs61vGRoAgTI3eZ9p9qfesTIDsUZExE8zPDZw9ereDTBwJs+TQJ/QtgvVPtT8gNeGmBQUDIQvM2qNAEPpQewepo1kIWQCkb4VLOL8Z+4Rvd/5sas+EN8/qID2IKfOb10EIp1PUIQTIfw8pUKPppfvZ1AeLUpQ3ocLJaxHc0LIQrjrWKT1MERab1tPOkofgOkUVwgICwgBq7yDeQrtE7Qp4CxvmTWvxqXSZ+XRIC+F5ipKjDoSDr+yFEJ6gdIrqYoC5Ee3TFCwZePbRBgzINSPsUXrZdPtJa5RaCNdSHg5jkEO4zebhEEYwmtgzCmEJAuEpgNk7FiEENBP6SwCCzlijFsJlx2iK/cOGSQNab4UQZFQJNesfBapLwGBqxZGuXYCQulBHz/JqjSbT1qiFcJFBB0blzIa8mq0QuhD6OcdG7VE4CEFqxc2XyL4kM4Gw7rWjE5bOWKOBPRMef/ZaOPxvG9nM9bMtocLGpD0KBCFQI8EVCEOwy+BXe3Mq+XyhLLmFcMg4pgcOc/NNFbCBma0/utQ3U1MXViBXfJaTMChQheSrPToVqV/KarcQyry/Ixncfo9hV7vs+92+NwjhDzAIgRxKyxDmIAgMmTnjupz2jVIL4ZL1dKjQzQVTYLIwh9mpjGpCKOseplPKmucbyjWD5q1RklIfWwjnl4zL8LGKcGtqFFDYGxsuAizys4BMi8QIhECTw+1R+TkTvvBlD+3bQ0hqRo8dZbi56Y6AMAGCMI3NQVifoCCMOpAGi0YUrqh8SAdr9BnC+o+PLYQvcsrgPZXDoHJP5FyZOxSKmpFQc+oYgRAmi1s4F4LJxy3KSUcWwsMNviXZXi6lBMshiMzdpFhOUdHbvyB0lEKXO5AsboEaw6epwhbLh/v3hpDERzSdAHzEgIk8zpeEEEJHEY+usg5kAojkiqnCFg32qYVwdo906eHDjDZHyiEzecxVmoFz6lL9LjqTm0K09jEgvcm4PcryE31O1icrJRLeGkLSHOwY3bubw0EYTAWvDoOwh4pRgHSGEZvCUcf2R8Nqsu+hONszC+HcQZruGDV1/8v3WeT7CVtKLttj68DlnmC4EoIKAgZhCFGJSazOlcwcoFuF4trLRIFZkrETfhMIdR2A57jOFgBZwu6BdN3ZUMd2Q5A/VLibxgYPhWAQAh0KV+sTMFpD+UfTici/t3y0f2MItyd2DFygvnQcz3HStEDh3d+AOUdJDebsN1kOX3oJgUadQBwK+9WkAKiC3w6dtkZzC+FMhJBuBTApnK667nikqhrPSfvzynvonrxdBQFGMTmExtoz7TAxntcngAKfayp/a/bCWOvcdJkIUFQtxRbCyaDOlrv0lNv2bV9nZBT5RuOfCKm6ukRoMFdv3rveBSGcYWfsUKgQmFOHEOA+ssJ4gArakKysplpQvA+EWo6ZTbs1B8ItmzN+T1jzVzmJzgAic0cb1d9+lw/Qz2jyUAgIIUgNYE7BmvhQ90yyibdJLYQzdoN+cTWaYLdvVu+Z8h+oy16MLfEFQbtWUQEGIQPrxqcQtG4xUL9xSgF69pJsNSsqpy3MveeJCxSrfqE3hZCrGKqbrsZ/AdVqH8F1YsMVojBz3H1ZmylYVh2UG15J88Al5EYACpyQ1sjnbMwVeNMzocjyS7T35Env8yKHKR9hsidKTkqwQCEz1xhmpaCE8UOhaHCwppnpYfee143zN4Wwxrrltilua82KJ4LDusA7IQSLEzJc/zAVpIDr6sEgvLoqMZOp/tZQUdPAQjgVU9W9RCgrpm24KUWqZk+gC9DFgX2Dnhm4Kq6UJQBweOsQHlWHZz1p7i0h3NCXPp9qQa74YftcHAzQsCtM3SkEhJA/ZADPTLMOITd1yCEQer6FcGpa8ElXD5bby5Ds6lID6OJgODF2KCzhHjJE9VFSuTRYp/CQ6VGYizeEUCT46eqQkphtOX07VjDD7mSsOxOkFZ0AeEyEZyZch7A8ZC7Wz8fvCGGvu3px/yIGZdohmGFnrkUatzXAJAdoZ0PUQj3ogMesYsu8H4SispNmJNlsEfnHHSOHg9BUSwrSAd7TjADKh/NdQeFipnuAPbpYcPRdIdQ38MKkeRmDoC4OZiyHW8EjqAOht39ATa4yjeUBEKYqjtk3y5jZcM3GeR2DoC4OmiND28n6NVoNOUGE6yul/D90wHZUvBeEKppQuyEvM9vm9kgXB4hhpzhsQAghjuSiZ6KCPYrASyQr3Qh9MwhFM1CtPLAct9ULGeQPEbAio7lmodrOr+Vclv2PgNQYKeAObo8qFSh5Nwh1224mRpvcTjvXAHNmjHlmIPt7QDQLJQ1dT5Ki4DnuRKly7HtBKI4GWprl9LroxNXFEcCtZlM5M6BWNMM1wDz2KkkzDDiIQ7pE4Sz6VhBqd+SlCWteyqA8XYFBSKmpYIvCNVqtfCWA2/UpjVQ+CRhCDyfUQvgQnmBaw4xwSl4NIeTpyljHXpIB1lQG6dir1I0ZPIhDnABhC+GDkaQVnggoql/MIOzpygUIuamNGtI9CpLKIsr1rC/RMAF94Ipttd4JQlHsV3PN9vHLIYQ9XRnyzAgIAXVhDqHAUyU/Jag9yldcSC2EewLflL40Tn82owAnlpryzBBSgHacA9BPSmYQsD2qFBh5KwhJpqkIc6C+dXs3U7gJCw7JUZ5xgUG2+YDoSFErKGeaUEB7lCh21XqjtDXtDDB6RC7ha09XFJvKHvVA+z5CVA9XylyLsAN5JFSrWPk+EG64msfqzwBhDwqhoXu9pAGFEKKllFLWsBsAxutJhZXKqLyPOcoNpEBzwX4Ca1QWhqOAEDqGhl0xyAUB0hambhUmyAeM4ogoIbaa8HaICperHxZs/3oGhwtpgBCWpiAEdY8yEAWuMiSfgjmQiWrV2LfRhMSJtEdYfgoIG83N4/jTlZICh21E7sDYo+tygssqEjWHA6sJ749W2oeU+lNAWIFOrSn3aOxopsovC0QJf1KrHdCg7FGS5WrGwLtoQtIhqlliDUfd54AQ1LBzzblH4dy6QCcDJUczA7NH+RRYCO9kw8b8GfwyQ9z7BDhp5tyjESSEIGNKlT4Lqv6ocsLCm5ijIlCvHTxOPgOD8koapLffUBKQKPVJ4SBsITZEvjEYDOOQuFVdaO+hCUXziZcEpyAE9nRVmoIQrqsbVIdTQnqFQntQHmTS+W8I4bwmFOU79SHsPweEoIadOfeoYsqWIoQMpMABcZSMChjnlXrq/XtoQmEb6Y+v+CQQVgwuDdNc8BM4exTEiha3GoxFJfmR0EK41xr9NJqwApzcwJi7SdwgACzMAWJFc/Ws1BsWxmRX9mq/BYTCweh/XQgBO4UKCI25RxNKPxmEwrT36focQTx5jRJd7wFh5W6xjD6LYyZ2MGRBa48YU+AuHIQFlLuIKmxoEEWSNW5jv4c5uu148lkgVLwa+tliFKSE88yAXbYlahsaxP1F9cT7d4CQbGzokHwWCJucAebMlF/QM0OhrGilCuwUQO+K8jIWwlsIt7n4W/J5PDOAy9kUhD9quKMsxVAVmFT0MwTyOu1d3yFOuLUI5udIWxtyZgCXs7EYRQPY4BSs3A+p0WpadQDwaSot0d5KE24sWPY5ErjVDzJKkpurwq1b7nx5nTo/gI6qCtdp2P6diqTqX/4tNOHGAhFB93k8M4DJJ+YUfAoJIZQVTWp3/VCY7y84W7wnhDOakFRbbTnn03hmENjFXmosUBhDxjdh1unZY8IOZ170EAmtJrxZwltTL8vPAiGgYUcPaMIHcCxaX6dgdZhVTics2BkSES3tqNWEt8bcJ3dhrAtcyC0wp+AhPTP/gqvKK5TU2rBosrOsAtG5+vIOEJabdQaQKwBi8wY8FBqDULHsplq0Hq7Vt8rd3mjffSa9OyTvAOG2UD3M6YnA3IqpGZhh55qzsvlqZ2BbByCECj1J2L56T+Lg6b4lhHPe0X6rUUT36gxOYOOlGUhLoa8IIVzJVIoDuLJbCrYRjXbVeyKNq/HNvz+E2wslBbuWq9CBTZ0i7EN4I+E8My6Yn1FBgYPdRt59SHtYEquXrHy6pzOpXrrvG0C4WYuE2z1ynMCsdlIxQEQ9kGxgKAjN9cxWcoEoZ04AHmWJgp28q/6oZlmBN4CwRptNoHYbP4LAtBAf64vba47RezEKEBqL1pMeDEIE6U8iVUvXydhuj+odCd8Bwu3r193w4LkOJF6JRJTaTYZwbWqor5eynzEzeCiE2zsg2yUpFM9iO+xR0oTMngmhINRtls4JrJxejItenwJAuBGwAnBoLmUGUoFHoE2GhYOUrvpjN3u2iaflFn4DCLe76Gig1xxNuGLkOfA2UwQm5g9n2EE6+9c1Aljemg/b6ZtvD9HqRG3drHQrzVkIl5+8jj1K4rqYjvmDeGbAnP2JuR4bcB1OfVh/EqnYuiosN+NQWE0IBqFOyJaQpsATTSFhMqbhvP187RmEEKzDaQLbTV6pBOnW3ZNkekmzFkIgVcjP+gj7k/tfAhGjqMAMO9fk7RDdzqzG/Ekqlym27p6qzUEthIpqQ/HRk67As1urQz6TTokMQri1qMGkPwnWqctV4eqS3ZasIY6EzEIIBqG40a30IGqE3Xz2bGGqw+Xng5AfCmFUIbg/SbRGCFc+st/8pamFEA5CxcSJeqHG5gmmr1f9NSGE8upSFgA7dcm6qbzNHlVuDmohVD9BKXhN6IL9QWFSVCoEBqGx5FHlFiwKEPoYOrKisEFs2q6Um4NaCNU/ZU0Vku5j6SOA3KOkADLszELYQCW9RuBOXVKvrIytId7UQgietbHyJNaiQhSfIJYPcYCuFAKHvVdTU4DsUXgIV2/3bjyHam+X7wDh3kWwcq2QWx/Lc36CcY82QDdkfXPXKCD7DKMDIGzccCWkuuHJCRiwhfApzL0Pw+UwBbcTw7VjJYh7FOpQCB32XrX5IqCHDV6giqxV6neDDU+OdMmLIGw/bXmL/bfScw4RWVCEa3MO081ENFgBUYWuWQibhH5WCMXGxvJFG2bDcV7//PMGEO4/lbhLOS/rATyojutAJYBNXigU0w9U7QlB3mW6mdPFPYJRfRtY34P2/SGM90O4eEBfd3RTSmuYQ2ESfDkIwborskMgjPvFnS1ZNIJmRHu9fScIC9hqa3cWXDEXp1Ap4eDDeGaAdAoz2+kG6lAoIIQfNmn+LjmdN1RaFO2YrCY8AEKxI841ulCCECIoQIhDIxgIK5MQAtXwjw6BUJzgksVHp2vEbAiJvYMmhLje7c5xpAIhkO7hOgVIEzYmISRlkHxaTbjmMmDa+ydJtff8d4CwpiAUzpmUCkcAmjcgh0JET18OQqjy4UflGBAHsaXzvLbZUGgr/ncwR2ECbO6Mi1wlZR4m2wOoC3xoGsIaUfaJIVw+rug+Op0Ove8EIVCNhZM7SaHKRb8EZgEpFEZRgpCZhTDrIZJmDsu2E4fWeU9KQvU+lnj63/UNIIS6DzsTqFA5coYwvhChU+iX04RAlYuPS3ldTCHVtUe3pFS8BYRAhfemKRSemTUJfNoABSn2+zhy4xDWGCCJ+0AIF59gopmps6FhwTtAGDdAn5dMU5iux4V8mEgzyKHQPIQZRGbxgZc/Fu80MaxTBFh8V6sJJxUIXJe8/jkBjXRs1WfpwjSaFS3Sgi8HoUjkCj81hHyAsxQGWkcJrQ69bxSiWJ5jXRdp8bSAicLtcUpbkENhBhD4Ds1D6ABM/5HXIPm8+nT+FKLhH90Uj3kPCB0K2DG2IxNO7miVXpDa8xA3KV4AYdfu3wUPvYu8lDejU+9Jt/b2G50J4WosTIe6hcMkWnPqAAUpTruXMzMOobBHASbeORDCRX+KRgXoasOR8E0gVOiPvJPCYtVtiWKYpBkACNvONIQA9RqjIyEUEzt/s1C9wyRpEkbfGsLZqg0i1QSsgLVwsjzvjNVaLJIC2aM9hCbMTEPYsc+tCaVBymZdM8r1noi35d7WW2hCqNTny3J4vtjEz51/VqJhKYFZKwDDNw0hRL7EIfcJ740ZNhsfVrRHtx0J30MTqrSj04xUTFAoOgIvoY5AVv7+RFj3FRA6uxU4OhZCvlGHs2P8n4r3QTdFCd8GQlJSH4Pqwud1TKqSLRVLSKDs0a8IYbY7vnlEjZnHpAs66x9VhLDBLrUQztujkBBOF0salGF0rD0a77ZHk1dAuP8si47u6MbVGJ0N6ii2Bdp0JHyTMyGIV/Fh3qaei1SG0/3RZLNQkLNLsh/C2DSEIl7vfnIIF3IKKFWyR0WR1cRCOD/EkkYYlsKpwoGEND2es0mRR2B0yl5ff/oCCKuc7h328b1NixnPAVOrHLu1sN+bmKPrfQc2zNxkYi+p6n7aTZqD1AAWJs8+Ty8z2YviuncU+4Yd+MdDSLqZRaJYtJLvNAxbTbi4Sbmwn86mC16QAcPJJ5nBVOLe5+llJjv1gkWJ+Hc+PM9HRBiSGR+Aypzpduh9O3MUqn71XRB3+smQuBIemqddNaAglQ9Jum870e1PSOIMqEDOnr2D4o/jk+1INbOOfZX7TNodet/NHIV3zYh1EXpzKeNEGqXhY2wAZKU0+4pcaEPo1UB7h79Lf5vIeOW6zJ/xj3YKEG5cYm+jCUWADVoVsoVHQ4jDMXTZnUXl10CdYfZsJ4kehHx/LwhMwUZ311ybCKwIt5e71S1Ess1P5E00IV8EPvgAFr39pHLQvac0AXLN7Cosr1uUn2QfIIagSoFWbW/0Ab6ZdvJm4UnhVvbmtKD30YRcFVIKPQJR4H6eQtJIDK+7eY5g6o8yd3v+CcVID0IHw3hy9tXmSLSqTOwa5dS16T/UXX10m++Ov48mBKv3dLei2d9usXdh5XzcZDIBNaXYVUNQ83DFFRhjQLXi2I7SxaaafJNsOpayfpLWbw76jpoQqsvmvV5ZNlO4NkyvflKXFhVM/VE/2A6hll1HPOwmIGmbZEshss3upD2TO2UxcQNi5WRMOtdCuJqNxS2NAHwM4driGJJoLg5SD8jdv9nJ5GplrfHtnR8iaUtg9o7gC0AYT1uVbO1C6HZL660grKLgAF24FoIX8YoWD9srV0Mgy3nHJWVX64kPmUYUau/Y7Jrhm05tKMWA1MlcotGKz2Hrt3sjc1ResA8PGMbq7Qh+NCzHy4YMwzTt3V45ydVy0Q6ZqhQm55vP/2YIDRbGmc7ODfCyObDD+/tOmlCcCpMDhqFSsoU0pfSTMqDlvD3oSXXsOtKMH+OD7B3e5lO5yepUpGnp5MQt6mLibfb9vheEMG2NnkRFtcjLhmILYCDL2Uk27roB/peGaXlVCsVrK+S4ZsKE4zBnrvf2B3kcoCBEX8AclarQB48VqiZmk64U0QoKcrd3c9YM1am1dtPnC2jvyDev0zI2JnPV+RYjNTvKjH8nCBUMvZXmyFsxVDPwRKlumsMUHNxcRJDqpH9dNReFUYXV9lCa+kl290DJ3DJZeM5b+hK+pyYUZXopOIVMuQQJqZk4FQIlkG6FUOcMd11XzHuha4aedE6y2f7Zbemf50HQhedMnGAzAW+mCaXLHdogVbzyKSkUBeFdD8Y1s3GwpXo56Rv3D0xwZeveQXFSq9f+3G1qkHi6HWs0/+T2XDB7K8dMPKTJQ1+mwBrbNOk4PBAOUrK535v6WGvKgqsuygECdWTjtU6NLqtcIezf5EQ6RKizgW0sdvh+ccLdEeM58TUKqYkis388iOW80dOobFaKkbrQ/knSbCr4xNSbshAPIhQ72V2Jzpet5BbWiVoIc0UFQ8ocGkKt+mXCIitAlvOWrTdQr7HxsA71jmXze0e6xTXGlI1okYANAWHXThxbFqZgz5Xl94MwrhAFzl5jyofCsy4GWc5brmYp17EVm8V9i5SQIZC9w9/iGVOuDCIyOGGiKRObxaw1sMsafT9zVF6pAR4rpaHW7aAOgSznbVfVS1UfUolPz1b3/tMW1xmR/tah7PrKUAQDYYeCCVUYTB+Mt5Z4eltNCNKo63EW9e7J1iDLmWwKt9SqFd0/nrZ2N2kg9g5Gc339rW7togP7sSbTN9f4zrKnDe2bxQkvrnfYRG7NwrRCy3QgqlA/ea1VLOg+5fehEGGK+bqCS6IaifWYD9UUuY4mzP1kch8ScUVqIdSBUOzysB5S3VKefBsA6BkqNhNtb4Bib6jpeikwvpl6Q/FDxZykTIRhMVAP1Cn3s8jcIVPbYYQthDrm6KBDgGMUekyR7j/T+AWqUDVUL+Jkk78PYpDql+dkah8rE3KgIJw8tVBGn4dC4mKPNfquEPIJjl4JYQxikApV6GpCqPSpomj9jAcZoPwhqbWNN6TochtcmEAQNmjyUT8XnCIVZoGFUBPCDct3LVCo6e4kFYIwSLUtO7XEkyXXFYRBqptBGqj1Y8kQJITTmYGUfjxOoUhyc7GFUBfCfWVaJmdR88FzmwzCQ1pqzbtLlcZJPBTO9cukqANJCtOb4EbpxubANhyEk1tR+HQqJBXbv3zeEULh/GJgzhl/Q7exCiUwOY5U52krreZqIb+WYoCCcbo1kRBR2zrkE03AIOymfeiPFUh319J8Wwgh2qjfekc37LMBQMheawGEtK2IkkZZsK7cSf+g9g6kkbXEqKOSmn++0AcHYTzT7vUxXoKohVA7RDGuNbhiwFsaWJIOQ4TddO4G+VhpNXtutLCqaNQCaHCNdpFqTdGu6hsMwtmzK7t72vMNfq0mVD5D7BeqUCN94uMRzZ0YYDkrD9NVWs0NWs5whyh8pnOjTOkmo9hSIwwMYexMJnVQ3N8YFHv787w3hJJCkHDhpls+fNkECfUgljNVVYQqBUCqFp/WqNh/LNQ4zCq16BWFwgNoCLmxMrOqb7y1AAbV94EwxNo+f7GAEwBlmGzy2/NHHOH9vkb1ndhnCu29VJhmAI5d5SQTpdYBpLkWYgWEsGrpjC1w2TxFrYTcQniBUP/CujhIJLvTSDe67Tk9OcPtfqVSM6T2qHuF1ZyqxfwdCA3uqpkZKp0BbzYiQAjJzP7G6DkFV6x89lk0YX9IbeujIeQglNg97RxGvq3toGh6EIb7G9krWtWUqShCB5/UKPQANLiKQaqiCEUNAKoZh1F7QnPFOGRXHbK9XMcxEBYvh5BtiNWNZQjpKxShvE7g88WT7s2ckfocxL8hrhmphQ5O+wu5EC9KcghFeM8gKISzqTAu7jv+910KkXgFByH7khAOlbF3UUg39t8dS3olABTWaPWeMs3XFaFgUHEqgv2nWaKS7qPQyO2xYgYchLMt7KW7CBVpikA8e28PoWhdtrNv4dZoH3/EaDhgAYTs1+lZ3Sq0amABBCrIetlGbmXUZH0vS/BBEHbzd8XckUUYCMn3gNBVikTPmTN72gVtPdSRRjoIA0r3UkgUigWspm5r1qFjuN1NoYJjt1zVgw69zz9McAUGYbNAGU2SBGbRJxttqefjjfsJINy8hp1o48nQ32GWjRByCjfvH+qJB6vGqHYtyARAF6585vpVfqEHw+AhwQYOwgozevw6TmC6qG8qWQANobdjDYtuuvohQ5rsORqR5t8H8mkOQOFiCsr6Y95QjzWEoZDtsDKEXy18/KUWEMKPkwEIGRCEzssh3NdYXbbx1K2blFCV0NticsrgmaD+fgpFrYu5BROtJl1vqolMASzSet63ccJrB0Lhkzk9kwupCd3jIQwwUBdi75DGf3oQ7nPXSWUYaRj5nBy3rHaB/3FxD4rNcC+F5YwupwoM1mjb8jlQF7r0Y43BbKJQBtu1MWqcCcGErm42u325hiCku8/jhNQaGFKhButd6os0OaO3HjKAcyGdtJnXGWQbuyXh3fFCsfn5k95HpMBgMnFKB7hqpeAdhZNwvrq+7mij10KY091HAUKqupC1fNYXHz+IMGcv9c3tpPk43b2LOH+n6hSurUr+e+7W1gAhZt5uQ7qY2DwUGOS/508esGKwnr5GTlkMpC2CmJC/lL4UQpBm8BzDplD8bKfaHWO/gzBIcNHs1uUTVmVbrzGYBjTcvoKS3YY0cSbMjzWjUtixU+Z3hD0wRRiXJiJvGt1uViM+7KUQAiSeDAuCZE6PRmf3w8ZCz6/Q3tuN4HMTPHk22KtVUnYZqRwq4sdWsqZQ8h3Z9/xX96vwBrG7CeZ73NrOMZPoFPiAsXoC38FrEsISpjxcVrzAPYru/uxBzTxfl3WPxjc/sbOcHwfqhR16RClqyk3c3aGKquzby6T0qwhKt+i+tL0/uG/2TQff+rwenXdxF/V8M1qzoGfyK0JI52hnKCPagYGQ7+rsxeYo2AYo1gRfFWXfo3tIEsRXtZMRQgiQ9fC8jsr9J1vSOH1RFH3prQ5VNvCGce+R3VMuZlwMu4vXJpgr/PmIaJ+BLYTUhCIMgJyjlzzIl0F4AgzRXg3TznPKiziO10EBOO6zbCI2VjT7DV0yXLNZvzVRgfXGKQFqsMnxKox6KagZUQdsBWRGljTFCGjbIE3C6AshdGkfw0J41oj3Avnm/ZQ7hOEPh4DkTygdxaDsF7bbJNUYtvN3ftgMKPAdq15wBoCwAKsEUJjPHkWHzL0hIc3MfVG629Gh7JREcIGlaNWXAjXqpsDzzlwGUIXqYqmYOmA5YNuGYz5SiG5WLmq+GoRzsZCTa2I9D6kJgM40/lYwynDN+YCWknx9IE/j0I/DjG0H6Emq0QvNUaAAhUkG6/yV61nmyrIT5NPgKhylGXnpzkEpnEWUhoaKRfRwHsXMvD2Kbube+2IM8uNYsHDCwqjMDsOQxMISBXdnU/78kRcfN2y5cywOm8H5Rs25+wFtONUaQUdAyCBqWZtmcKXCLrdJj1nPhOuTAuMjbC3xlqgjxww7rsTOsTxqyjywkFtuxLKjEM3mbgyc3nSo8AxhQKMvpQjJpW/CshQ1/HoWYcTy2MdSVoc4qhUuelAY046IXIDAzOmK5R3kZBHHdPoousx9+rUYdFwVq4GKoyGwNhSRfHasw4EfDZ0sBh61zOldHTZ1a5AwSWPKJ4MTwDsfZ38ffQ2EqCJfh8C4SbFidU9faEO4s6HUggifDjZYxInWAdw9xtst64UPKEgHU1I5H6ZyMF3aA7uyuJHFXgEhpV/GGCUkq0ukXkjDFRg6HciClp/tcrIP3ynF5tGWMLvHkIUnavgbMUZF/n6rXWJhq+S+24GfNzyzp8KzJnS+Bn98TXplz7Tq5NEkEZ7S3QtanKnKQqZ1mXgyoXg0Rbp79xBMCI+or1JifG/ATTwgOUmRIYOOUgwfEBb3AkLTEIqLIF9A4qx2ykKMWLOeVJC4ckF78VYvDZFmqLifFfjGzgtCG2LEtfj2ZD+5cYgZc1ViX7LgzS7pHDlJzJgiofJACL/WjFZdG0rnJnX2qaXj9PU9Gu5GsS0ZtqFYhC4qu+GRafInDjnyhiQzm91LZS6AvPilm3ZL5Bfl59cP8cXV9nUfl9sfkSf4kw8oNGfL5bjtDllxXmvQOTPevUUtQgx9oHYQvtzR+H/Dn/QE3cv6j678BPu4MT+2zk0gf5NJu1TpfsQVwC4d7ii/oPLB+Jmcwy7TGbVwjnilbEumM+po0/MWD+lj9wPaOD9Ju2nE86tt+OdLgvWfXwK4L116XXU1YubgE/xVjVOwz/H9PziIVXUZ3PKovRR96Uf0VoLe7hvTcNAtheM1TZNl8cN9qx9yffN13NTSoaFWturw5U2HItlFKYb9POqByoyPuvHG2iLjF7ViIfyUHLr+6F1FfZGmjlML4etX/n/tOGlRjBPD/CT8LMMOk3OQAV1HfR62x0d9HbafuJZAC+HnB5Eb/veBjo+/dz8QMZSwT7aUKfMRuq/rGqK7XSJBLLIAWgi/EImUce3COI5RIhwK/F+FayKKEpd94oVMGVfljLEo8iVvJ9fnw2aRnzBq+bMQfmEepQRfc9j2+VkIrVixYiG0YsVCaMWKFQuhFSsWQitWrFgIrVixEFqxYsVCaMWKhdCKFSsWQitWLIRWrFixEFqxYiG0YsWKhdCKFQuhFStWLIRWrFgIrVixYiG0YsVCaMWKFQuhFSsWQitWrFgIrVixEFqxYsVCaMWKhdCKFSsWQitWLIRWrFixEFqxYiG0YsWKhdCKFQuhFSsWQitWrFgIrVixEFqxYsVCaMWKhdCKFSsWQitWLIRWrFixEFqxYiH8HkLp8yvB8i9Qxbd+fhv68P97xv2SX90/29SyZCG8FybWxL9a1PeoLJEQNrFM//x5+LXw5u/0Vj9zUbtlLvO2vX7snzyfRcndMC4FCe+/9ar8mf2WzGJoIbxdD5w4VJReFpNRss4r+3YkpnQG8bgMfyqFFAX/zfFHkDMvJXpisE29jovT3iNEe2/hffjbJNjhv+Xw3zvxf3G8+vnNxTPinyl+Ro6rXnrDKQ6i1ElTp5/Q35y+QgzQQzgXs1byeeA/+PTxYr7KdvgFp3n+SvyVskAv1cQWws8mPsaF03EAYyHjP/m/ZXyZBpT+d0WmJXMKPCpM5weZF+9xPaNm/Jv6T3LHprf0Nj2mEfbkHx0xZtTJt2gf1jJNav7yj4YjluB04f1+VDiaesLy75zpiXLEX8YO3w34aOW3aNgTqNUwRKmO5+Yu7tJ/CyyFFsLL0kJOJgkkZw5/jP/qcaOJ/ls1vPokHMNy3M6dmR+RP9a5D5R4JJbIE5Li5OboyLFaeBuunLgmlNuEhBAjsWHwt3hYy4X8af5ywKGJ59+RVJgFUxAOv36aMnHF+5E45X/iWrYWH/8IIcVFJt5ghLCZ+3yOacgsTxbCAQmcdgMRcVdzSyyVFpOwTDk+Vwi5drgTubhIhqgrNSEZ1eekJvy4/8hUkumJ9dygJLwuX9TdaML48R17aY5KCpDQwJSJTyXV3SMJ6IcgmXiIUv7jabwwrmzyXCYh/FFiNgVhOkIoNCEbIHx4i5xDSJ4g/PE8eWIHshRaCIeln0ptQTqnaG++Zyq0o4TwrzSpan5UciSgA6je8Fs19ql4DyJWeidPeoN4UuSSc+79gigTP5zmzbBWb/yErGwuv57J1ZvJdxEvNNy+xINqI5U0g+mgOcn92w+6kv9EKJgdzNHsZlyjDONieA7CSUDOe0AxmKMDhPhZE95BKPaycWu7SCd1eJeH1iC1EJ43d2EciW/m+gkX35c2IvIGCP/7esa5kRbJtdYIpXTCpfiRqnVdF/H/uPJ/8s8XR+uFQSzJqRHuxfrk+u32r9FZ3HSg7dS64yuttJzTK4T8f6UktbgapCFGIwKJhGYYVzGOZhzX5TOmn/BojrJ5c3SAEClC+Dx3fGqlGVHcGONW3hZCNi6ZSng6b4wzGvIV6qb8YEVPgyZ0EPJHEaDyH5ULqRIQUkGD0Juq0JOq50B5I8WT6kD+WOM+Hl9vIaS0lUB3V2BOw5t2H9J/ySGUP673hAcIaUKfxKe3ECYzEPaPEMYpavM8ZIy5Lv8HC6Pha1gILYTyBEXr0UGSPwfrh3+e/n1SE+aDLcgZCjUgZLithiXKrVjhWBFvTG8V5SARLYcj4w0CVwgzNGDHt5DxjMbO9mIh1Gs8KEJ5JtwIYTHzlzcQhpMQ5hddfKsJ/9z9zP9GzagJXUvU20N4tt46PJscQ+kAYV0UxWDFFUJKJ4uHM2GEzxBWZV8+iYiJXd8sam81VSrcL1UxoQpH2h7VpH9RIUNohImQBf/3djhY0mTYGTx8ovhGE5b95MD6SR0sIYxT/h374izDt+4RSi8QBoNLWAnCur9GV8UHO9JdI33Plqi3h5AN7kNufNF5CAdzlDw42IcgRlYM3tGSzPogCfHo1RiVPzhqMookkd7EUkwuEIb3EDq3mhCH4e0RkL/oSCZRGN68SzwfJ/RnNWGVPQc3sqyT0QcZogjwn0VNmA7ft5uOEkrxWhuvtxAKCMkQgpv3nlK3emLwTOJoCNLRQzITEfPCy8fJ81IsXKJhmPu363XSD1k9QXhnjkpXCbm8wC5KiN2ifM1AeBhXg5O5OGE88Y3J+OI5Tjiao/mjEX/zpZiAMJ6ZPm4QtDS3SFkIR03I1jRh/LSRy6yP89msJPPhuB/e+a3YqPoSRM9eGvFmGXpai1cI2ZImxNQdDVCX/cF5KA3EjIV3+lSEOCfHlc1rwiUZIOQHavlp3VPGzJBDUFw0oRjxj8dA4UC6E1oI7ZlwdOV103aRMFLPEGbXGNsQIcwc5I4sjBBmQ3rpk1znTEQMYhldP8cIhiNi/ugWmoXwQRPi0+je4VyMyz9OH43aeGZczvyZ8NaIveL3IxZhdnEmvGQoiLE8QRhfIZTBUC99Sh/thlyHVisb3Mp3hBCzXK6keCpVMrgzRx3UDsLh8ciYmOWeTbDBO+r+GwdrjA66rvsxxOSuHkAkPaOk66qqyjL+j6YZUuKcRzfhDITJE4T8sweOURCwQc9ez7fnH/8zhgbdQT4+PuQ4lxyg6eiAKtCdXEMUF/X/4Fc6jS+jGwifZzdEQ44RshBaCEORTH2mkF4TOGREoHUcnEsIHyIJf4fkz/rsuzyNEC7eP8RURrcfzdZ4dNYzNQidW+/oIK3UWyXGhfwmNz7PM4R6T1hyNnNKltk+HB1XHnCrwRU7BFbkP8MTdr2rgjxDGCXih9hV8HAYjwsLoYVwXNb8v17xdzi3DWtEGIweX2ChNEcFhBQFl4jdcLbjJ7FhwY8QVihCkzKSms4cHOOpWIRzSQWYMEfvmU2HVR88aZ1znLBAC+N6hlAMsp8K1ie0qC6akI72aOzcvQ9ybpxREkJ56YP+r7sPcYdjgNWEFsLRN5MNcNR9f/l2bVF6MvzOIQxHTchuPIAyVYWv+IHCc4iiEcIPjdlVuNmZSS5y3A7rbsrTwd8JRXQbhME5hdR5onmEkFTNrVRnqScTVriyI4/ZdJe5uoEQs2AgiTRlIXPzGDdh+yEEOKbSjbmj93HCtEzTMfPWQzZIYSGUBBWjq4Uv1mGlOE4n7zYNmvDfnyDk2/eQMMYpHE5gD7co4rOGk9KJ+++5O6SYSR/FJRE8LUQAPJbmJJuAsJiEsLpLNaEyTWa8G3X3Nv7o/J2R6TihW/OtYxrCs6OnOIcli3H/4jNXO3XdNOcrYelwpB7N0ZlI4XgbxIqFkK+Uj/FK7/0ikflW7HomjO50AhopxDL3Ze0+Ic0vAb1neVZhIrF0BsIhI/tWh1F2+XjSIZY/ojx/n5CdJvQQ69O5W/dnCMvx4/mxsCN328/w5yod7oZQiioyHXQUcZMqtXrQQnimUNabyM7Rq/MaiTtH1mBAIsz2o77/6q5Yfz/4f7y/OT/WiCvxP6aF/MjcIZeFCA3Ryhxw1xX/kH/4lztctHduHaQRN3B/kClzVLpV+ztDkjFxEVF8VFc86NN0xOM+Rje+1qCpS71YulInM6vFzfof54v9A5Vu2sU38zZMWzHmo9EcVT+eByAl7rgtatPWLIQXXeKLhGwRvcrGU1vWcWUwfFfqjrVUHv2XKC3FFUN5LCykbTktjkOFznA8z0nZ5OJG/BP6Ir+zkZE4PBUPCom/3IuMTvRoUfeltG6ff5y/S5peE0bT4d+GgfW6iuh0KV9DL3uReKnLzvZ35slbmcllAPybjdNw+Vg5Jym6+TErFkJxyJProUXtGBwbljnLFz06+nbv3Kl0/7l286CeJaAaBQnzZNCdfT/sDkJFumqjCO0VCgvhwzpmD0uHXRAUEa6JZZmLVy+vs1kZbzjIdTcdSTyx53V/jZXcv0xZOMEIDcUg3YnX2cLANtF+ovcFmnL2MG76MN4ZCQNLk4VwYond396DluAN5s2SZSG0YsVCaMWKFQuhFSsWQitWrFgIrVixEFqxYsVCaMWKhdCKFSsWQitWLIRWrFixEFqxYiG08gVEZn7+5zFJs1YshFasWAit3AgbWg2qSo4Q+jP1F350Lg1F3T9//mA8rcT+uvKO3/PthnO1NflbEeqLQta8KVpkn7GF8DvbfLivu6ZqnL+3wPT1g3jD/zmYssDpusZ5vINOaVQ39fj6068Pb+Gl4uc+RJNer3i87ktp3dXd2Pa6L7vqtv5TVZfIFmCyEH5TJSjq5ZKhY98NVs5MNbQOu9gVBQibx7JooSjmfX7deSpXP9bp578tf05WhcO39WTo8Ps1jgLRcHeiEFtpKbQQfk89KMt9izo2t6WaQu++EOBFMg6RKFbKaXzUhFiWgLtAOF1TWBTKHtpTyPbcLLxRhKJXKfFwhIcqU2JYZxENJ2YbCFuxEH5tCJlQWp0olsihSC6LvKyG1T92/8vO1YM9zt4Iof/4TrLxX3fRhPyXskfpbiDkVJU3hZXGOo4e/32pBzPPQa6oQP7HdZHjZaJ2ooXQQvgdpRiqHhZDld5rFSl07gGcyc4z1zL1Q3dtbjY+QhjJFriNrIUqSpFW6dDrRTZ6QWNLmrFjoWxOJkxSdCmdKjWhaMCBZLebBkmwkyQZnDtummUWQgvhd1SEUgU2rVCId/0/L6tdElM+n/08ljxUSUpOjdSEgqpSYjTZbnOE0BuK9jf92YM6tJqKPcza4WyIczfh/3GTxPcR43azYx+0hfA7ikPGmtqyt1GNgvtKbUk4QMjc8FwNLR8hnHiz5mKOlmdddifB3wFCWUgcyd4PpHJOeCz99jGYo4iKoVR1GaF7eK1YCL+fhLiXnbIDH9M8nerRPTSa5prwagfm+EO0Neocr+nuIhCOU91BSJoHqarKw3Q4EwrY0kx6SRtZU1x0tMmG14dea0Q2iJHtbPh7l72F0EL4HW1RyqTu+vCFZekKZ0r1VEe7GCAMHiCc7ugSnyFMZyIcQ4hCQsjPkFIZDrEHkZvmniE8ORNvX3Fr1BYvtBB+M4mkE7M758rI46Fzb/bRgZhbCCn9WGhrdIVQGpsP3SZ+/LhCKD9oVIY1Ek0lRk3IxKd62dAM+9pPnqvM1j4zC+H3kkR09uOHs6Loy7Lse9FKk9xZnlITDhDe6s//J/v9Zc8SkxsISTzVkv4GQiQS11pPRhSr1MXRCKEv1a2Lfv0Uwn+JQ5gNDRNz+9QshN9JGEPN0K2zGjPDKpnT0t76NOnQJNe5g1BqQhG1eGwf391B2KGxX/V9/fBbCIU2TIeunl47HD/F6yIQEp1jE1L+bb6JmxUL4Zc9ELLbtJb4mhxT58mfZQjzZtI7Si/e0UDauc30c/nXEKwfzFHRfAqdlSGuzo6ZTnwgG9FmKIki0XXeQmgh/GYQyl66t336zjSWNwlpFPdPEJ4GCMNznDAcBYX3EJLGecrhdnAwZsxcDp/RRRk6QyYOEr/dOMXdcFOpJa2H1EL4rRgcwvR3XQtLxxla8Sa3Z8Jpc7S+6xI86LRmNEeDodHvVBJ2cE5b8y6PjVF+MpRu0sGxI0MUwkzuvKF9t+PVjVSWvc2YsRB+q0nzhh7X9+KK9M+mpeGNJiT3EI5pa8+5oyJ0cb5F4V1M3AcI/4pOprE0Z9GNZcykphuuaYwQPiSPi3imVYQWwm8lhThjpXed1yg94WLIUru2tW07kt15R5m8d0GeNGE+XH4QEFKuCauKVI894TOSsUtyzu1jo3iIGcbyTBhQ5GR3lzfE73qFfWgWwu8licjQnni9ReIa+63Zhz4e43OI/0zyZBpyYIWzVL7O0If7keRS2IcUxv+/HT6xbV30HHlvW9GVePxs2nIrVEYnuHjiQoV9ZBbCbykqGSibj2FBcG7SKWWtWed9M93nn7W9Pi2E3881k0/jpVDcbK5t8M3rdIk0+tDd+vLrwfV9h5bWw2Uol91c/rViIbRiVFVLsfNgIbRixYqF0IoVC6EVK1YW5P8DKwuU3Igw7HIAAAAASUVORK5CYII=" alt="LOOM Creative Hub, Athens" width="900" height="401"></div>
+    <div class="sr">
+      <h1>LOOM — a creative hub for strategic ideas, communication &amp; culture, in Athens.</h1>
+      <p>There is a loose thread on this cloth. Pull it and the cloth unravels: this is culture with its seams out — art, music, fashion, writing, film, memes, colour, material, finish. Most people see a mess. We have a word for it: τριαλαλούμ, a mind let loose on purpose. Look again: every thread is somebody.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────── the hub ─────────────── -->
+  <section id="hub" class="band" data-weft="pink" data-name="the hub" aria-labelledby="hub-h">
+    <div class="pin">
+      <p class="hand hub-pre">so we strung them all on one frame.</p>
+      <h2 id="hub-h" class="hub-h"><span class="ser">Together,</span> <span class="loud fit">we're a hub.</span></h2>
+      <p class="lede hub-l"><b>People make culture. Departments make decks.</b> So every brief gets its own warp: the strategist, the photographer, the illustrator, the director it actually needs. Pulled tight on one frame. Woven into one thing.</p>
+      <div class="weave-mq" id="mq" role="img" aria-label="Your cultural translator. Your creative friend. Your designated driver. Your spirit guide.">
+        <div class="mq-row" aria-hidden="true"><span>your cultural translator <i>✳</i> your creative friend <i>✳</i> your designated driver <i>✳</i> your spirit guide <i>✳</i> </span><span>your cultural translator <i>✳</i> your creative friend <i>✳</i> your designated driver <i>✳</i> your spirit guide <i>✳</i> </span><span>your cultural translator <i>✳</i> your creative friend <i>✳</i> your designated driver <i>✳</i> your spirit guide <i>✳</i> </span></div>
+      </div>
+      <p class="hand hub-go">keep scrolling — you're the shuttle now.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────── five threads ─────────────── -->
+  <section id="five" class="band" data-weft="cream" data-name="five threads" aria-labelledby="five-h">
+    <div class="wrap">
+      <p class="eyebrow">what we weave with</p>
+      <h2 id="five-h" class="five-h"><span class="wide">Five threads.</span><span class="ser">Take one. Take all five. They hold <span data-doodle="underline">better together.</span></span></h2>
+      <ol class="yarns" id="yarns">
+        <li style="--c:var(--teal)"><a href="#t-question"><b>the question</b><i>cultural analysis &amp; market research</i></a></li>
+        <li style="--c:var(--yellow)"><a href="#t-direction"><b>the direction</b><i>creative consulting</i></a></li>
+        <li style="--c:var(--pink)"><a href="#t-story"><b>the story</b><i>creative content &amp; storytelling</i></a></li>
+        <li style="--c:var(--orange)"><a href="#t-room"><b>the room</b><i>PR &amp; cultural communication</i></a></li>
+        <li style="--c:var(--lime)"><a href="#t-whatif"><b>the what-if</b><i>creative lab projects</i></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─────────────── thread one: the question ─────────────── -->
+  <section id="t-question" class="band thread" data-weft="teal" data-name="the question" aria-labelledby="tq-h">
+    <header class="th wrap">
+      <p class="eyebrow"><span class="spool"></span>thread one — cultural analysis &amp; market research</p>
+      <h2 id="tq-h"><span class="ser">Questions first.</span> <span class="loud">Moodboards later.</span></h2>
+      <p class="hand role">aka your cultural translator</p>
+    </header>
+    <div class="qpin" id="qpin">
+      <div class="qstage">
+        <div class="qframe" id="qframe">
+          <p class="q" data-note="(be honest.)">How well do you know your customers?</p>
+          <p class="q" data-note="(it rarely is.)">And is that enough?</p>
+          <p class="q" data-img="feta_01" data-note="→ see: φεταλόβερ, for Τυροκομείο Καλομοίρης.">Why do we buy feta where our grandmas do?</p>
+          <p class="q" data-img="gg_100" data-note="→ its people. see: Golden Gym “Faces”.">What actually sells a gym?</p>
+          <p class="q" data-img="mil_61" data-note="→ see: the Milano PR Trip, for Tsakiris Mallas.">Can a legacy brand still do a first?</p>
+          <p class="q" data-img="face_owl" data-note="(our research can tell you.)">Why did the chicken cross the road?</p>
+        </div>
+        <p class="qnote hand" id="qnote" aria-hidden="true"></p>
+        <figure class="qpic" id="qpic" aria-hidden="true"><img alt="" width="741" height="927"></figure>
+        <p class="qcount eyebrow" id="qcount" aria-hidden="true">question 1 / 6</p>
+      </div>
+    </div>
+    <div class="wrap after">
+      <p class="shout"><span class="wide">We do our <span data-doodle="circle">own</span> research.</span> <span class="hand">no viral BS. no vibes dressed up as data.</span></p>
+      <ul class="offer">
+        <li>Tailor-made research projects</li>
+        <li>Cultural analysis &amp; trend-spotting</li>
+        <li>Quantitative &amp; qualitative methodologies</li>
+        <li>Insight-fueled strategy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─────────────── thread two: the direction ─────────────── -->
+  <section id="t-direction" class="band thread dark" data-weft="night" data-name="the direction" aria-labelledby="td-h">
+    <header class="th wrap">
+      <p class="eyebrow"><span class="spool"></span>thread two — creative consulting</p>
+      <h2 id="td-h"><span class="ser">Every brand gets lost</span> <span class="loud">sometimes.</span></h2>
+      <p class="hand role">aka your spirit guide</p>
+    </header>
+    <div class="mzpin" id="mzpin">
+      <div class="mzstage">
+        <canvas id="maze" aria-hidden="true"></canvas>
+        <div class="mzsay" id="mzsay">
+          <p class="mz">New platforms.</p>
+          <p class="mz">New codes.</p>
+          <p class="mz">Same old you?</p>
+          <p class="mz ser">We hold the other end of the thread.</p>
+        </div>
+        <p class="mzout" id="mzout"><span class="loud">Relevant. Bold.</span> <span class="ser">Still you.</span></p>
+      </div>
+    </div>
+    <div class="wrap after">
+      <ul class="offer">
+        <li>Creative direction</li>
+        <li>Brand vision</li>
+        <li>Cultural positioning</li>
+      </ul>
+      <ul class="legacy">
+        <li><figure class="jq" data-paper="night"><img src="a/kal_55.webp" alt="A white t-shirt printed with φεταλόβερ and pin badges; over it, the words Tradition, amplified" width="741" height="927" loading="lazy" decoding="async"></figure><p class="lg-n">Τυροκομείο Καλομοίρης <small>est. 1928</small></p><p class="ser">A dairy, dressed like a drop.</p></li>
+        <li><figure class="jq" data-paper="night"><img src="a/mil_60.webp" alt="Collage for the Tsakiris Mallas Milano PR Trip SS25: creators, the Duomo, a disco ball, sandals" width="741" height="741" loading="lazy" decoding="async"></figure><p class="lg-n">Tsakiris Mallas</p><p class="ser">A legacy house that still does firsts.</p></li>
+        <li><figure class="jq" data-paper="night"><img src="a/fresh_88.webp" alt="Fresh Line, natural cosmetics from Greece: a woman applying cream, on yellow" width="741" height="927" loading="lazy" decoding="async"></figure><p class="lg-n">Fresh Line <small>natural cosmetics from Greece</small></p><p class="ser">A Greek love-brand with a clear story.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─────────────── thread three: the story ─────────────── -->
+  <section id="t-story" class="band thread" data-weft="pink" data-name="the story" aria-labelledby="ts-h">
+    <header class="th wrap">
+      <p class="eyebrow"><span class="spool"></span>thread three — creative content &amp; storytelling</p>
+      <h2 id="ts-h"><span class="ser">The friend with taste</span> <span class="loud">and a film crew.</span></h2>
+      <p class="hand role">aka your creative friend</p>
+    </header>
+    <div class="fspin" id="fspin">
+      <div class="fsstage">
+        <p class="fs-big" id="fsbig" aria-hidden="true">scroll-stopping</p>
+        <div class="fstrack" id="fstrack">
+          <figure class="reel" style="--r:-2deg"><video muted loop playsinline preload="none" data-src="a/v_gg2.mp4" poster="a/v_gg2_p.webp" aria-label="Golden Gym"></video><figcaption><b>Golden Gym</b> — “Faces”. Real members, real trainers. One-word brief: upgrade.</figcaption></figure>
+          <figure class="reel" style="--r:1.5deg"><video muted loop playsinline preload="none" data-src="a/v_sb2.mp4" poster="a/v_sb2_p.webp" aria-label="Sun of a Beach"></video><figcaption><b>Sun of a Beach</b> — unboxing the Forever Collection.</figcaption></figure>
+          <figure class="reel" style="--r:-1deg"><video muted loop playsinline preload="none" data-src="a/v_rc2.mp4" poster="a/v_rc2_p.webp" aria-label="Rom Com"></video><figcaption><b>Rom Com</b> — pov: you just found the cutest photobooth in Athens.</figcaption></figure>
+          <figure class="reel" style="--r:2.5deg"><video muted loop playsinline preload="none" data-src="a/v_ca3.mp4" poster="a/v_ca3_p.webp" aria-label="Candelinas"></video><figcaption><b>Candelinas</b> — “maybe in another life.”</figcaption></figure>
+          <figure class="reel" style="--r:-2.5deg"><video muted loop playsinline preload="none" data-src="a/v_tm3.mp4" poster="a/v_tm3_p.webp" aria-label="Tsakiris Mallas"></video><figcaption><b>Tsakiris Mallas</b> — on the shop floor, mic in hand.</figcaption></figure>
+          <figure class="reel" style="--r:1deg"><video muted loop playsinline preload="none" data-src="a/v_bs3.mp4" poster="a/v_bs3_p.webp" aria-label="Blue Sails"></video><figcaption><b>Blue Sails</b> — 9am, 12pm, 4pm, 8pm.</figcaption></figure>
+          <figure class="reel" style="--r:-1.5deg"><video muted loop playsinline preload="none" data-src="a/v_gg1.mp4" poster="a/v_gg1_p.webp" aria-label="Golden Gym"></video><figcaption><b>Golden Gym</b> — a trainer, a mic, a word on hip thrusts.</figcaption></figure>
+          <figure class="reel" style="--r:2deg"><video muted loop playsinline preload="none" data-src="a/v_sb3.mp4" poster="a/v_sb3_p.webp" aria-label="Sun of a Beach"></video><figcaption><b>Sun of a Beach</b> — what do the Four Seasons, Costa Navarino and W Hotels have in common?</figcaption></figure>
+          <figure class="reel" style="--r:-1deg"><video muted loop playsinline preload="none" data-src="a/v_ca2.mp4" poster="a/v_ca2_p.webp" aria-label="Candelinas"></video><figcaption><b>Candelinas</b> — light your favourite.</figcaption></figure>
+          <div class="fs-end"><p class="hand">see?</p><p class="ser">You stopped scrolling.</p></div>
+        </div>
+        <p class="fs-sub"><span class="ser">Reels, films, stills, UGC, the long cut.</span> <span class="hand">whatever makes a thumb stop.</span></p>
+      </div>
+    </div>
+    <div class="wrap after">
+      <div class="lens">
+        <div class="lens-t">
+          <p class="eyebrow">and then there's</p>
+          <h3 class="wide"><span data-doodle="scribble">LOOM LENS</span></h3>
+          <p class="ser">Every shoot gets two cuts. The polished one you hired us for. And ours: how it actually felt.</p>
+          <p class="hand">a mini campaign inside the campaign.</p>
+          <ul class="offer">
+            <li>Campaign visual direction</li>
+            <li>UGC management &amp; direction</li>
+          </ul>
+        </div>
+        <div class="lens-g">
+          <figure class="jq" data-paper="pink" style="--r:-2deg"><img src="a/bts_21.webp" alt="Backstage in black and white: a model biting into fruit at a street market stall" width="741" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="pink" style="--r:1.5deg"><img src="a/laiki_09.webp" alt="An older man lifting a bunch of red grapes at a market stall" width="741" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="pink" style="--r:-1deg"><img src="a/laiki_13.webp" alt="Portrait of an elderly man in a cap that says Greece, a tote on his shoulder" width="741" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="pink" style="--r:2deg"><img src="a/bts_27.webp" alt="Backstage in black and white: a woman walking through the market with a Kalomiris tote" width="741" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="pink" style="--r:-2.5deg"><img src="a/laiki_16.webp" alt="A hand holding up a peach in the sun" width="741" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="pink" style="--r:1deg"><img src="a/laiki_14.webp" alt="A dog on a pink lead, seen from above" width="741" height="927" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── thread four: the room ─────────────── -->
+  <section id="t-room" class="band thread" data-weft="orange" data-name="the room" aria-labelledby="tr-h">
+    <header class="th wrap">
+      <p class="eyebrow"><span class="spool"></span>thread four — PR &amp; cultural communication</p>
+      <h2 id="tr-h"><span class="ser">We throw the party</span> <span class="loud">and drive you home.</span></h2>
+      <p class="hand role">aka your designated driver</p>
+    </header>
+    <div class="rtpin" id="rtpin">
+      <div class="rtstage">
+        <svg class="rt" id="rtsvg" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path id="rtghost" d="M150 440 C 330 60, 800 10, 1050 210" />
+          <path id="rtpathb" d="M150 440 C 330 60, 800 10, 1050 210" />
+          <path id="rtpath" d="M150 440 C 330 60, 800 10, 1050 210" />
+          <g class="rt-pt" id="rtA"><circle cx="150" cy="440" r="13"/><text x="150" y="492" text-anchor="middle">ATH</text></g>
+          <g class="rt-pt" id="rtB"><circle cx="1050" cy="210" r="13"/><text x="1050" y="176" text-anchor="middle">MIL</text></g>
+          <g id="rtneedle"><path class="nd" d="M-58 0 C-58 -5 -44 -5.5 -30 -4.6 L26 -1.2 L40 0 L26 1.2 L-30 4.6 C-44 5.5 -58 5 -58 0 Z"/><ellipse class="eye" cx="-46" cy="0" rx="6.5" ry="1.9"/></g>
+        </svg>
+        <div class="pass" id="rtpass">
+          <div class="care">
+            <div class="k">boarding pass · first class</div>
+            <dl>
+              <div><dt>passenger</dt><dd>Tsakiris Mallas</dd></div>
+              <div><dt>from → to</dt><dd>Athens → Milano</dd></div>
+              <div><dt>date</dt><dd>06 May 2025</dd></div>
+              <div><dt>seats</dt><dd>5 creators</dd></div>
+            </dl>
+            <div class="v">The first fashion PR trip a Greek brand ever took to a fashion capital.</div>
+            <div class="s">in the hold: a concept, a creator line-up, and content to feed reels, TikToks &amp; ads for months</div>
+          </div>
+        </div>
+        <figure class="rt-v" id="rtv"><video muted loop playsinline preload="none" data-src="a/v_tm1.mp4" poster="a/v_tm1_p.webp" aria-label="Two creators walking through Milano with Tsakiris Mallas tote bags"></video></figure>
+        <figure class="rt-i" id="rti"><img src="a/mil_61.webp" alt="Milano PR Trip SS25, Tsakiris Mallas: a creator in front of the Duomo" width="741" height="741" loading="lazy" decoding="async"></figure>
+        <p class="rt-say hand" id="rtsay">invites out. phones up. press in.</p>
+      </div>
+    </div>
+    <div class="wrap after">
+      <div class="sfc">
+        <div class="sfc-pics">
+          <figure class="pic" style="--r:-3deg"><img src="a/sfc_29.webp" alt="Summer Fruit Club 1, a collage for Sinsay: sunglasses, flowers, pineapples" width="695" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="pic" style="--r:2.5deg"><img src="a/sfc_39.webp" alt="Summer Fruit Club 2, a collage for Sinsay: a creator holding a moodboard, lemons, straw hats" width="695" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="jq" data-paper="orange" style="--r:-1.5deg"><img src="a/sfc_38.webp" alt="Two creators posing outside a Sinsay store by a picnic table" width="618" height="927" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="sfc-t">
+          <p class="eyebrow">Sinsay · Summer Fruit Club</p>
+          <h3><span class="ser">One collection.</span> <span class="wide"><span data-doodle="underline2">Two parties.</span></span></h3>
+          <p class="lede">A new summer line turned into two PR experiences in two locations — in-store picnic included. Every invite, RSVP and creator ran through one system, with our friends at Reach. One of the first activations in Greece to work this way.</p>
+          <p class="hand">we know all the tea. it dies with us.</p>
+        </div>
+      </div>
+      <ul class="offer">
+        <li>Creative PR events</li>
+        <li>Creator &amp; influencer marketing</li>
+        <li>Brand placement in earned media</li>
+        <li>Press kit development</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─────────────── thread five: the what-if ─────────────── -->
+  <section id="t-whatif" class="band thread" data-weft="lime" data-name="the what-if" aria-labelledby="tw-h">
+    <header class="th wrap">
+      <p class="eyebrow"><span class="spool"></span>thread five — creative lab projects</p>
+      <h2 id="tw-h"><span class="ser">No brief?</span> <span class="loud">Even better.</span></h2>
+      <p class="hand role">aka pure <span lang="el">τριαλαλούμ</span></p>
+    </header>
+    <div class="wrap">
+      <div class="toy" id="toy">
+        <div class="toy-l">
+          <p class="hand toy-go">your turn. paint a pattern —</p>
+          <canvas id="draft" width="384" height="384" role="img" aria-label="A weave draft: a grid you can paint on"></canvas>
+          <div class="toy-ctl" id="toyctl">
+            <button type="button" data-p="plain">plain</button>
+            <button type="button" data-p="twill">twill</button>
+            <button type="button" data-p="bone">herringbone</button>
+            <button type="button" data-p="key">meander</button>
+            <button type="button" data-p="shuffle">shuffle</button>
+          </div>
+        </div>
+        <div class="toy-r">
+          <p class="ser toy-say">…and this whole stretch of cloth becomes yours.</p>
+          <p class="hand toy-say2">look behind you: you just rewove the page.</p>
+          <p class="shout"><span class="loud">Play that works.</span></p>
+        </div>
+      </div>
+      <ul class="spec">
+        <li><figure class="pic" style="--r:-2deg"><img src="a/kal_97.webp" alt="A red and green wheel of fortune with cheese prizes, in a shop" width="741" height="927" loading="lazy" decoding="async"></figure><p class="hand">a (cheese)wheel of fortune</p></li>
+        <li><figure class="pic" style="--r:2deg"><img src="a/kal_94.webp" alt="A white t-shirt reading φεταλόβερ and a black one reading σαπέρα σακάτω" width="741" height="927" loading="lazy" decoding="async"></figure><p class="hand">merch people actually wear</p></li>
+        <li><figure class="pic" style="--r:-1deg"><img src="a/sfc_48.webp" alt="A phone photographing a smoothie bottle on a gingham picnic table" width="695" height="927" loading="lazy" decoding="async"></figure><p class="hand">a picnic, inside a store</p></li>
+        <li><figure class="pic" style="--r:1.5deg"><img src="a/edu_62.webp" alt="A workshop booklet titled Content Diary, with the note: it is messy but it is okay" width="741" height="493" loading="lazy" decoding="async"></figure><p class="hand">a diary that says “it's messy but it's okay”</p></li>
+      </ul>
+      <ul class="offer">
+        <li>Co-creation projects</li>
+        <li>Experimental formats</li>
+        <li>Branded experiences</li>
+        <li>Special activations &amp; audience interactions</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─────────────── the whole cloth ─────────────── -->
+  <section id="whole" class="band" data-weft="cream" data-name="the whole cloth" aria-labelledby="wc-h">
+    <div class="wrap">
+      <p class="eyebrow">all five threads, one cloth</p>
+      <h2 id="wc-h" class="wc-h"><span class="loud fit" lang="el">φεταλόβερ</span><span class="ser">for Τυροκομείο Καλομοίρης, est. 1928</span></h2>
+    </div>
+    <div class="line" id="line1">
+      <div class="line-in">
+        <figure class="peg" style="--r:-3deg"><img src="a/feta_01.webp" alt="An elderly man in a Greece cap at the street market, carrying an illustrated Kalomiris tote" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:2deg"><img src="a/feta_05.webp" alt="Close-up of a black tote bag lettered with the word φεταλόβερ" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:-1.5deg"><img src="a/laiki_12.webp" alt="An elderly woman in a blue dress pulling a shopping trolley past the fruit stalls" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:3deg"><img src="a/feta_03.webp" alt="A woman holding sunflowers, a black Kalomiris tote on her shoulder" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:-2deg"><img src="a/feta_06.webp" alt="An elderly man smiling with a cream Kalomiris tote, a young man leaning on his shoulder" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:1.5deg"><img src="a/laiki_18.webp" alt="A hand picking figs from punnets on a white tablecloth" width="741" height="927" loading="lazy" decoding="async"></figure>
+        <figure class="peg" style="--r:-2.5deg"><img src="a/feta_07.webp" alt="The φεταλόβερ tote with spring onions sticking out, beside a stall of courgettes" width="741" height="927" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+    <div class="wrap">
+      <ol class="five-in">
+        <li style="--c:var(--teal)"><b>the question</b><span>Why do we buy feta from the same shop our grandmas do?</span></li>
+        <li style="--c:var(--yellow)"><b>the direction</b><span>Tradition, amplified. Dress a dairy like a drop.</span></li>
+        <li style="--c:var(--pink)"><b>the story</b><span>Shot on a Saturday at the Kallidromiou street market. Grapes, figs, grandpas and all.</span></li>
+        <li style="--c:var(--orange)"><b>the room</b><span>The Athens store opening, 07.11.2025, and a creator programme run with Reach.</span></li>
+        <li style="--c:var(--lime)"><b>the what-if</b><span>Totes drawn by an Athenian illustrator, printed by Athenian printers. And that wheel.</span></li>
+      </ol>
+      <p class="stat"><span class="tight" data-doodle="burst">+100K</span><span class="ser">organic impressions in two months.</span></p>
+      <p class="credit">Photographs: @j.mantzas, @jokontaa · Totes: @iliminili, printed in Athens by @inkspit_rats · Figure from LOOM × Reach.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────── the people ─────────────── -->
+  <section id="people" class="band dark" data-weft="hot" data-name="LOOMístas" aria-labelledby="pp-h">
+    <div class="wrap">
+      <p class="eyebrow">who's on the frame</p>
+      <h2 id="pp-h"><span class="loud fit">LOOMístas</span></h2>
+      <div class="pp">
+        <div class="pp-t">
+          <div class="care"><div class="k">LOOMísta · LOOMístria (n.)</div><div class="v">Shows up. Stays unbothered. Backs the squad.</div><div class="s">see also: creative crush · OG · groupchat MVP</div></div>
+          <p class="ser pp-l">Illustrators, photographers, directors, animators, DJs, printers, strategists. We don't keep a roster. We keep a <span data-doodle="circle">group chat.</span></p>
+          <p class="hand">two years old. big feelings. still becoming.</p>
+        </div>
+        <div class="pp-g">
+        <figure class="pol" style="--r:-4deg"><img src="a/party_77.webp" alt="A pink birthday cake iced with the LOOM logo beside a tray of shots" width="741" height="927" loading="lazy" decoding="async"><figcaption>turning one</figcaption></figure>
+        <figure class="pol" style="--r:3deg"><img src="a/party_82.webp" alt="A DJ in a leopard-print top making a peace sign under an On Air neon sign" width="741" height="927" loading="lazy" decoding="async"><figcaption>brief: 00s pop</figcaption></figure>
+        <figure class="pol" style="--r:-2deg"><img src="a/party_81.webp" alt="Hands clinking cocktail glasses" width="741" height="927" loading="lazy" decoding="async"><figcaption>loud, late, very LOOM</figcaption></figure>
+        <figure class="pol" style="--r:2.5deg"><img src="a/edu_68.webp" alt="Two women laughing at a workshop, one holding the Content Diary booklet" width="741" height="493" loading="lazy" decoding="async"><figcaption>big feelings</figcaption></figure>
+      </div>
+      </div>
+      <div class="ili">
+        <p class="hand ili-h">and the origin story, as one LOOMístria drew it —</p>
+        <div class="ili-g">
+          <figure class="pic" style="--r:-2.5deg"><img src="a/manifesto_1.webp" alt="Hand-drawn poster of a wooden loom on pink and yellow. Lettering: LOOM began when someone noticed a loose thread on the fabric of culture, and pulled it." width="695" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="pic" style="--r:1.5deg"><img src="a/manifesto_2.webp" alt="Hand-drawn poster of two hands playing cat’s cradle with an orange thread. Lettering: In the ensuing chaos, we saw beauty. In this beauty, we found purpose." width="695" height="927" loading="lazy" decoding="async"></figure>
+          <figure class="pic" style="--r:-1deg"><img src="a/manifesto_3.webp" alt="Hand-drawn poster of the LOOM logo sitting on a scribbled table. Lettering: Together, we are a hub. Your cultural translator. Your creative friend. Your designated driver. Your spirit guide. Welcome to LOOM." width="695" height="927" loading="lazy" decoding="async"></figure>
+        </div>
+        <p class="credit">Art: @iliminili</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── sharing is caring ─────────────── -->
+  <section id="edu" class="band dark" data-weft="blue" data-name="we also teach" aria-labelledby="ed-h">
+    <div class="wrap">
+      <p class="eyebrow">we also teach</p>
+      <h2 id="ed-h" class="ed-h"><span class="ser">We teach what we learn.</span> <span class="loud">And vice versa.</span></h2>
+      <p class="hand ed-s">class of ’25–’26 —</p>
+      <ol class="log">
+        <li class="next"><a href="https://www.athenscollege.edu.gr/lifelonglearning/programs/subjects/2026/10/07/lifelonglearning-calendar/isagogi-se-short-form-content-ke-nees-platformes-tiktok-reels-youtube-shorts-ai-tools-and-digital-storytelling" target="_blank" rel="noopener"><time>Oct–Nov ’26</time><span class="what">Introduction to Short-Form Content &amp; New Platforms: TikTok, Reels, YouTube Shorts, AI Tools &amp; Digital Storytelling</span><span class="host">Athens College Lifelong Learning</span><span class="fmt">short course</span><em>coming soon</em></a></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7472568286371610624" target="_blank" rel="noopener"><time>June ’26</time><span class="what">How to build a successful social media presence and convert it to business value</span><span class="host">ALBA · AHEAD</span><span class="fmt">workshop</span></a></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7470818337212747776" target="_blank" rel="noopener"><time>June ’26</time><span class="what">TikTok for Dummies (&amp; Entrepreneurs)</span><span class="host">Venture Garden</span><span class="fmt">seminar</span></a></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7406358399837192192" target="_blank" rel="noopener"><time>Dec ’25</time><span class="what">LOOM × Εξέλιξη Ζωής: TikTok Learning Day, part 2</span><span class="host">Exelixi Zois</span><span class="fmt">workshop</span></a></li>
+        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7378399867859021824" target="_blank" rel="noopener"><time>Sept ’25</time><span class="what">LOOM × Εξέλιξη Ζωής: TikTok Learning Day, part 1</span><span class="host">Exelixi Zois</span><span class="fmt">seminar</span></a></li>
+      </ol>
+      <div class="ed-g">
+        <figure class="pic" style="--r:-2deg"><img src="a/edu_63.webp" alt="A presenter laughing in front of a slide titled The Breakfast Club" width="741" height="493" loading="lazy" decoding="async"></figure>
+        <figure class="pic" style="--r:1.5deg"><img src="a/edu_69.webp" alt="A flipchart covered in red marker: GRWM, content calendar, trends, BTS, educational" width="741" height="493" loading="lazy" decoding="async"></figure>
+        <figure class="pic" style="--r:-1deg"><img src="a/edu_c.webp" alt="A laptop on a video call showing a slide titled TikTok for dummies" width="731" height="1300" loading="lazy" decoding="async"></figure>
+      </div>
+      <p class="ser ed-end">Knowledge is a thread too. Pass it on.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────── got loomed ─────────────── -->
+  <section id="clients" class="band" data-weft="yellow" data-name="got loomed" aria-labelledby="cl-h">
+    <div class="wrap">
+      <p class="eyebrow">clients, so far</p>
+      <h2 id="cl-h" class="cl-h"><span class="loud fit">got loomed</span> <span class="hand">(you'd be in good company)</span></h2>
+      <ul class="rack" id="rack">
+        <li>Tsakiris Mallas</li><li lang="el">Τυροκομείο Καλομοίρης</li><li>Sinsay</li><li>Golden Gym</li><li>Sun of a Beach</li><li>Blue Sails</li>
+        <li>Rom Com</li><li>Candelinas Athens</li><li>mimi bar Athens</li><li>Fresh Line</li><li>Kaya Healgram</li><li>Livewise</li>
+        <li>Venture Garden</li><li>Alba Hub for Entrepreneurship &amp; Development</li><li>Plinthos Architects</li><li lang="el" style="text-transform:none">μάιμέτσοβο</li><li>Uplodio</li><li>Tierra</li>
+      </ul>
+      <div class="swatches">
+        <figure class="jq sw" data-paper="yellow"><img src="a/bs_deck.webp" alt="Two people on the deck of a catamaran off a rocky Greek coast" width="975" height="1300" loading="lazy" decoding="async"><figcaption>Blue Sails — our Mamma Mia-coded account</figcaption></figure>
+        <figure class="jq sw" data-paper="yellow"><img src="a/mimi_a.webp" alt="A man in sunglasses leaning on a mannequin in a mirrored top, under red bar lights" width="867" height="1300" loading="lazy" decoding="async"><figcaption>mimi bar Athens — a concept campaign</figcaption></figure>
+        <figure class="jq sw" data-paper="yellow"><img src="a/sin_store.webp" alt="A creator outside a Sinsay store, holding a collage moodboard" width="866" height="1300" loading="lazy" decoding="async"><figcaption>Sinsay — Summer Fruit Club</figcaption></figure>
+        <figure class="jq sw" data-paper="yellow"><img src="a/kal_tin.webp" alt="A tin of feta being slipped into a handbag" width="867" height="1300" loading="lazy" decoding="async"><figcaption>Kalomiris — feta is always in</figcaption></figure>
+        <figure class="jq sw" data-paper="yellow"><img src="a/tm_boat.webp" alt="A model in a swimsuit on a sailing boat at sunset" width="867" height="1300" loading="lazy" decoding="async"><figcaption>Tsakiris Mallas — at sea</figcaption></figure>
+        <figure class="jq sw" data-paper="yellow"><img src="a/gg_101.webp" alt="Three people posing in a gym in front of a film camera" width="741" height="927" loading="lazy" decoding="async"><figcaption>Golden Gym — backstage</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── the knot ─────────────── -->
+  <section id="knot" class="band" data-weft="pink" data-name="the knot" aria-labelledby="kn-h">
+    <div class="wrap kn">
+      <blockquote class="kn-q"><p class="ser">“The person is still the point.”</p><footer class="eyebrow">Angie Simon — founder &amp; director</footer></blockquote>
+      <h2 id="kn-h" class="kn-h"><span class="loud">Got a loose<br>thread?</span></h2>
+      <p class="hand kn-s"><span data-doodle="arrowdown">bring it. we'll pull.</span></p>
+      <div class="kn-mail">
+        <span class="mail" id="mail">hello@loomcreativehub.com</span>
+        <button type="button" id="copy" class="btn">copy</button>
+      </div>
+      <ul class="kn-links">
+        <li><a href="https://www.instagram.com/loomcreativehub__/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/loom-creative-hub/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <canvas id="rug" width="1200" height="260" role="img" aria-label="The whole page, drawn as a striped rag rug"></canvas>
+      <p class="kn-foot"><span id="woven">You just wove this.</span> <span>LOOM Creative Hub · Athens</span></p>
+    </div>
+  </section>
+</main>
+<nav class="selvedge" id="selvedge" aria-label="Sections"></nav>
+<div class="bandzone" id="bandzone" aria-hidden="true"></div>
+
+<script>
+(function () {
+'use strict';
+
+/* ───────────────────────── utils ───────────────────────── */
+const $ = (s, e = document) => e.querySelector(s);
+const $$ = (s, e = document) => Array.from(e.querySelectorAll(s));
+const clamp = (v, a = 0, b = 1) => (v < a ? a : v > b ? b : v);
+const lerp = (a, b, t) => a + (b - a) * t;
+const sstep = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+const lin = (a, b, v) => clamp((v - a) / (b - a));
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+const easeInCubic = t => t * t * t;
+const easeInOut = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+const easeOutBack = t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+const TAU = Math.PI * 2;
+function rng(seed) {
+  let s = seed >>> 0;
+  return () => {
+    s = (s + 0x6D2B79F5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const hex2rgb = h => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+const rgbStr = c => `rgb(${c[0] | 0},${c[1] | 0},${c[2] | 0})`;
+const mixRGB = (A, B, t) => [lerp(A[0], B[0], t), lerp(A[1], B[1], t), lerp(A[2], B[2], t)];
+const mix = (a, b, t) => rgbStr(mixRGB(hex2rgb(a), hex2rgb(b), t));
+const shade = (h, amt) => mix(h, amt < 0 ? '#000000' : '#ffffff', Math.abs(amt));
+const toHex = c => '#' + c.map(v => clamp(Math.round(v), 0, 255).toString(16).padStart(2, '0')).join('');
+
+/* ───────────────────────── palette (LOOM's own yarn) ───────────────────────── */
+const C = {
+  pink: '#FF66C4', hot: '#E3127A', yellow: '#FFDE59', orange: '#FF914D', red: '#FF5A36',
+  blue: '#2F7BEA', teal: '#19C3CE', lime: '#93FF45', ink: '#17110F', cream: '#F3EEE3', night: '#1A1033'
+};
+const RGB = {}; for (const k in C) RGB[k] = hex2rgb(C[k]);
+
+const ASSET = p => (window.__LOOM_ASSETS && window.__LOOM_ASSETS[p]) || p;
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const root = document.documentElement;
+
+/* ───────────────────────── stage / sizing ───────────────────────── */
+let W = 0, H = 0, DPR = 1, PITCH = 12, NT = 0;      // NT = number of warp threads across the viewport
+const cv = $('#ink');
+const cx = cv.getContext('2d');
+const resizeHooks = [];
+const frameHooks = [];
+function measure() {
+  const w = Math.max(320, root.clientWidth || innerWidth), h = innerHeight;
+  const widthChanged = w !== W;
+  W = w; H = h;
+  DPR = Math.min(window.devicePixelRatio || 1, W > 1100 ? 1.5 : 2);
+  PITCH = clamp(Math.round(W / 120), 5, 12);
+  NT = Math.ceil(W / PITCH) + 1;
+  cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+  cv.style.width = W + 'px'; cv.style.height = H + 'px';
+  root.style.setProperty('--vh', (H / 100) + 'px');
+  root.style.setProperty('--pitch', PITCH + 'px');
+  return widthChanged;
+}
+
+/* ───────────────────────── scroll + pointer ───────────────────────── */
+const S = { y: 0, sy: 0, v: 0, t: 0, dt: 16, max: 1 };
+const PT = { x: -999, y: -999, px: -999, py: -999, down: false, seen: false, touch: false, vx: 0, vy: 0 };
+addEventListener('scroll', () => { S.y = window.scrollY || root.scrollTop || 0; }, { passive: true });
+addEventListener('pointermove', e => {
+  PT.x = e.clientX; PT.y = e.clientY; PT.touch = e.pointerType === 'touch';
+  if (!PT.seen) { PT.px = PT.x; PT.py = PT.y; PT.seen = true; }
+}, { passive: true });
+addEventListener('pointerdown', e => { PT.down = true; PT.x = e.clientX; PT.y = e.clientY; PT.touch = e.pointerType === 'touch'; if (!PT.seen) { PT.px = PT.x; PT.py = PT.y; PT.seen = true; } }, { passive: true });
+addEventListener('pointerup', () => { PT.down = false; }, { passive: true });
+addEventListener('pointercancel', () => { PT.down = false; }, { passive: true });
+
+/* a section's scroll progress, in screens, from the moment its top meets the top of the viewport */
+function screensInto(el) { return (S.sy - el._top) / H; }
+const tracked = [];
+function track(el) { if (el && tracked.indexOf(el) < 0) tracked.push(el); return el; }
+function relayout() {
+  const sc = window.scrollY || 0;
+  for (const el of tracked) { const r = el.getBoundingClientRect(); el._top = r.top + sc; el._h = r.height; }
+  S.max = Math.max(1, root.scrollHeight - H);
+}
+
+/* a hand: marker strokes that never land twice in the same place */
+function marker(pts, o) {
+  o = o || {};
+  const w = o.w || 3, R = rng((o.seed || 1) * 7919 + (o.boil && !RM ? Math.floor(S.t * 8) : 0));
+  cx.save(); cx.globalAlpha = o.alpha === undefined ? 1 : o.alpha; cx.strokeStyle = o.col || C.ink; cx.lineCap = 'round'; cx.lineJoin = 'round';
+  for (let pass = 0; pass < 2; pass++) {
+    cx.lineWidth = pass ? w * 0.5 : w;
+    cx.beginPath();
+    for (let i = 0; i < pts.length; i += 2) {
+      const x = pts[i] + (R() - 0.5) * w * 0.9, y = pts[i + 1] + (R() - 0.5) * w * 0.9;
+      if (i === 0) cx.moveTo(x, y);
+      else { const px = pts[i - 2], py = pts[i - 1]; cx.quadraticCurveTo((px + x) / 2 + (R() - 0.5) * w * 1.4, (py + y) / 2 + (R() - 0.5) * w * 1.4, x, y); }
+    }
+    if (o.close) cx.closePath();
+    cx.stroke();
+  }
+  cx.restore();
+}
+function markerArrow(x0, y0, x1, y1, bend, o) {
+  const mx = (x0 + x1) / 2 - (y1 - y0) * bend, my = (y0 + y1) / 2 + (x1 - x0) * bend;
+  const pts = [];
+  for (let i = 0; i <= 6; i++) { const u = i / 6, a = (1 - u) * (1 - u), b = 2 * u * (1 - u), c = u * u; pts.push(a * x0 + b * mx + c * x1, a * y0 + b * my + c * y1); }
+  marker(pts, o);
+  const ang = Math.atan2(y1 - my, x1 - mx), L = (o && o.head) || 16;
+  marker([x1 - Math.cos(ang - 0.5) * L, y1 - Math.sin(ang - 0.5) * L, x1, y1, x1 - Math.cos(ang + 0.55) * L, y1 - Math.sin(ang + 0.55) * L], Object.assign({}, o, { seed: ((o && o.seed) || 1) + 3 }));
+}
+
+
+/* ───────────────────────── sound: the loom is an instrument ─────────────────────────
+   Everything is synthesised (plucked strings via Karplus–Strong, wood knocks and
+   shuttle swooshes from filtered noise) — no audio files. Starts on the first gesture. */
+const AU = (() => {
+  let ac = null, master = null, ready = false, on = true, lastPluck = -1, voices = 0;
+  const NOTES = [];
+  let noiseBuf = null, rip = null, ripGain = null, ripFilter = null;
+  const SCALE = [0, 2, 4, 7, 9];           // major pentatonic: anything you strum sounds right
+  const BASE = 45;                         // A2
+  const NN = 22;
+  const m2f = m => 440 * Math.pow(2, (m - 69) / 12);
+
+  function ks(freq, sr, dur) {
+    const N = Math.max(2, Math.round(sr / freq)), len = Math.floor(sr * dur);
+    const out = new Float32Array(len), buf = new Float32Array(N);
+    let prev = 0;
+    for (let i = 0; i < N; i++) { const n = Math.random() * 2 - 1; prev += 0.62 * (n - prev); buf[i] = prev; }
+    const pp = Math.max(1, Math.round(N * 0.21)), tmp = buf.slice();
+    for (let i = 0; i < N; i++) buf[i] = tmp[i] - 0.85 * tmp[(i - pp + N) % N];
+    const T60 = lerp(2.4, 1.1, clamp((freq - 110) / 1500));
+    const rho = Math.pow(0.001, 1 / (freq * T60));
+    let idx = 0, peak = 0;
+    for (let i = 0; i < len; i++) {
+      const a = buf[idx], b = buf[(idx + 1) % N];
+      buf[idx] = (a + b) * 0.5 * rho;
+      out[i] = a; if (Math.abs(a) > peak) peak = Math.abs(a);
+      idx = (idx + 1) % N;
+    }
+    const g = 0.85 / (peak || 1), fi = Math.floor(sr * 0.003), fo = Math.floor(sr * 0.08);
+    for (let i = 0; i < len; i++) {
+      let e = 1; if (i < fi) e = i / fi; else if (i > len - fo) e = (len - i) / fo;
+      out[i] *= g * e;
+    }
+    return out;
+  }
+
+  function init() {
+    if (ac) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try { ac = new AC(); } catch (e) { ac = null; return; }
+    const comp = ac.createDynamicsCompressor();
+    comp.threshold.value = -14; comp.knee.value = 10; comp.ratio.value = 8; comp.attack.value = 0.003; comp.release.value = 0.16;
+    master = ac.createGain(); master.gain.value = on ? 0.8 : 0;
+    const post = ac.createGain(); post.gain.value = 1.4;          // make-up after the compressor
+    master.connect(comp); comp.connect(post); post.connect(ac.destination);
+    const sr = ac.sampleRate;
+    for (let i = 0; i < NN; i++) {
+      const midi = BASE + 12 * Math.floor(i / SCALE.length) + SCALE[i % SCALE.length];
+      const data = ks(m2f(midi), sr, 2.0);
+      const b = ac.createBuffer(1, data.length, sr); b.getChannelData(0).set(data); NOTES.push(b);
+    }
+    noiseBuf = ac.createBuffer(1, sr, sr);
+    const nd = noiseBuf.getChannelData(0); for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+    // continuous "thread being pulled" bed, silent until driven
+    rip = ac.createBufferSource(); rip.buffer = noiseBuf; rip.loop = true;
+    ripFilter = ac.createBiquadFilter(); ripFilter.type = 'bandpass'; ripFilter.frequency.value = 2600; ripFilter.Q.value = 0.9;
+    ripGain = ac.createGain(); ripGain.gain.value = 0;
+    rip.connect(ripFilter); ripFilter.connect(ripGain); ripGain.connect(master); rip.start();
+    ready = true;
+  }
+  function unlock() { init(); if (ac && ac.state === 'suspended') ac.resume().catch(() => {}); }
+  ['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, unlock, { passive: true }));
+
+  function pan(node, p) {
+    if (ac.createStereoPanner) { const sp = ac.createStereoPanner(); sp.pan.value = clamp(p, -1, 1); node.connect(sp); return sp; }
+    return node;
+  }
+  /* u: 0..1 across the warp (left = low), vel: 0..1 */
+  function pluck(u, vel = 0.4, p = 0, detune = 0) {
+    if (!ready || !on || ac.state !== 'running') return;
+    const now = ac.currentTime;
+    if (now - lastPluck < 0.014 || voices > 26) return;
+    lastPluck = now;
+    const i = clamp(Math.round(u * (NN - 1)), 0, NN - 1);
+    const src = ac.createBufferSource(); src.buffer = NOTES[i]; src.detune.value = detune;
+    const g = ac.createGain(); g.gain.value = 0.05 + clamp(vel, 0, 1) * 0.9;
+    src.connect(g); pan(g, p).connect(master);
+    voices++; src.onended = () => { voices--; };
+    src.start();
+  }
+  function burst({ dur = 0.08, f0 = 1500, f1 = 1500, q = 1.2, gain = 0.3, p0 = 0, p1 = 0, type = 'bandpass', attack = 0.004 }) {
+    if (!ready || !on || ac.state !== 'running') return;
+    const now = ac.currentTime;
+    const src = ac.createBufferSource(); src.buffer = noiseBuf; src.loop = true;
+    const f = ac.createBiquadFilter(); f.type = type; f.Q.value = q;
+    f.frequency.setValueAtTime(f0, now); f.frequency.exponentialRampToValueAtTime(Math.max(40, f1), now + dur);
+    const g = ac.createGain(); g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(gain, now + attack); g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    src.connect(f); f.connect(g);
+    let out = g;
+    if (ac.createStereoPanner) { const sp = ac.createStereoPanner(); sp.pan.setValueAtTime(clamp(p0, -1, 1), now); sp.pan.linearRampToValueAtTime(clamp(p1, -1, 1), now + dur); g.connect(sp); out = sp; }
+    out.connect(master);
+    src.start(now, Math.random() * 0.5); src.stop(now + dur + 0.02);
+  }
+  function thump(f0 = 150, f1 = 62, dur = 0.11, gain = 0.5) {
+    if (!ready || !on || ac.state !== 'running') return;
+    const now = ac.currentTime, o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(f0, now); o.frequency.exponentialRampToValueAtTime(f1, now + dur);
+    g.gain.setValueAtTime(gain, now); g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    o.connect(g); g.connect(master); o.start(now); o.stop(now + dur + 0.02);
+  }
+  let lastClack = -1;
+  function clack(v = 1) {            // the beater hitting the cloth
+    if (!ready) return; const now = ac.currentTime; if (now - lastClack < 0.09) return; lastClack = now;
+    burst({ dur: 0.05, f0: 2100, f1: 900, q: 1.6, gain: 0.11 * v });
+    thump(170, 70, 0.09, 0.2 * v);
+  }
+  function swoosh(dir = 1, v = 1) {  // the shuttle crossing
+    burst({ dur: 0.22, f0: 500, f1: 2600, q: 0.8, gain: 0.045 * v, p0: -0.8 * dir, p1: 0.8 * dir, attack: 0.07 });
+  }
+  function snap() { burst({ dur: 0.03, f0: 5200, f1: 3000, q: 0.7, gain: 0.16, type: 'highpass' }); }
+  function ripLevel(v) {             // 0..1, call every frame while unravelling
+    if (!ready || !on) return;
+    ripGain.gain.setTargetAtTime(clamp(v) * 0.11, ac.currentTime, 0.04);
+    ripFilter.frequency.setTargetAtTime(1500 + 2600 * clamp(v), ac.currentTime, 0.05);
+  }
+  function chord(us, vel = 0.35, gap = 70) { us.forEach((u, k) => setTimeout(() => pluck(u, vel, u * 1.6 - 0.8), k * gap)); }
+  function setOn(v) {
+    on = v; if (master) master.gain.setTargetAtTime(on ? 0.8 : 0, ac.currentTime, 0.05);
+    if (on) unlock();
+  }
+  return { unlock, pluck, clack, swoosh, snap, thump, burst, ripLevel, chord, setOn, get on() { return on; }, get ready() { return ready && ac && ac.state === 'running'; } };
+})();
+
+
+/* ───────────────────────── the world: one set of threads, four lives ─────────────────────────
+   The same NT threads are (1) the warp of the opening cloth, (2) the storm once the cloth is
+   unravelled, (3) a full-height harp when order returns, (4) the loom's warp at the foot of
+   the page for the rest of the journey. */
+const WS = {
+  unravel: 0,      // rows already pulled out of the opening cloth
+  rows: 1,
+  chaos: 0,        // 0 → hanging warps, 1 → storm
+  order: 0,        // 0 → storm, 1 → strings
+  bgInk: 0,        // behind-colour: 0 yellow → 1 ink
+  fellY: 0,        // top of the string zone (px). 0 = whole screen is strings
+  bandOn: 0,       // 0..1 strings visible at all
+  heroOn: true,
+  shed: 0,         // flips with each pick: which half of the warp is lifted
+  weft: C.pink,    // colour of the thread on the shuttle right now
+  shuttleX: 0, shuttleDir: 1, shuttleShow: 0,
+  beat: 0,         // decaying kick of the beater
+  dirty: true
+};
+
+const K = 9;                                   // control points per thread
+let tx, amp, ph, fq, thP, heroCol, chaosCol, strCol, chaosW, strW, zOrder, PX, PY;
+let logoImg = null, cloth = null, RH = 12, COLS = 0, ROWS = 0, JQ = null;
+
+function strColorOf(i) {
+  // the warp is mostly undyed cotton, with LOOM's colours running through it at intervals
+  const m = i % 16;
+  if (m === 3) return C.pink; if (m === 7) return C.yellow; if (m === 11) return C.orange;
+  if (i % 48 === 15) return C.teal; if (i % 48 === 31) return C.lime; if (i % 48 === 47) return C.blue;
+  return C.cream;
+}
+
+function buildThreads() {
+  const R = rng(20240601);
+  tx = new Float32Array(NT); amp = new Float32Array(NT); ph = new Float32Array(NT); fq = new Float32Array(NT);
+  thP = new Float32Array(NT * 8); heroCol = []; chaosCol = []; strCol = []; chaosW = new Float32Array(NT); strW = new Float32Array(NT);
+  PX = new Float32Array(NT * K); PY = new Float32Array(NT * K);
+  const pal = [C.ink, C.ink, C.ink, C.ink, C.ink, C.hot, C.hot, C.hot, C.pink, C.pink, C.cream, C.cream, C.blue, C.red, C.orange, C.lime, C.teal];
+  const zs = [];
+  for (let i = 0; i < NT; i++) {
+    tx[i] = (i + 0.5) * PITCH;
+    fq[i] = 9 + R() * 5;
+    const o = i * 8;
+    thP[o] = R() * TAU;                    // start angle
+    thP[o + 1] = (1.4 + R() * 3.6) * (R() < 0.5 ? -1 : 1);   // angular span along the thread
+    thP[o + 2] = R() * 0.28;               // inner radius (fraction)
+    thP[o + 3] = 0.45 + R() * 0.75;        // outer radius
+    thP[o + 4] = (0.12 + R() * 0.32) * (R() < 0.22 ? -1 : 1); // spin speed
+    thP[o + 5] = R() * TAU;                // wobble phase
+    thP[o + 6] = 0.5 + R() * 1.4;          // wobble freq
+    const z = R(); thP[o + 7] = z; zs.push([z, i]);
+    { const h = R(); heroCol.push(h < 0.28 ? RGB.ink.slice() : h < 0.7 ? RGB.hot.slice() : mixRGB(RGB.pink, [120, 0, 70], 0.12 + R() * 0.2)); }
+    chaosCol.push(hex2rgb(pal[(R() * pal.length) | 0]));
+    const sc = strColorOf(i); strCol.push(hex2rgb(sc));
+    chaosW[i] = z > 0.94 ? 9 + R() * 10 : z < 0.45 ? 1.1 + z * 2.2 : 1.8 + z * 4;
+    strW[i] = sc === C.cream ? Math.max(1.1, PITCH * 0.14) : Math.max(1.6, PITCH * 0.24);
+  }
+  zs.sort((a, b) => a[0] - b[0]); zOrder = zs.map(a => a[1]);
+}
+
+/* ── the opening cloth: weft-faced, chunky, with LOOM woven into it ── */
+let HH = 0;
+function buildCloth() {
+  HH = H;
+  RH = Math.max(5, Math.round(PITCH * 0.67)); COLS = Math.ceil(W / PITCH); ROWS = Math.ceil(HH / RH); WS.rows = ROWS;
+  JQ = new Uint8Array(COLS * ROWS);
+  const PW = Math.ceil(W);
+  let fine = null;
+  if (logoImg && logoImg.naturalWidth) {
+    // one sample line per weft: full resolution along the thread, row resolution across it
+    const m = document.createElement('canvas'); m.width = PW; m.height = ROWS;
+    const mc = m.getContext('2d', { willReadFrequently: true });
+    const ar = logoImg.naturalWidth / logoImg.naturalHeight;
+    let lw = W * (W < 700 ? 0.9 : 0.8), lh = lw / ar;
+    if (lh > H * 0.46) { lh = H * 0.46; lw = lh * ar; }
+    const lx = (W - lw) / 2, ly = H * 0.46 - lh / 2;
+    mc.imageSmoothingEnabled = true; mc.imageSmoothingQuality = 'high';
+    mc.drawImage(logoImg, lx, ly / RH, lw, lh / RH);
+    try { fine = mc.getImageData(0, 0, PW, ROWS).data; } catch (e) { fine = null; }
+    WS.logoBox = { x: lx, y: ly, w: lw, h: lh };
+  }
+  const cls = (x, r) => { if (!fine) return 0; const o = (r * PW + clamp(x | 0, 0, PW - 1)) * 4; return fine[o + 3] > 110 ? (fine[o + 1] < 186 ? 2 : 1) : 0; };
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) JQ[r * COLS + c] = cls((c + 0.5) * PITCH, r);
+
+  cloth = document.createElement('canvas'); cloth.width = Math.round(W * DPR); cloth.height = Math.round(HH * DPR);
+  const g = cloth.getContext('2d'); g.scale(DPR, DPR);
+  const R = rng(11);
+  const base = [RGB.pink, RGB.yellow, RGB.orange];
+  const tick = [hex2rgb(C.hot), hex2rgb('#F0A732'), hex2rgb('#E86A2A')];
+  const tone = (b, j) => rgbStr(j < 0 ? mixRGB(b, [70, 0, 50], -j) : mixRGB(b, [255, 255, 255], j));
+  for (let r = 0; r < ROWS; r++) {
+    const y = r * RH, rj = (R() - 0.5) * 0.09;
+    g.fillStyle = tone(base[0], rj); g.fillRect(0, y, W, RH + 0.6);
+    // short tonal runs along the weft, like hand-dyed yarn
+    for (let x = 0; x < W;) { const len = 30 + R() * 190; if (R() < 0.45) { g.fillStyle = tone(base[0], rj + (R() - 0.5) * 0.07); g.fillRect(x, y, len, RH + 0.6); } x += len; }
+    if (fine) {
+      let start = -1, k0 = 0;
+      for (let x = 0; x <= PW; x++) {
+        const k = x < PW ? cls(x, r) : 0;
+        if (k !== k0) { if (k0) { g.fillStyle = tone(base[k0], rj * 0.6 + (R() - 0.5) * 0.04); g.fillRect(start, y, x - start, RH + 0.6); } start = x; k0 = k; }
+      }
+    }
+    const gr = g.createLinearGradient(0, y, 0, y + RH);
+    gr.addColorStop(0, 'rgba(255,255,255,0.22)'); gr.addColorStop(0.34, 'rgba(255,255,255,0.03)');
+    gr.addColorStop(0.68, 'rgba(60,0,40,0.05)'); gr.addColorStop(1, 'rgba(60,0,40,0.30)');
+    g.fillStyle = gr; g.fillRect(0, y, W, RH);
+    for (let c = (r & 1); c < COLS; c += 2) {
+      const k = JQ[r * COLS + c], tcol = tick[k];
+      const tw = PITCH * 0.3, th = RH * 0.72, x = c * PITCH + (PITCH - tw) / 2, yy = y + (RH - th) / 2;
+      g.fillStyle = `rgba(${tcol[0]},${tcol[1]},${tcol[2]},${k ? 0.42 : 0.78})`;
+      g.beginPath(); if (g.roundRect) g.roundRect(x, yy, tw, th, tw / 2); else g.rect(x, yy, tw, th); g.fill();
+      g.fillStyle = 'rgba(255,255,255,0.22)'; g.fillRect(x + tw * 0.2, yy + th * 0.14, tw * 0.22, th * 0.5);
+    }
+  }
+  for (let n = 0; n < (W * HH) / 5200; n++) {
+    const x = R() * W, r = (R() * ROWS) | 0, len = 10 + R() * 70;
+    g.fillStyle = R() < 0.5 ? 'rgba(255,255,255,0.10)' : 'rgba(90,0,60,0.07)';
+    g.fillRect(x, r * RH + RH * 0.2, len, RH * 0.45);
+  }
+  for (let n = 0; n < 6; n++) {
+    const x0 = R() * W, wv = W * (0.16 + R() * 0.3);
+    const gf = g.createLinearGradient(x0, 0, x0 + wv, HH * 0.3);
+    gf.addColorStop(0, 'rgba(255,255,255,0)'); gf.addColorStop(0.5, n % 2 ? 'rgba(255,255,255,0.09)' : 'rgba(70,0,50,0.09)'); gf.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gf; g.fillRect(0, 0, W, HH);
+  }
+  const v = g.createRadialGradient(W / 2, HH * 0.46, Math.min(W, HH) * 0.2, W / 2, HH * 0.5, Math.max(W, HH) * 0.75);
+  v.addColorStop(0, 'rgba(255,255,255,0.06)'); v.addColorStop(1, 'rgba(80,0,60,0.18)');
+  g.fillStyle = v; g.fillRect(0, 0, W, HH);
+}
+
+/* ── rope (the loose thread) + the ball of yarn you wind it onto ── */
+const ROPE_N = 30;
+function ropeLen() { return H * (W < 700 ? 0.34 : 0.46); }
+const rope = { x: new Float32Array(ROPE_N), y: new Float32Array(ROPE_N), ox: new Float32Array(ROPE_N), oy: new Float32Array(ROPE_N), col: [], held: false, grabbed: false, bx: 0, by: 0, init: false, spin: 0, lastCells: 0 };
+function ropeReset() {
+  const ax = W - 2, ay = RH * 0.5;
+  for (let i = 0; i < ROPE_N; i++) { rope.x[i] = rope.ox[i] = ax - i * 1.2; rope.y[i] = rope.oy[i] = ay + i * (ropeLen() / ROPE_N); }
+  rope.col = []; for (let i = 0; i < ROPE_N; i++) rope.col.push(2);
+  rope.bx = rope.x[ROPE_N - 1]; rope.by = rope.y[ROPE_N - 1]; rope.init = true; rope.held = false; rope.grabbed = false;
+}
+function ropeStep(ax, ay, t) {
+  const n = ROPE_N, held = rope.held;
+  let segL;
+  if (held) {
+    const d = Math.hypot(rope.bx - ax, rope.by - ay);
+    segL = Math.max(3, d * 1.1 / (n - 1));
+  } else segL = ropeLen() / (n - 1);
+  const grav = held ? 0.5 : 0.42, damp = held ? 0.9 : 0.985;
+  for (let i = 1; i < n; i++) {
+    if (held && i === n - 1) continue;
+    let vx = (rope.x[i] - rope.ox[i]) * damp, vy = (rope.y[i] - rope.oy[i]) * damp;
+    rope.ox[i] = rope.x[i]; rope.oy[i] = rope.y[i];
+    if (!held) {
+      vx += Math.sin(t * 0.9 + i * 0.3) * 0.012 * i;            // a little draught
+      if (PT.seen && FINE) {                                    // you can bat it about
+        const dx = rope.x[i] - PT.x, dy = rope.y[i] - PT.y, d2 = dx * dx + dy * dy;
+        if (d2 < 70 * 70) { const d = Math.sqrt(d2) || 1, f = (70 - d) / 70 * 1.6; vx += dx / d * f + PT.vx * 0.04; vy += dy / d * f * 0.6; }
+      }
+    }
+    rope.x[i] += vx; rope.y[i] += vy + grav;
+  }
+  rope.x[0] = ax; rope.y[0] = ay;
+  if (held) { rope.x[n - 1] = rope.bx; rope.y[n - 1] = rope.by; }
+  for (let it = 0; it < 10; it++) {
+    for (let i = 0; i < n - 1; i++) {
+      const dx = rope.x[i + 1] - rope.x[i], dy = rope.y[i + 1] - rope.y[i], d = Math.hypot(dx, dy) || 0.001;
+      const diff = (d - segL) / d * 0.5, ox = dx * diff, oy = dy * diff;
+      const p0 = i === 0, p1 = held && i + 1 === n - 1;
+      if (p0 && p1) continue;
+      if (p0) { rope.x[i + 1] -= ox * 2; rope.y[i + 1] -= oy * 2; }
+      else if (p1) { rope.x[i] += ox * 2; rope.y[i] += oy * 2; }
+      else { rope.x[i] += ox; rope.y[i] += oy; rope.x[i + 1] -= ox; rope.y[i + 1] -= oy; }
+    }
+  }
+  if (!held) { rope.bx = rope.x[n - 1]; rope.by = rope.y[n - 1]; }
+}
+const ROPE_COL = [C.pink, C.yellow, C.orange];
+function drawRope(alpha) {
+  const n = ROPE_N, w = Math.max(2.6, PITCH * 0.36);
+  cx.lineCap = 'round'; cx.lineJoin = 'round';
+  // underlay for a little body
+  cx.globalAlpha = alpha * 0.35; cx.strokeStyle = C.ink; cx.lineWidth = w + 2.2;
+  cx.beginPath(); cx.moveTo(rope.x[0], rope.y[0]);
+  for (let i = 1; i < n - 1; i++) cx.quadraticCurveTo(rope.x[i], rope.y[i], (rope.x[i] + rope.x[i + 1]) / 2, (rope.y[i] + rope.y[i + 1]) / 2);
+  cx.lineTo(rope.x[n - 1], rope.y[n - 1]); cx.stroke();
+  cx.globalAlpha = alpha; cx.lineWidth = w;
+  for (let i = 0; i < n - 1; i++) {
+    cx.strokeStyle = ROPE_COL[rope.col[i] || 0];
+    cx.beginPath();
+    const mx0 = i === 0 ? rope.x[0] : (rope.x[i - 1] + rope.x[i]) / 2, my0 = i === 0 ? rope.y[0] : (rope.y[i - 1] + rope.y[i]) / 2;
+    const mx1 = i === n - 2 ? rope.x[n - 1] : (rope.x[i] + rope.x[i + 1]) / 2, my1 = i === n - 2 ? rope.y[n - 1] : (rope.y[i] + rope.y[i + 1]) / 2;
+    cx.moveTo(mx0, my0); cx.quadraticCurveTo(rope.x[i], rope.y[i], mx1, my1); cx.stroke();
+  }
+  cx.globalAlpha = 1;
+}
+function drawBall(x, y, r, rot, alpha) {
+  if (alpha <= 0.01) return;
+  cx.save(); cx.globalAlpha = alpha; cx.translate(x, y);
+  cx.fillStyle = 'rgba(23,17,15,0.22)'; cx.beginPath(); cx.ellipse(r * 0.12, r * 0.2, r * 1.04, r * 1.02, 0, 0, TAU); cx.fill();
+  cx.rotate(rot);
+  cx.beginPath(); cx.arc(0, 0, r, 0, TAU); cx.fillStyle = C.pink; cx.fill(); cx.save(); cx.clip();
+  const cols = [C.hot, C.yellow, C.pink, C.orange, C.yellow, C.hot];
+  cx.lineWidth = Math.max(1.5, r * 0.085);
+  for (let a = 0; a < 3; a++) {
+    cx.rotate(a === 0 ? 0.4 : 1.15);
+    for (let k = -4; k <= 4; k++) {
+      cx.strokeStyle = cols[(k + 4 + a * 2) % cols.length];
+      cx.beginPath(); cx.ellipse(0, k * r * 0.26, r * 1.1, r * 0.5, 0, Math.PI * 1.02, Math.PI * 1.98); cx.stroke();
+    }
+  }
+  cx.restore();
+  cx.strokeStyle = 'rgba(255,255,255,0.55)'; cx.lineWidth = Math.max(1.2, r * 0.06);
+  cx.beginPath(); cx.arc(0, 0, r * 0.74, -2.4, -1.5); cx.stroke();
+  cx.strokeStyle = C.ink; cx.lineWidth = Math.max(1.6, r * 0.07);
+  cx.beginPath(); cx.arc(0, 0, r, 0, TAU); cx.stroke();
+  cx.restore();
+}
+
+/* ── per-frame geometry of every thread ── */
+function computeThreads(t) {
+  const u = WS.unravel, rows = WS.rows;
+  const yPeel = WS.heroOn ? Math.min(H + 12, u * RH) : H + 12;
+  const chaos = WS.chaos, order = WS.order;
+  const cxm = W / 2, cym = H / 2, D = Math.hypot(W, H) * 0.56, asp = clamp(W / H, 0.6, 1.9);
+  const fell = WS.fellY;
+  const step = RM ? 0 : Math.floor(t * 12), tq = RM ? 0 : step / 12;
+  for (let i = 0; i < NT; i++) {
+    const o = i * 8, base = i * K;
+    const ci = chaos <= 0 ? 0 : easeInOut(clamp(chaos * 1.5 - thP[o + 7] * 0.5));
+    const oi = order <= 0 ? 0 : easeOutBack(clamp(order * 1.7 - (i / NT) * 0.7));
+    const a = amp[i];
+    const vib = a > 0.02 ? a * Math.sin(ph[i]) : 0;
+    for (let k = 0; k < K; k++) {
+      const s = k / (K - 1);
+      let x, y;
+      if (oi >= 0.999) {                                   // a string: taut between the fell and the foot
+        y = lerp(H + 6, fell - 2, s); x = tx[i] + vib * Math.sin(Math.PI * s);
+      } else {
+        // hanging warp, free at the top once the weft has left
+        const freed = yPeel;
+        const sw = Math.min(46, freed * 0.085) * Math.pow(s, 1.4);
+        let hx = tx[i] + sw * Math.sin(t * (0.9 + (i % 5) * 0.13) + i * 0.83 + s * 2.4) + sw * 0.5 * Math.sin(t * 1.9 + i * 1.7);
+        let hy = lerp(freed, -14, s);
+        if (ci > 0) {
+          // drawn "on twos": the storm moves like hand-drawn animation, not like a screensaver
+          const th = thP[o] + s * thP[o + 1] + tq * thP[o + 4] + 0.35 * Math.sin(tq * thP[o + 6] + thP[o + 5] + s * 3);
+          const rr = (thP[o + 2] + s * (thP[o + 3] - thP[o + 2])) * D * (1 + 0.12 * Math.sin(tq * 0.7 + thP[o + 5] + s * 5));
+          const jx = Math.sin(i * 12.9898 + k * 78.233 + step * 3.7) * 2.2, jy = Math.cos(i * 4.898 + k * 7.23 + step * 5.1) * 2.2;
+          const vx = cxm + Math.cos(th) * rr * asp + jx, vy = cym + Math.sin(th) * rr + jy;
+          hx = lerp(hx, vx, ci); hy = lerp(hy, vy, ci);
+        }
+        if (oi > 0) {
+          const sx = tx[i], syy = lerp(H + 6, fell - 2, s);
+          x = lerp(hx, sx, oi); y = lerp(hy, syy, oi);
+        } else { x = hx; y = hy; }
+      }
+      PX[base + k] = x; PY[base + k] = y;
+    }
+  }
+}
+function drawThreads() {
+  const chaos = WS.chaos, order = WS.order, heroW = Math.max(1.6, PITCH * 0.3);
+  cx.lineCap = 'round'; cx.lineJoin = 'round';
+  const taut = order >= 0.999;
+  for (let n = 0; n < NT; n++) {
+    const i = chaos > 0.02 && !taut ? zOrder[n] : n, base = i * K;
+    let col = heroCol[i], w = heroW;
+    if (chaos > 0) { const c = clamp(chaos * 1.4); col = mixRGB(col, chaosCol[i], c); w = lerp(heroW, chaosW[i], c); }
+    if (order > 0) { const c = clamp(order * 1.5 - 0.1); col = mixRGB(col, strCol[i], c); w = lerp(w, strW[i], clamp(order * 1.2)); }
+    if (taut) {
+      // the shed: every other thread lifts a hair when the shuttle goes through
+      const lift = ((i & 1) === WS.shed ? 1 : 0.62) + amp[i] * 0.06;
+      col = [col[0] * lift, col[1] * lift, col[2] * lift];
+    }
+    cx.strokeStyle = rgbStr(col); cx.lineWidth = w;
+    cx.beginPath(); cx.moveTo(PX[base], PY[base]);
+    for (let k = 1; k < K - 1; k++) cx.quadraticCurveTo(PX[base + k], PY[base + k], (PX[base + k] + PX[base + k + 1]) / 2, (PY[base + k] + PY[base + k + 1]) / 2);
+    cx.lineTo(PX[base + K - 1], PY[base + K - 1]);
+    cx.stroke();
+  }
+}
+
+/* ── plucking ── */
+function pluckString(i, vel) {
+  if (i < 0 || i >= NT) return;
+  amp[i] = Math.min(PITCH * 1.5, amp[i] + vel * PITCH * 1.25); ph[i] = Math.PI / 2;
+  AU.pluck(i / (NT - 1), 0.16 + vel * 0.5, (i / NT) * 1.6 - 0.8);
+  WS.dirty = true;
+}
+function strumFromPointer() {
+  if (!PT.seen || WS.order < 0.999 || WS.bandOn < 0.5) return;
+  if (PT.y < WS.fellY + 4 && PT.py < WS.fellY + 4) return;
+  const a = Math.floor(PT.px / PITCH), b = Math.floor(PT.x / PITCH);
+  if (a === b) return;
+  const step = a < b ? 1 : -1, count = Math.abs(b - a), vel = clamp(Math.abs(PT.vx) / 26, 0.18, 1);
+  const stride = Math.max(1, Math.ceil(count / 7));
+  for (let i = a + step, n = 0; n < count; i += step, n++) if (n % stride === 0) pluckString(i, vel);
+}
+function stepStrings(dt) {
+  const k = Math.exp(-dt / 520);
+  let any = false;
+  for (let i = 0; i < NT; i++) if (amp[i] > 0.02) { amp[i] *= k; ph[i] += dt * 0.001 * fq[i] * TAU; any = true; } else amp[i] = 0;
+  return any;
+}
+
+
+/* ───────────────────────── act one: pull → unravel → chaos → order → strings ───────────────────────── */
+const act1 = track($('#pull'));
+const hubEl = track($('#hub'));
+/* timeline, in screens scrolled since the top of the page */
+const T = { u0: 0.16, u1: 2.2, c0: 2.1, c1: 2.9, o0: 5.55, o1: 6.45, end: 7.6 };
+const wd = {}; ['hint', 'care0', 'c1', 'c2', 'c3', 'c4a', 'c4b', 'c4c', 'c5', 'c6'].forEach(id => { wd[id] = $('#' + id); });
+const nouns = $$('#w .noun'), tags = $$('#w .tag');
+const tagString = [];
+
+function show(el, a, tf) {
+  if (a <= 0.003) { if (el._v !== 0) { el.style.opacity = '0'; el.style.visibility = 'hidden'; el._v = 0; } return false; }
+  if (el._v !== 1) { el.style.visibility = 'visible'; el._v = 1; }
+  el.style.opacity = a.toFixed(3);
+  if (tf !== undefined) el.style.transform = tf;
+  return true;
+}
+const win = (s, a, b, f = 0.14) => Math.min(sstep(a, a + f, s), 1 - sstep(b - f, b, s));
+
+let lastRow = 0, lastOrderN = 0, lastChaosNote = 0, prevU = 0, didChord = false;
+
+function act1Timeline(s) {
+  WS.heroOn = s < T.c1 + 0.1;
+  WS.unravel = lin(T.u0, T.u1, s) * WS.rows;
+  WS.chaos = sstep(T.c0, T.c1, s);
+  WS.order = sstep(T.o0, T.o1, s);
+}
+
+function fitWord() {
+  const el = wd.c4b, sp = el && el.firstElementChild; if (!sp) return;
+  el.style.fontSize = '100px';
+  const w = sp.offsetWidth || 1;
+  el.style.fontSize = Math.min((W * 0.92) / w * 100, H * 0.36).toFixed(1) + 'px';
+}
+
+function act1Words(s, t) {
+  show(wd.hint, 1 - sstep(0.2, 0.5, s), `rotate(${(-3 + Math.sin(t * 1.3) * 0.7).toFixed(2)}deg) translateY(${(s * 40).toFixed(1)}px)`);
+  const cf = sstep(1.6, 2.0, s);
+  show(wd.care0, 1 - sstep(1.86, 2.02, s), `translate(${(cf * -30).toFixed(1)}px,${(cf * cf * 240).toFixed(1)}px) rotate(${(-3 - cf * 38).toFixed(1)}deg)`);
+
+  let a = win(s, 2.3, 3.05);
+  show(wd.c1, a, `rotate(${(-5 + (1 - a) * 4).toFixed(2)}deg) translateY(${((1 - sstep(2.3, 2.5, s)) * 50 - sstep(2.85, 3.05, s) * 60).toFixed(1)}px)`);
+
+  a = win(s, 3.0, 3.95);
+  show(wd.c2, a, `translateY(-50%) scale(${(0.9 + 0.1 * a).toFixed(3)}) rotate(${(Math.sin(t * 0.8) * 1.2).toFixed(2)}deg)`);
+  const na = win(s, 2.85, 4.35, 0.2);
+  const tq = RM ? 0 : Math.floor(t * 12) / 12;
+  for (let i = 0; i < nouns.length; i++) {
+    const el = nouns[i];
+    if (na <= 0.003) { show(el, 0); continue; }
+    const ang = i * (TAU / nouns.length) + tq * (0.2 + (i % 3) * 0.04) + s * 1.1;
+    const rx = W * (0.36 + 0.07 * ((i * 7) % 3)), ry = H * (0.33 + 0.06 * ((i * 5) % 3));
+    const depth = 0.5 + 0.5 * Math.sin(ang + 1.2);
+    const x = W / 2 + Math.cos(ang) * rx, y = H / 2 + Math.sin(ang) * ry;
+    show(el, na, `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-50%) rotate(${(Math.sin(ang * 2 + i) * 16).toFixed(1)}deg) scale(${(0.62 + depth * 0.6).toFixed(3)})`);
+  }
+
+  a = win(s, 3.9, 4.55);
+  show(wd.c3, a, `translateY(-50%) rotate(${(2 - a * 2).toFixed(2)}deg)`);
+
+  a = win(s, 4.4, 5.28);
+  show(wd.c4a, a, `rotate(-3deg) translateY(${((1 - a) * -20).toFixed(1)}px)`);
+  a = win(s, 4.5, 5.34, 0.16);
+  const pop = easeOutBack(lin(4.5, 4.78, s));
+  show(wd.c4b, a, `translateY(-50%) scale(${(0.55 + 0.45 * pop).toFixed(3)}) rotate(${(Math.sin(tq * 2.1) * 1.5).toFixed(2)}deg)`);
+  a = win(s, 4.68, 5.26);
+  show(wd.c4c, a, `translateX(-50%) translateY(${((1 - a) * 40).toFixed(1)}px)`);
+
+  a = win(s, 5.3, 5.9);
+  show(wd.c5, a, `translateY(-50%) scale(${(1.3 - 0.3 * sstep(5.3, 5.65, s)).toFixed(3)})`);
+
+  a = win(s, 6.5, T.end + 0.05, 0.2);
+  show(wd.c6, a, `translateY(${((1 - sstep(6.5, 6.75, s)) * 24).toFixed(1)}px)`);
+  const small = W < 700;
+  for (let i = 0; i < tags.length; i++) {
+    const el = tags[i], j = tagString[i] | 0;
+    const ta = small && (i % 2) ? 0 : win(s, 6.62 + i * 0.035, T.end + 0.05, 0.12);
+    if (ta <= 0.003) { show(el, 0); continue; }
+    const yy = H * (0.44 + 0.36 * (((i * 37) % 10) / 10));
+    const vib = amp[j] > 0.02 ? amp[j] * Math.sin(ph[j]) * Math.sin(Math.PI * (1 - yy / H)) : 0;
+    const xx = clamp(tx[j], small ? 74 : 90, W - (small ? 74 : 90));
+    show(el, ta, `translate(${(xx + vib).toFixed(1)}px,${yy.toFixed(1)}px) translate(-50%,0) rotate(${(vib * 1.6 + ((i % 3) - 1) * 2.5).toFixed(2)}deg)`);
+  }
+}
+
+function layoutTags() {
+  tagString.length = 0;
+  const n = tags.length;
+  for (let i = 0; i < n; i++) {
+    const u = (i + 0.5) / n, jitter = ((i * 53) % 7 - 3) / 100;
+    tagString.push(clamp(Math.round((0.07 + 0.86 * u + jitter) * (NT - 1)), 2, NT - 3));
+  }
+}
+
+function act1Sound(s, dt) {
+  const u = WS.unravel, du = Math.abs(u - prevU); prevU = u;
+  if (WS.heroOn && u > 0 && u < WS.rows) {
+    AU.ripLevel(clamp(du / 2.2));
+    const r = Math.floor(u);
+    if (r !== lastRow) { AU.pluck(clamp(1 - (r / WS.rows) * 0.85), 0.16, (r & 1) ? -0.5 : 0.5); lastRow = r; }
+  } else AU.ripLevel(0);
+  if (WS.chaos > 0.4 && WS.order < 0.05 && Math.abs(S.v) > 0.05) {          // the storm: wrong notes, whenever you move
+    lastChaosNote += dt;
+    if (lastChaosNote > 90) { lastChaosNote = 0; AU.pluck(Math.random(), 0.09, Math.random() * 2 - 1, (Math.random() - 0.5) * 900); }
+  }
+  if (WS.order > 0 && WS.order < 1) {                                        // order: every thread lands on its note
+    const nIn = Math.floor(clamp((WS.order * 1.7 - 0.6) / 0.7) * NT);
+    if (nIn !== lastOrderN) { const st = Math.max(1, Math.round(NT / 24)); if (nIn % st === 0) AU.pluck(clamp(nIn / NT), 0.3, clamp(nIn / NT) * 1.6 - 0.8); lastOrderN = nIn; }
+  }
+  if (WS.order >= 1 && !didChord && s < T.end) { didChord = true; AU.chord([0.14, 0.32, 0.5, 0.64, 0.86], 0.3, 90); }
+  if (WS.order < 0.5) didChord = false;
+}
+
+let hintBox = null;
+function drawAct1(s, t) {
+  const u = WS.unravel, rows = WS.rows;
+  // behind the cloth: yellow. When order comes, ink sweeps in with it, left to right.
+  cx.fillStyle = C.yellow; cx.fillRect(0, 0, W, H);
+  if (WS.order > 0) {
+    const xw = W * clamp((WS.order * 1.7 - 0.55) / 0.7) * 1.02;
+    if (xw > 0) { cx.fillStyle = C.ink; cx.fillRect(0, 0, xw, H); }
+  }
+
+  computeThreads(t);
+  drawThreads();
+
+  let ax = W - 2, ay = 0;
+  if (WS.heroOn && cloth) {
+    const r0 = Math.floor(u), f = u - r0;
+    if (r0 < rows) {
+      const y1 = (r0 + 1) * RH;
+      if (y1 < H) cx.drawImage(cloth, 0, y1 * DPR, cloth.width, cloth.height - y1 * DPR, 0, y1, W, cloth.height / DPR - y1);
+      const leftward = (r0 & 1) === 0;                         // the peel point runs right→left on even rows
+      const x0 = leftward ? 0 : W * f, x1 = leftward ? W * (1 - f) : W;
+      if (x1 - x0 > 0.5) cx.drawImage(cloth, x0 * DPR, r0 * RH * DPR, (x1 - x0) * DPR, RH * DPR, x0, r0 * RH, x1 - x0, RH);
+      if (u > 0) { ax = leftward ? x1 : x0; ay = r0 * RH + RH * 0.5; }
+      if (u > 0.01) {                                          // a soft lip where the cloth now ends
+        const g = cx.createLinearGradient(0, y1, 0, y1 + 16);
+        g.addColorStop(0, 'rgba(60,0,40,0.30)'); g.addColorStop(1, 'rgba(60,0,40,0)');
+        cx.fillStyle = g; cx.fillRect(0, y1, W, 16);
+      }
+    } else { ax = W / 2; ay = H; }
+  }
+
+  // the loose thread, and the ball of yarn it becomes
+  const gone = sstep(T.c0, T.c0 + 0.28, s);
+  if (rope.init && gone < 1) {
+    if (!rope.held && (u > 0.02 || rope.grabbed)) rope.held = true;
+    else if (rope.held && u <= 0.001 && !rope.grabbed) { rope.held = false; for (let i = 0; i < ROPE_N; i++) rope.col[i] = 2; }
+    const near = !rope.held && FINE && PT.seen && Math.hypot(PT.x - rope.bx, PT.y - rope.by) < 90;
+    if (near !== rope.near) { rope.near = near; root.classList.toggle('cangrab', near); }
+    if (rope.held) {
+      let gx, gy;
+      if (FINE && PT.seen) { gx = PT.x; gy = PT.y; }
+      else { const un = u / rows; gx = W * (0.6 + 0.12 * Math.sin(t * 0.7)); gy = Math.min(H * 0.86, H * (0.36 + 0.4 * un) + Math.sin(t * 1.1) * 14); }
+      rope.bx += (gx - rope.bx) * 0.2; rope.by += (gy - rope.by) * 0.2;
+    }
+    const cells = Math.floor(u * COLS);
+    let dC = Math.min(6, Math.abs(cells - rope.lastCells)); rope.lastCells = cells;
+    if (dC > 0 && JQ) {                                        // the colours being pulled travel down the thread
+      const r0 = Math.min(rows - 1, Math.floor(u)), f = u - Math.floor(u);
+      const c = clamp(Math.floor(((r0 & 1) === 0 ? 1 - f : f) * COLS), 0, COLS - 1);
+      const k = JQ[r0 * COLS + c];
+      while (dC-- > 0) { rope.col.unshift(k); rope.col.pop(); }
+      rope.spin += 0.22;
+    }
+    for (let it = 0; it < 2; it++) ropeStep(ax, ay, t);
+    const un = clamp(u / rows);
+    const rb = (rope.held ? 10 + (W < 700 ? 30 : 56) * Math.sqrt(un) : 9) * (1 + 0.3 * Math.sin(gone * Math.PI)) * (1 - gone * gone);
+    drawRope(1 - gone);
+    if (rope.held) drawBall(rope.bx, rope.by, rb, rope.spin, 1);
+    else {                                                     // at rest it ends in LOOM's orange dot
+      cx.fillStyle = C.orange; cx.strokeStyle = C.ink; cx.lineWidth = 2.2;
+      cx.beginPath(); cx.arc(rope.bx, rope.by, 10, 0, TAU); cx.fill(); cx.stroke();
+      cx.strokeStyle = 'rgba(255,255,255,.7)'; cx.lineWidth = 1.6; cx.beginPath(); cx.arc(rope.bx, rope.by, 6, -2.5, -1.5); cx.stroke();
+      if (hintBox && s < 0.4) {                                // and a hand points at it
+        const a = 1 - sstep(0.15, 0.4, s);
+        markerArrow(hintBox.right - hintBox.width * 0.1, hintBox.top - 6, rope.bx - 20, rope.by + 16, -0.22, { w: 4, col: C.ink, boil: 1, seed: 4, alpha: a, head: 18 });
+      }
+    }
+  }
+}
+
+/* grabbing the thread: any drag pulls, by scrolling the page */
+addEventListener('pointerdown', e => {
+  if (!rope.init || !WS.heroOn) return;
+  const d = Math.hypot(e.clientX - rope.bx, e.clientY - rope.by);
+  if (d < 120 || rope.held) { rope.grabbed = true; root.classList.add('pulling'); }
+});
+addEventListener('pointerup', () => { rope.grabbed = false; root.classList.remove('pulling'); });
+addEventListener('pointermove', e => {
+  if (!rope.grabbed || !WS.heroOn || e.pointerType === 'touch' || !PT.down) return;
+  const d = Math.hypot(e.movementX || 0, e.movementY || 0);
+  if (d > 0) window.scrollBy(0, d * 1.5);
+});
+resizeHooks.push(() => { fitWord(); hintBox = wd.hint.getBoundingClientRect(); });
+
+
+/* ───────────────────────── the cloth: woven grounds, the loom at the foot, the shuttle ───────────────────────── */
+const bands = $$('.band'); bands.forEach(track);
+const lum = c => (0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]) / 255;
+let TROW = 7;                                   // height of one weft in the long cloth
+
+function weaveTile(weftHex, o) {
+  o = o || {};
+  // 48 threads wide, so the coloured warp ends in the cloth line up with the strings on the loom below
+  const P = PITCH, rh = TROW, cols = o.cols || 48, rows = o.rows || 72, w = cols * P, h = rows * rh, sc = DPR > 1 ? 2 : 1;
+  const c = document.createElement('canvas'); c.width = w * sc; c.height = h * sc;
+  const g = c.getContext('2d'); g.scale(sc, sc);
+  const R = rng(o.seed || 3), base = hex2rgb(weftHex), L = lum(base), darkGround = L < 0.3;
+  const tone = (b, j) => rgbStr(j < 0 ? mixRGB(b, [20, 0, 20], -j) : mixRGB(b, [255, 255, 255], j));
+  const rowCol = o.rowCol, pat = o.pattern, pn = o.pn || 16, cw = o.cellW || 2, chh = o.cellH || 3;
+  const flecks = [C.pink, C.yellow, C.orange, C.teal, C.lime, C.blue, C.cream, C.hot, C.red];
+  for (let r = 0; r < rows; r++) {
+    const y = r * rh, rj = (R() - 0.5) * (darkGround ? 0.06 : 0.055);
+    const b = rowCol ? hex2rgb(rowCol[r % rowCol.length]) : base;
+    g.fillStyle = tone(b, rj); g.fillRect(0, y, w, rh + 0.5);
+    for (let x = 0; x < w;) { const len = 26 + R() * 180; if (R() < 0.4) { g.fillStyle = tone(b, rj + (R() - 0.5) * 0.05); g.fillRect(x, y, Math.min(len, w - x), rh + 0.5); } x += len; }
+    if (pat) {                                                  // the visitor's draft: weft floats, two threads wide
+      const pr = Math.floor(r / chh) % pn;
+      g.fillStyle = `rgba(${o.patRGB[0]},${o.patRGB[1]},${o.patRGB[2]},0.78)`;
+      for (let pc = 0; pc < cols / cw; pc++) if (pat[pr * pn + (pc % pn)]) { const x = pc * cw * P + 1; g.beginPath(); if (g.roundRect) g.roundRect(x, y + 0.6, cw * P - 2, rh - 1.2, rh * 0.4); else g.rect(x, y + 0.6, cw * P - 2, rh - 1.2); g.fill(); }
+    }
+    const gr = g.createLinearGradient(0, y, 0, y + rh);
+    gr.addColorStop(0, `rgba(255,255,255,${darkGround ? 0.08 : 0.16})`); gr.addColorStop(0.36, 'rgba(255,255,255,0.02)');
+    gr.addColorStop(0.7, 'rgba(0,0,0,0.03)'); gr.addColorStop(1, `rgba(20,0,20,${darkGround ? 0.3 : 0.17})`);
+    g.fillStyle = gr; g.fillRect(0, y, w, rh);
+    for (let cI = (r & 1); cI < cols; cI += 2) {                // the warp, showing through in plain weave
+      const wcHex = strColorOf(cI), plain = wcHex === C.cream, wc = hex2rgb(wcHex);
+      const tw = P * 0.3, th = rh * 0.72, x = cI * P + (P - tw) / 2, yy = y + (rh - th) / 2;
+      if (plain) g.fillStyle = L > 0.8 ? 'rgba(23,17,15,0.09)' : `rgba(243,238,227,${darkGround ? 0.13 : 0.3})`;
+      else g.fillStyle = `rgba(${wc[0]},${wc[1]},${wc[2]},${darkGround ? 0.5 : 0.62})`;
+      g.beginPath(); if (g.roundRect) g.roundRect(x, yy, tw, th, tw / 2); else g.rect(x, yy, tw, th); g.fill();
+    }
+    if (!rowCol && !pat && R() < 0.2) {                         // rag flecks: a κουρελού is made of leftovers
+      const fc = hex2rgb(flecks[(R() * flecks.length) | 0]);
+      g.fillStyle = `rgba(${fc[0]},${fc[1]},${fc[2]},${darkGround ? 0.2 + R() * 0.16 : 0.24 + R() * 0.22})`;
+      g.fillRect(R() * w, y + rh * 0.18, 8 + R() * 40, rh * 0.5);
+    }
+  }
+  return { url: c.toDataURL('image/jpeg', 0.86), w, h };
+}
+
+const TEXS = {};
+function dressBands() {
+  TROW = Math.max(5, Math.round(PITCH * 0.6));
+  let prev = null;
+  bands.forEach((b, i) => {
+    const key = b.dataset.weft, hex = C[key] || C.pink;
+    if (!TEXS[key]) TEXS[key] = weaveTile(hex, { seed: 3 + i * 7 });
+    const t = TEXS[key];
+    b.style.backgroundImage = `url(${t.url})`; b.style.backgroundSize = `${t.w}px ${t.h}px`;
+    if (prev) {                                                 // a few picks of other colours wherever the weft changes
+      const pc = C[prev];
+      const st = weaveTile(hex, { seed: 90 + i, rows: 8, cols: 48, rowCol: [C.ink, pc, C.cream, C.ink, i % 2 ? C.yellow : C.orange, C.cream, C.ink, toHex(mixRGB(hex2rgb(hex), [20, 0, 20], 0.25))] });
+      b.style.setProperty('--seam', `url(${st.url})`); b.style.setProperty('--seam-h', st.h + 'px'); b.style.setProperty('--tw', st.w + 'px');
+    }
+    prev = key;
+  });
+}
+
+function bandAt(y) { for (const b of bands) if (y >= b._top && y < b._top + b._h) return b; return null; }
+
+/* ── the loom at the foot of the page ── */
+let lastPass = 0, shuttleFrac = 0;
+const knotEl = track($('#knot'));
+function loomTimeline() {
+  const hs = screensInto(hubEl);
+  restY = H - bandHeight();
+  let fy = hs <= 0 ? 0 : lerp(0, restY, easeInOut(lin(0, 0.9, hs)));
+  if (knotEl._top) fy = lerp(fy, H + 60, sstep(knotEl._top - H * 1.0, knotEl._top - H * 0.25, S.sy));   // the cloth comes off the loom
+  WS.fellY = fy;
+  WS.bandOn = fy < H + 40 ? 1 : 0;
+  // the shuttle: your scroll, back and forth
+  const span = W < 700 ? 150 : 230, travel = S.sy / span, pass = Math.floor(travel);
+  shuttleFrac = travel - pass;
+  WS.shuttleDir = (pass & 1) ? -1 : 1;
+  const e = easeInOut(shuttleFrac);
+  WS.shuttleX = lerp(26, W - 26, WS.shuttleDir > 0 ? e : 1 - e);
+  if (pass !== lastPass) {
+    if (hs > 0.02 && WS.bandOn && Math.abs(pass - lastPass) < 4) { WS.beat = 1; WS.shed ^= 1; AU.clack(clamp(0.5 + Math.abs(S.v) * 0.4)); AU.swoosh(WS.shuttleDir, 0.8); }
+    lastPass = pass;
+  }
+  WS.beat *= 0.86; if (WS.beat < 0.01) WS.beat = 0;
+  const b = bandAt(S.sy + Math.min(fy, H - 1));
+  if (b) WS.weft = C[b.dataset.weft] || C.pink;
+}
+
+function drawLoom(t) {
+  const fy = WS.fellY;
+  if (fy >= H + 30) return;
+  const hs = screensInto(hubEl), live = hs > 0.05;
+  // the last few picks are still loose: thin gaps that close as the cloth climbs away from the reed
+  if (live && fy > 4) {
+    cx.fillStyle = C.ink;
+    let y = fy;
+    for (let i = 0; i < 3; i++) { const gap = 2.2 - i * 0.6; y -= TROW + gap; cx.globalAlpha = 0.85 - i * 0.2; cx.fillRect(0, y, W, gap); }
+    cx.globalAlpha = 1;
+  }
+  cx.fillStyle = C.ink; cx.fillRect(0, fy, W, H - fy + 2);
+  const sh = cx.createLinearGradient(0, fy, 0, fy + 46);
+  sh.addColorStop(0, 'rgba(255,255,255,0.07)'); sh.addColorStop(1, 'rgba(255,255,255,0)');
+  cx.fillStyle = sh; cx.fillRect(0, fy, W, 46);
+  computeThreads(t); drawThreads();
+  if (!live) return;
+  // the weft just thrown, lying in the shed
+  const sx = WS.shuttleX, yy = fy + 1;
+  cx.strokeStyle = WS.weft; cx.lineWidth = Math.max(3, TROW * 0.62); cx.lineCap = 'round';
+  cx.beginPath(); cx.moveTo(WS.shuttleDir > 0 ? -4 : W + 4, yy); cx.lineTo(sx, yy); cx.stroke();
+  // the reed: it kicks up at every pick
+  const by = fy + 13 - WS.beat * 9, bh = W < 700 ? 13 : 17;
+  cx.fillStyle = C.yellow; cx.fillRect(-2, by, W + 4, bh);
+  cx.fillStyle = 'rgba(23,17,15,0.85)';
+  for (let i = 0; i < NT; i++) cx.fillRect(tx[i] + PITCH * 0.5 - 0.6, by + 3, 1.2, bh - 6);
+  cx.fillStyle = C.lime; cx.fillRect(0, by, 12, bh); cx.fillRect(W - 12, by, 12, bh);
+  marker([-2, by, W * 0.3, by, W * 0.66, by, W + 2, by], { w: 2.6, seed: 21 });
+  marker([-2, by + bh, W * 0.4, by + bh, W * 0.7, by + bh, W + 2, by + bh], { w: 2.6, seed: 22 });
+  // the shuttle
+  const sy2 = fy - 3, d = WS.shuttleDir, L = W < 700 ? 22 : 30;
+  cx.save(); cx.translate(sx, sy2);
+  cx.fillStyle = 'rgba(23,17,15,0.25)'; cx.beginPath(); cx.ellipse(2, 5, L, 9, 0, 0, TAU); cx.fill();
+  cx.fillStyle = C.orange; cx.strokeStyle = C.ink; cx.lineWidth = 2.6; cx.lineJoin = 'round';
+  cx.beginPath(); cx.moveTo(-L, 0); cx.quadraticCurveTo(0, -15, L, 0); cx.quadraticCurveTo(0, 15, -L, 0); cx.closePath(); cx.fill(); cx.stroke();
+  cx.fillStyle = WS.weft; cx.beginPath(); if (cx.roundRect) cx.roundRect(-L * 0.42, -4.5, L * 0.84, 9, 4); else cx.rect(-L * 0.42, -4.5, L * 0.84, 9); cx.fill(); cx.stroke();
+  cx.strokeStyle = 'rgba(255,255,255,.7)'; cx.lineWidth = 1.6; cx.beginPath(); cx.moveTo(-L * 0.62, -4); cx.quadraticCurveTo(-L * 0.2, -9.5, L * 0.2, -8.6); cx.stroke();
+  cx.restore();
+}
+
+/* ── jacquard: every photo arrives woven in two yarns, then develops ── */
+const TWILL = (x, y) => (((x + y * 3) & 7) + 0.5) / 8;
+function weaveFigure(fig) {
+  const img = $('img', fig); if (!img || fig._woven) return;
+  if (!img.complete || !img.naturalWidth) { img.addEventListener('load', () => weaveFigure(fig), { once: true }); return; }
+  fig._woven = true;
+  const bw = img.clientWidth || 200, bh = img.clientHeight || 250, cell = 3;
+  const cw = Math.max(30, Math.round(bw / cell)), ch = Math.max(30, Math.round(bh / cell));
+  const c = document.createElement('canvas'); c.width = cw; c.height = ch; c.setAttribute('aria-hidden', 'true');
+  const g = c.getContext('2d', { willReadFrequently: true });
+  const ir = img.naturalWidth / img.naturalHeight, br = cw / ch;
+  let sw = img.naturalWidth, shh = img.naturalHeight, sx = 0, sy = 0;
+  if (ir > br) { sw = shh * br; sx = (img.naturalWidth - sw) / 2; } else { shh = sw / br; sy = (img.naturalHeight - shh) / 2; }
+  try {
+    g.drawImage(img, sx, sy, sw, shh, 0, 0, cw, ch);
+    const id = g.getImageData(0, 0, cw, ch), d = id.data;
+    const key = fig.dataset.paper || 'cream';
+    let paper = hex2rgb(C[key] || C.cream), ink = RGB.ink;
+    if (key === 'night') { paper = RGB.yellow; ink = RGB.night; }
+    if (key === 'hot' || key === 'blue') { paper = RGB.cream; ink = hex2rgb(C[key]); }
+    for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) {
+      const o = (y * cw + x) * 4;
+      let l = (0.299 * d[o] + 0.587 * d[o + 1] + 0.114 * d[o + 2]) / 255;
+      l = clamp((l - 0.5) * 1.25 + 0.52);
+      const on = l > TWILL(x, y), col = on ? paper : ink;
+      d[o] = col[0]; d[o + 1] = col[1]; d[o + 2] = col[2]; d[o + 3] = 255;
+    }
+    g.putImageData(id, 0, 0);
+    fig.appendChild(c);
+  } catch (e) { /* cross-origin or blocked: the photo simply shows as it is */ }
+}
+let devIO = null;
+function initFigures() {
+  const figs = $$('.jq');
+  if (!('IntersectionObserver' in window)) { figs.forEach(f => f.classList.add('dev')); return; }
+  const near = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { weaveFigure(e.target); near.unobserve(e.target); } }); }, { rootMargin: '120% 0px 120% 0px' });
+  devIO = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('dev'), 380); devIO.unobserve(e.target); } }); }, { rootMargin: '0px 0px -30% 0px', threshold: 0.12 });
+  figs.forEach(f => { near.observe(f); devIO.observe(f); });
+}
+
+/* ── videos: fetched when close, playing only while on screen ── */
+function initVideos() {
+  const vids = $$('video[data-src]');
+  if (!('IntersectionObserver' in window)) { vids.forEach(v => { v.src = ASSET(v.dataset.src); }); return; }
+  const load = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { const v = e.target; if (!v.src) { v.src = ASSET(v.dataset.src); v.load(); } load.unobserve(v); } }); }, { rootMargin: '150% 60% 150% 60%' });
+  const play = new IntersectionObserver(es => { es.forEach(e => { const v = e.target; if (e.isIntersecting) { if (!v.src) { v.src = ASSET(v.dataset.src); } const p = v.play(); if (p && p.catch) p.catch(() => {}); } else v.pause(); }); }, { threshold: 0.15 });
+  vids.forEach(v => { load.observe(v); play.observe(v); });
+}
+
+
+/* ───────────────────────── what happens along the cloth ───────────────────────── */
+const inView = (el, m = 0) => el && el._h !== undefined && S.sy + H > el._top - m && S.sy < el._top + el._h + m;
+const pinP = el => clamp((S.sy - el._top) / Math.max(1, el._h - H));      // 0..1 through a pinned stretch
+
+/* ── the hub: a ribbon woven through the warp ── */
+const mqRow = $('#mq .mq-row'); let mqW = 1;
+function updHub(t) {
+  if (!mqRow || !inView(hubEl, 200)) return;
+  const x = -((S.sy * 0.55 + (RM ? 0 : t * 28)) % mqW);
+  mqRow.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`;
+}
+
+/* ── five threads, thrown one by one ── */
+const yarnLis = $$('#yarns li'); yarnLis.forEach(track);
+const fiveEl = track($('#five'));
+function updYarns() {
+  if (!inView(fiveEl, 200)) return;
+  for (let i = 0; i < yarnLis.length; i++) {
+    const li = yarnLis[i], p = RM ? 1 : easeOutCubic(clamp((S.sy + WS.fellY - li._top - 10) / (H * 0.26)));
+    if (li._p !== p) { li._p = p; li.style.setProperty('--p', p.toFixed(3)); }
+  }
+}
+
+/* ── thread one: questions, woven and unpicked ── */
+const qPin = track($('#qpin')), qEls = $$('#qframe .q'), qNote = $('#qnote'), qPic = $('#qpic'), qCount = $('#qcount');
+const qLine = document.createElement('div'); qLine.className = 'qline'; $('#qframe').appendChild(qLine);
+let qCur = -1, qShown = -1;
+function updQuestions() {
+  if (!inView(qPin, 100)) return;
+  const n = qEls.length, v = clamp(pinP(qPin) * n, 0, n - 0.0001), idx = Math.floor(v), f = v - idx;
+  const last = idx === n - 1;
+  const rev = easeInOut(lin(0.02, 0.3, f)), unp = last ? 0 : easeInOut(lin(0.8, 0.99, f));
+  for (let i = 0; i < n; i++) {
+    const el = qEls[i];
+    const cp = i < idx ? 'inset(100% 0 0 0)' : i > idx ? 'inset(0 0 100% 0)' : `inset(${(unp * 100).toFixed(2)}% 0 ${((1 - rev) * 100).toFixed(2)}% 0)`;
+    if (el._cp !== cp) { el._cp = cp; el.style.clipPath = cp; el.style.webkitClipPath = cp; }
+  }
+  const edge = unp > 0 ? unp : rev, moving = (rev > 0.001 && rev < 0.999) || (unp > 0.001 && unp < 0.999);
+  qLine.style.opacity = moving ? '1' : '0';
+  if (moving) { qLine.style.top = (edge * 100).toFixed(2) + '%'; const zig = (f * 9) % 2; qLine.style.setProperty('--sx', ((zig < 1 ? zig : 2 - zig) * 100).toFixed(1) + '%'); }
+  const hold = f > 0.3 && (last || f < 0.82) ? idx : -1;
+  if (hold !== qShown) {
+    qShown = hold;
+    if (hold < 0) { qNote.style.opacity = '0'; qPic.classList.remove('on'); }
+    else {
+      const el = qEls[hold];
+      qNote.textContent = el.dataset.note || ''; qNote.style.opacity = '1';
+      if (el.dataset.img) { const im = $('img', qPic); const src = ASSET('a/' + el.dataset.img + '.webp'); if (im.getAttribute('src') !== src) im.setAttribute('src', src); qPic.classList.add('on'); }
+      else qPic.classList.remove('on');
+      AU.pluck(0.3 + hold * 0.1, 0.22, 0);
+    }
+  }
+  if (idx !== qCur) { qCur = idx; qCount.lastChild.textContent = `question ${idx + 1} / ${n}`; }
+}
+
+/* ── thread two: the labyrinth, and the thread that gets you out of it ── */
+const MZ = { cv: $('#maze'), pin: track($('#mzpin')), say: $$('#mzsay .mz'), out: $('#mzout'), ready: false, lastP: -1 };
+function buildMaze() {
+  const st = MZ.cv.parentElement, w = st.clientWidth || W, h = st.clientHeight || H, md = Math.min(DPR, 1.5);
+  MZ.w = w; MZ.h = h; MZ.d = md; MZ.cv.width = Math.round(w * md); MZ.cv.height = Math.round(h * md); MZ.g = MZ.cv.getContext('2d');
+  const top = clamp(H * 0.1, 62, 110), bot = bandHeight() + clamp(H * 0.12, 74, 130), gut = Math.max(18, w * 0.05);
+  const availW = w - 2 * gut, availH = Math.max(160, h - top - bot);
+  const wantRows = w < 700 ? 8 : 5;
+  const cs = Math.max(34, Math.floor(Math.min(availH / wantRows, availW / (w < 700 ? 6 : 11))));
+  const cols = Math.max(4, Math.floor(availW / cs)), rows = Math.max(3, Math.floor(availH / cs));
+  const ox = (w - cols * cs) / 2, oy = top + (availH - rows * cs) / 2, N = cols * rows;
+  let best = null;
+  for (let attempt = 0; attempt < 40; attempt++) {
+    const R = rng(101 + attempt * 13), vis = new Uint8Array(N), E = new Uint8Array(N).fill(1), So = new Uint8Array(N).fill(1);
+    const stack = [0]; vis[0] = 1;
+    while (stack.length) {
+      const c = stack[stack.length - 1], x = c % cols, y = (c / cols) | 0, nb = [];
+      if (x > 0 && !vis[c - 1]) nb.push(c - 1); if (x < cols - 1 && !vis[c + 1]) nb.push(c + 1);
+      if (y > 0 && !vis[c - cols]) nb.push(c - cols); if (y < rows - 1 && !vis[c + cols]) nb.push(c + cols);
+      if (!nb.length) { stack.pop(); continue; }
+      const n = nb[(R() * nb.length) | 0];
+      if (n === c + 1) E[c] = 0; else if (n === c - 1) E[n] = 0; else if (n === c + cols) So[c] = 0; else So[n] = 0;
+      vis[n] = 1; stack.push(n);
+    }
+    const a = ((rows / 2) | 0) * cols, b = ((rows / 2) | 0) * cols + cols - 1;
+    const prev = new Int32Array(N).fill(-1), q = [a]; prev[a] = a;
+    while (q.length) {
+      const c = q.shift(); if (c === b) break; const x = c % cols, y = (c / cols) | 0;
+      const go = n => { if (prev[n] < 0) { prev[n] = c; q.push(n); } };
+      if (x < cols - 1 && !E[c]) go(c + 1); if (x > 0 && !E[c - 1]) go(c - 1);
+      if (y < rows - 1 && !So[c]) go(c + cols); if (y > 0 && !So[c - cols]) go(c - cols);
+    }
+    const path = []; for (let c = b; ; c = prev[c]) { path.push(c); if (c === a) break; } path.reverse();
+    if (!best || path.length > best.path.length) best = { E, So, path, a, b };
+    if (path.length > N * 0.55) break;
+  }
+  const { E, So, path, a, b } = best;
+  const cxy = c => [ox + (c % cols + 0.5) * cs, oy + (((c / cols) | 0) + 0.5) * cs];
+  const raw = [[ox - cs * 1.1, cxy(a)[1]]].concat(path.map(cxy)).concat([[ox + cols * cs + cs * 1.3, cxy(b)[1]]]);
+  // round the corners, then measure
+  const pts = [raw[0]], r = cs * 0.34;
+  for (let i = 1; i < raw.length - 1; i++) {
+    const p0 = raw[i - 1], p1 = raw[i], p2 = raw[i + 1];
+    const d0 = [p1[0] - p0[0], p1[1] - p0[1]], d1 = [p2[0] - p1[0], p2[1] - p1[1]];
+    const l0 = Math.hypot(d0[0], d0[1]) || 1, l1 = Math.hypot(d1[0], d1[1]) || 1;
+    if (Math.abs(d0[0] * d1[1] - d0[1] * d1[0]) < 0.01) { pts.push(p1); continue; }
+    const s0 = [p1[0] - d0[0] / l0 * r, p1[1] - d0[1] / l0 * r], s1 = [p1[0] + d1[0] / l1 * r, p1[1] + d1[1] / l1 * r];
+    for (let k = 0; k <= 5; k++) { const u = k / 5, A = (1 - u) * (1 - u), B = 2 * u * (1 - u), Cc = u * u; pts.push([A * s0[0] + B * p1[0] + Cc * s1[0], A * s0[1] + B * p1[1] + Cc * s1[1]]); }
+  }
+  pts.push(raw[raw.length - 1]);
+  const cum = [0]; for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  MZ.pts = pts; MZ.cum = cum; MZ.len = cum[cum.length - 1]; MZ.cs = cs; MZ.start = raw[0];
+  // chalk the walls once
+  const wc = document.createElement('canvas'); wc.width = MZ.cv.width; wc.height = MZ.cv.height;
+  const g = wc.getContext('2d'); g.scale(md, md); g.lineCap = 'round'; g.strokeStyle = C.cream;
+  const R2 = rng(9);
+  const seg = (x0, y0, x1, y1) => {
+    for (let pass = 0; pass < 2; pass++) {
+      g.lineWidth = pass ? 1.2 : 3.2; g.globalAlpha = pass ? 0.55 : 1;
+      const j = () => (R2() - 0.5) * 3.2;
+      g.beginPath(); g.moveTo(x0 + j(), y0 + j()); g.quadraticCurveTo((x0 + x1) / 2 + j() * 1.4, (y0 + y1) / 2 + j() * 1.4, x1 + j(), y1 + j()); g.stroke();
+    }
+  };
+  for (let c = 0; c < N; c++) {
+    const x = c % cols, y = (c / cols) | 0, X = ox + x * cs, Y = oy + y * cs;
+    if (y === 0) seg(X, Y, X + cs, Y);
+    if (x === 0 && c !== a) seg(X, Y, X, Y + cs);
+    if (So[c] || y === rows - 1) seg(X, Y + cs, X + cs, Y + cs);
+    if ((E[c] && x < cols - 1) || (x === cols - 1 && c !== b)) seg(X + cs, Y, X + cs, Y + cs);
+  }
+  MZ.walls = wc;
+  MZ.tmp = document.createElement('canvas'); MZ.tmp.width = wc.width; MZ.tmp.height = wc.height; MZ.tg = MZ.tmp.getContext('2d');
+  MZ.ready = true; MZ.lastP = -1;
+}
+function mzPoint(L) {
+  const cum = MZ.cum, pts = MZ.pts; let lo = 0, hi = cum.length - 1;
+  while (lo < hi - 1) { const m = (lo + hi) >> 1; if (cum[m] <= L) lo = m; else hi = m; }
+  const u = (L - cum[lo]) / Math.max(0.001, cum[hi] - cum[lo]);
+  return [lerp(pts[lo][0], pts[hi][0], u), lerp(pts[lo][1], pts[hi][1], u), lo];
+}
+function updMaze(t) {
+  if (!MZ.ready || !inView(MZ.pin, 80)) return;
+  const p = pinP(MZ.pin);
+  const says = [[0.04, 0.24], [0.24, 0.44], [0.44, 0.64], [0.66, 0.89]];
+  MZ.say.forEach((el, i) => { const a = win(p, says[i][0], says[i][1], 0.035); if (el._a !== a) { el._a = a; el.style.opacity = a.toFixed(3); el.style.transform = `translateY(${((1 - a) * 12).toFixed(1)}px)`; } });
+  const oa = sstep(0.9, 0.97, p); if (MZ.out._a !== oa) { MZ.out._a = oa; MZ.out.style.opacity = oa.toFixed(3); MZ.out.style.transform = `scale(${(0.92 + 0.08 * oa).toFixed(3)})`; }
+  if (Math.abs(p - MZ.lastP) < 0.0004 && RM) return; MZ.lastP = p;
+  const g = MZ.g, w = MZ.w, h = MZ.h, md = MZ.d;
+  g.setTransform(md, 0, 0, md, 0, 0); g.clearRect(0, 0, w, h);
+  const fade = 1 - oa, L = MZ.len * easeInOut(lin(0.03, 0.88, p)), head = mzPoint(L);
+  g.globalAlpha = 0.26 * fade; g.drawImage(MZ.walls, 0, 0, w, h);
+  const tg = MZ.tg; tg.setTransform(1, 0, 0, 1, 0, 0); tg.globalCompositeOperation = 'source-over'; tg.clearRect(0, 0, MZ.tmp.width, MZ.tmp.height);
+  tg.drawImage(MZ.walls, 0, 0); tg.globalCompositeOperation = 'destination-in';
+  const rad = MZ.cs * 3.3 * md, gr = tg.createRadialGradient(head[0] * md, head[1] * md, rad * 0.15, head[0] * md, head[1] * md, rad);
+  gr.addColorStop(0, 'rgba(0,0,0,1)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); tg.fillStyle = gr; tg.fillRect(0, 0, MZ.tmp.width, MZ.tmp.height);
+  g.globalAlpha = fade; g.drawImage(MZ.tmp, 0, 0, w, h);
+  // the thread
+  g.lineCap = 'round'; g.lineJoin = 'round';
+  for (let pass = 0; pass < 2; pass++) {
+    g.strokeStyle = pass ? C.orange : 'rgba(0,0,0,.6)'; g.lineWidth = pass ? 5 : 9; g.globalAlpha = fade * (pass ? 1 : 0.7);
+    g.beginPath(); g.moveTo(MZ.pts[0][0], MZ.pts[0][1]);
+    for (let i = 1; i <= head[2]; i++) g.lineTo(MZ.pts[i][0], MZ.pts[i][1]);
+    g.lineTo(head[0], head[1]); g.stroke();
+  }
+  g.globalAlpha = fade;
+  const br = lerp(30, 12, lin(0, 1, L / MZ.len)), bx = MZ.start[0] - br * 0.2, by = MZ.start[1];
+  g.fillStyle = C.orange; g.strokeStyle = '#000'; g.lineWidth = 2.5; g.beginPath(); g.arc(bx, by, br, 0, TAU); g.fill(); g.stroke();
+  g.save(); g.beginPath(); g.arc(bx, by, br - 1, 0, TAU); g.clip(); g.strokeStyle = 'rgba(255,222,89,.9)'; g.lineWidth = 2;
+  for (let k = -3; k <= 3; k++) { g.beginPath(); g.ellipse(bx, by + k * br * 0.3, br * 1.1, br * 0.5, 0.5 + L * 0.004, Math.PI, TAU); g.stroke(); }
+  g.restore();
+  g.fillStyle = C.yellow; g.beginPath(); g.arc(head[0], head[1], 8, 0, TAU); g.fill(); g.stroke();
+  g.globalAlpha = 1;
+}
+
+/* ── thread three: the reel that stops your scroll ── */
+const FS = { pin: track($('#fspin')), track: $('#fstrack'), big: $('#fsbig'), max: 0, bigMax: 0, wd: 110 };
+function measureFS() {
+  FS.max = Math.max(0, FS.track.scrollWidth - W * 0.62);
+  FS.bigMax = Math.max(0, FS.big.scrollWidth * 1.25 - W * 0.9);
+}
+function updFilm() {
+  if (!inView(FS.pin, 200)) return;
+  const p = pinP(FS.pin), e = RM ? p : p;
+  FS.track.style.transform = `translate3d(${(-e * FS.max).toFixed(1)}px,0,0)`;
+  FS.wd += ((151 - clamp(Math.abs(S.v) * 55, 0, 100)) - FS.wd) * 0.12;      // the word squeezes when you rush it
+  FS.big.style.setProperty('--wd', FS.wd.toFixed(1));
+  FS.big.style.transform = `translate3d(${(W * 0.06 - e * FS.bigMax).toFixed(1)}px,0,0)`;
+}
+
+/* ── thread four: athens → milano, stitched ── */
+const RT = { pin: track($('#rtpin')), path: $('#rtpath'), under: $('#rtpathb'), needle: $('#rtneedle'), pass: $('#rtpass'), v: $('#rtv'), i: $('#rti'), len: 0, lastN: -1 };
+function measureRT() {
+  const small = W < 700, svg = $('#rtsvg');
+  const d = small ? 'M110 700 C 70 430, 300 240, 500 330' : 'M150 440 C 330 60, 800 10, 1050 210';
+  const A = small ? [110, 700] : [150, 440], B = small ? [500, 330] : [1050, 210];
+  svg.setAttribute('viewBox', small ? '0 0 600 760' : '0 0 1200 560');
+  [RT.path, RT.under, $('#rtghost')].forEach(el => el.setAttribute('d', d));
+  const set = (id, pt, dy) => { const g = $(id); $('circle', g).setAttribute('cx', pt[0]); $('circle', g).setAttribute('cy', pt[1]); const tx2 = $('text', g); tx2.setAttribute('x', pt[0]); tx2.setAttribute('y', pt[1] + dy); };
+  set('#rtA', A, 52); set('#rtB', B, -34);
+  try { RT.len = RT.path.getTotalLength(); } catch (e) { RT.len = 0; }
+  RT.lastN = -1;
+}
+function updRoute() {
+  if (!RT.len || !inView(RT.pin, 100)) return;
+  const p = pinP(RT.pin), pp = easeInOut(lin(0.12, 0.74, p)), L = RT.len * pp, dash = 24, gap = 15;
+  const arr = []; let x = 0;
+  while (x + dash < L) { arr.push(dash, gap); x += dash + gap; }
+  arr.push(Math.max(0, Math.min(dash, L - x)), RT.len + 80);
+  const da = arr.join(' ');
+  RT.path.style.strokeDasharray = da; RT.under.style.strokeDasharray = da;
+  const n = arr.length >> 1;
+  if (n !== RT.lastN) { if (RT.lastN >= 0 && n > RT.lastN) AU.pluck(0.35 + (n % 5) * 0.09, 0.2, pp * 1.6 - 0.8); RT.lastN = n; }
+  const pt = RT.path.getPointAtLength(L), p2 = RT.path.getPointAtLength(Math.min(RT.len, L + 3));
+  const ang = Math.atan2(p2.y - pt.y, p2.x - pt.x) * 180 / Math.PI + Math.sin(L * 0.16) * 7;   // the needle dips in and out
+  RT.needle.setAttribute('transform', `translate(${pt.x.toFixed(1)},${pt.y.toFixed(1)}) rotate(${ang.toFixed(1)})`);
+  const set = (el, a, tf) => { if (el._a !== a) { el._a = a; el.style.opacity = a.toFixed(3); el.style.transform = tf; } };
+  let a = sstep(0.0, 0.1, p); set(RT.pass, a, `rotate(-2.5deg) translateY(${((1 - a) * 30).toFixed(1)}px)`);
+  a = sstep(0.42, 0.54, p); set(RT.v, a, `rotate(4deg) scale(${(0.8 + 0.2 * easeOutBack(a)).toFixed(3)})`);
+  a = sstep(0.72, 0.84, p); set(RT.i, a, `rotate(-5deg) scale(${(0.8 + 0.2 * easeOutBack(a)).toFixed(3)})`);
+}
+
+/* ── the washing line: prints that swing when you move ── */
+const wholeEl = track($('#whole')), pegs = $$('.peg'); const pegA = pegs.map(() => 0), pegV = pegs.map(() => 0);
+function updPegs(dt) {
+  if (!inView(wholeEl, 100) || RM) return;
+  const push = clamp(S.v * 9, -10, 10);
+  for (let i = 0; i < pegs.length; i++) {
+    const target = -push * (0.6 + (i % 3) * 0.3);
+    pegV[i] += (target - pegA[i]) * 0.02 - pegV[i] * 0.07; pegA[i] += pegV[i] * (dt / 16);
+    const base = parseFloat(pegs[i].style.getPropertyValue('--r')) || 0;
+    pegs[i].style.transform = `rotate(${(base + pegA[i]).toFixed(2)}deg)`;
+  }
+}
+
+/* ── thread five: your turn at the loom ── */
+const TOY = { n: 16, cells: new Uint8Array(256), cv: $('#draft'), band: $('#t-whatif'), box: $('#toy'), down: false, val: 1, timer: 0 };
+function toyPreset(name) {
+  const n = TOY.n, c = TOY.cells, R = rng((Math.random() * 1e6) | 0);
+  const KEY = ['1111111111111111', '1000000000000001', '1011111111111101', '1010000000000101', '1010111111110101', '1010100000010101', '1010101111010101', '1010101001010101', '1010101001010101', '1010101111010101', '1010100000010101', '1010111111110101', '1010000000000101', '1011111111111101', '1000000000000001', '1111111111111111'];
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    let v = 0;
+    if (name === 'plain') v = (x + y) & 1;
+    else if (name === 'twill') v = ((x + y) % 4) < 2 ? 1 : 0;
+    else if (name === 'bone') v = (((x < 8 ? x : 15 - x) + y) % 4) < 2 ? 1 : 0;
+    else if (name === 'key') v = KEY[y][x] === '1' ? 1 : 0;
+    c[y * n + x] = v;
+  }
+  if (name === 'shuffle') {
+    for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++) { const v = R() < 0.42 ? 1 : 0; c[y * n + x] = c[y * n + 15 - x] = c[(15 - y) * n + x] = c[(15 - y) * n + 15 - x] = v; }
+  }
+}
+function toyDraw() {
+  const g = TOY.cv.getContext('2d'), n = TOY.n, s = TOY.cv.width / n;
+  g.fillStyle = C.cream; g.fillRect(0, 0, TOY.cv.width, TOY.cv.height);
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    if (TOY.cells[y * n + x]) { g.fillStyle = C.hot; g.beginPath(); if (g.roundRect) g.roundRect(x * s + 1, y * s + s * 0.16, s - 2, s * 0.68, s * 0.3); else g.rect(x * s + 1, y * s + s * 0.16, s - 2, s * 0.68); g.fill(); g.fillStyle = 'rgba(255,255,255,.3)'; g.fillRect(x * s + 4, y * s + s * 0.26, s - 8, 2.5); }
+    else { g.fillStyle = 'rgba(23,17,15,.2)'; g.fillRect(x * s + s * 0.4, y * s + 2, s * 0.2, s - 4); }
+  }
+}
+function toyApply() {
+  const t = weaveTile(C.lime, { seed: 41, cols: 32, rows: 48, pattern: TOY.cells, pn: 16, cellW: 2, cellH: 3, patRGB: mixRGB(RGB.lime, [0, 96, 40], 0.62) });
+  TOY.band.style.backgroundImage = `url(${t.url})`; TOY.band.style.backgroundSize = `${t.w}px ${t.h}px`;
+}
+function toyCell(e) {
+  const r = TOY.cv.getBoundingClientRect(), n = TOY.n;
+  const x = clamp(Math.floor((e.clientX - r.left) / r.width * n), 0, n - 1), y = clamp(Math.floor((e.clientY - r.top) / r.height * n), 0, n - 1);
+  return y * n + x;
+}
+function toyPaint(e, first) {
+  const i = toyCell(e);
+  if (first) TOY.val = TOY.cells[i] ? 0 : 1;
+  if (TOY.cells[i] === TOY.val) return;
+  TOY.cells[i] = TOY.val; toyDraw(); AU.pluck((i % TOY.n) / (TOY.n - 1), 0.3, (i % TOY.n) / 8 - 1);
+  clearTimeout(TOY.timer); TOY.timer = setTimeout(() => { toyApply(); TOY.box.classList.add('done'); }, 140);
+}
+function initToy() {
+  if (!TOY.cv) return;
+  toyPreset('bone'); toyDraw();
+  TOY.cv.addEventListener('pointerdown', e => { TOY.down = true; try { TOY.cv.setPointerCapture(e.pointerId); } catch (er) {} toyPaint(e, true); e.preventDefault(); });
+  TOY.cv.addEventListener('pointermove', e => { if (TOY.down) toyPaint(e, false); });
+  const up = () => { TOY.down = false; };
+  TOY.cv.addEventListener('pointerup', up); TOY.cv.addEventListener('pointercancel', up);
+  $('#toyctl').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    toyPreset(b.dataset.p); toyDraw(); toyApply(); TOY.box.classList.add('done');
+    AU.chord([0.2, 0.45, 0.7], 0.3, 60);
+  });
+}
+
+/* ── the knot: the whole page as a rag rug, a copy button, a small boast ── */
+const startedAt = Date.now();
+function drawRug() {
+  const c = $('#rug'); if (!c) return;
+  const g = c.getContext('2d'), Wc = c.width, Hc = c.height, fr = 54, top = 26, bot = Hc - 30, R = rng(8);
+  g.clearRect(0, 0, Wc, Hc);
+  const list = [{ k: 'pink', h: 3 }].concat(bands.map(b => ({ k: b.dataset.weft, h: Math.max(0.6, (b._h || H) / H) })));
+  const total = list.reduce((a, b) => a + b.h, 0), bodyW = Wc - fr * 2;
+  g.fillStyle = 'rgba(23,17,15,.22)'; g.fillRect(fr + 6, top + 10, bodyW, bot - top);
+  let x = fr;
+  list.forEach((b, i) => {
+    const w = bodyW * b.h / total, base = hex2rgb(C[b.k] || C.pink);
+    for (let xx = 0; xx < w; xx += 4) {
+      const j = (R() - 0.5) * 0.12;
+      g.fillStyle = rgbStr(j < 0 ? mixRGB(base, [20, 0, 20], -j) : mixRGB(base, [255, 255, 255], j));
+      g.fillRect(x + xx, top + (R() - 0.5) * 2.4, Math.min(4.4, w - xx + 0.4), bot - top);
+    }
+    if (i > 0) { g.fillStyle = C.ink; g.fillRect(x - 3, top, 3, bot - top); g.fillStyle = C.cream; g.fillRect(x, top, 3, bot - top); g.fillStyle = C.ink; g.fillRect(x + 3, top, 2, bot - top); }
+    x += w;
+  });
+  g.lineCap = 'round'; g.lineWidth = 2.4;
+  for (let y = top + 3; y < bot; y += 6.5) {
+    const col = hex2rgb(strColorOf(Math.round(y / 6.5)));
+    g.strokeStyle = rgbStr(col);
+    const l1 = fr * (0.6 + R() * 0.38), l2 = fr * (0.6 + R() * 0.38);
+    g.beginPath(); g.moveTo(fr, y); g.quadraticCurveTo(fr - l1 * 0.5, y + (R() - 0.5) * 9, fr - l1, y + (R() - 0.5) * 12); g.stroke();
+    g.beginPath(); g.moveTo(Wc - fr, y); g.quadraticCurveTo(Wc - fr + l2 * 0.5, y + (R() - 0.5) * 9, Wc - fr + l2, y + (R() - 0.5) * 12); g.stroke();
+  }
+  g.fillStyle = C.cream; g.fillRect(Wc - fr - 96, bot - 34, 74, 24); g.strokeStyle = C.hot; g.lineWidth = 1.5; g.setLineDash([4, 3]); g.strokeRect(Wc - fr - 93, bot - 31, 68, 18); g.setLineDash([]);
+  g.fillStyle = C.ink; g.font = '900 13px "Roboto Flex", Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('L O O M', Wc - fr - 59, bot - 21.5);
+}
+let boasted = false;
+function updKnot() {
+  if (boasted || !knotEl._top || S.sy < knotEl._top - H * 0.6) return;
+  boasted = true;
+  const metres = ((root.scrollHeight / 96) * 2.54 / 100).toFixed(1), sec = Math.max(1, Math.round((Date.now() - startedAt) / 1000));
+  const mm = Math.floor(sec / 60), ss = String(sec % 60).padStart(2, '0');
+  $('#woven').textContent = `You just wove ${metres} m of cloth in ${mm}:${ss}.`;
+  AU.chord([0.1, 0.3, 0.5, 0.7, 0.9], 0.3, 110);
+}
+function initKnot() {
+  const btn = $('#copy'), mail = $('#mail'); if (!btn) return;
+  btn.addEventListener('click', () => {
+    const txt = mail.textContent.trim();
+    const done = () => { btn.textContent = 'copied'; setTimeout(() => { btn.textContent = 'copy'; }, 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(mail); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'selected — now copy'; setTimeout(() => { btn.textContent = 'copy'; }, 2600); };
+    try { navigator.clipboard.writeText(txt).then(done, fallback); } catch (e) { fallback(); }
+  });
+}
+
+/* ── selvedge: a strip of the cloth's colours to find your way ── */
+const selv = $('#selvedge'); let selvA = [];
+function initSelvedge() {
+  if (!selv) return;
+  selv.innerHTML = '';
+  selvA = bands.map(b => {
+    const a = document.createElement('a'); a.href = '#' + b.id; a.style.setProperty('--c', C[b.dataset.weft] || C.pink);
+    const sp = document.createElement('span'); sp.textContent = b.dataset.name || b.id; a.appendChild(sp); a.setAttribute('aria-label', b.dataset.name || b.id);
+    selv.appendChild(a); return a;
+  });
+}
+/* in-page links scroll the cloth themselves, so they behave the same wherever the page is hosted */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+  const el = document.getElementById(a.getAttribute('href').slice(1)); if (!el) return;
+  e.preventDefault();
+  window.scrollTo(0, Math.round(el.getBoundingClientRect().top + (window.scrollY || 0)) + 1);
+});
+let selvCur = -1;
+function updSelvedge() {
+  if (!selv) return;
+  const on = S.sy > hubEl._top + H * 0.6 && WS.fellY < H;
+  if (selv._on !== on) { selv._on = on; selv.classList.toggle('on', on); }
+  const b = bandAt(S.sy + H * 0.4), i = bands.indexOf(b);
+  if (i !== selvCur) { if (selvA[selvCur]) selvA[selvCur].classList.remove('cur'); if (selvA[i]) selvA[i].classList.add('cur'); selvCur = i; }
+}
+
+/* ── doodles: marker scribbles that never sit still ── */
+const doodles = $$('[data-doodle]').map(el => ({ el, kind: el.dataset.doodle, cv: null, vis: false, seed: (Math.random() * 999) | 0 }));
+function strokePts(g, pts, w, col, R, close) {
+  g.strokeStyle = col; g.lineCap = 'round'; g.lineJoin = 'round';
+  for (let pass = 0; pass < 2; pass++) {
+    g.lineWidth = pass ? w * 0.5 : w; g.globalAlpha = pass ? 0.8 : 1; g.beginPath();
+    for (let i = 0; i < pts.length; i += 2) {
+      const x = pts[i] + (R() - 0.5) * w * 0.9, y = pts[i + 1] + (R() - 0.5) * w * 0.9;
+      if (i === 0) g.moveTo(x, y); else { const px = pts[i - 2], py = pts[i - 1]; g.quadraticCurveTo((px + x) / 2 + (R() - 0.5) * w * 1.6, (py + y) / 2 + (R() - 0.5) * w * 1.6, x, y); }
+    }
+    if (close) g.closePath(); g.stroke();
+  }
+  g.globalAlpha = 1;
+}
+function drawDoodle(d, tick) {
+  const el = d.el, w = el.offsetWidth, h = el.offsetHeight; if (!w || !h) return;
+  const pad = Math.round(Math.max(18, h * 0.5)), cw = w + pad * 2, chh = h + pad * 2, md = Math.min(DPR, 2);
+  if (!d.cv) { d.cv = document.createElement('canvas'); d.cv.setAttribute('aria-hidden', 'true'); el.appendChild(d.cv); }
+  const c = d.cv;
+  if (c._w !== cw || c._h !== chh) { c._w = cw; c._h = chh; c.width = Math.round(cw * md); c.height = Math.round(chh * md); c.style.width = cw + 'px'; c.style.height = chh + 'px'; c.style.left = -pad + 'px'; c.style.top = -pad + 'px'; }
+  const g = c.getContext('2d'); g.setTransform(md, 0, 0, md, 0, 0); g.clearRect(0, 0, cw, chh);
+  const R = rng(d.seed * 131 + tick * 17), lw = clamp(h * 0.075, 2.4, 7), col = getComputedStyle(el).color;
+  const x0 = pad, x1 = pad + w, y0 = pad, y1 = pad + h, ym = pad + h / 2, xm = pad + w / 2;
+  if (d.kind === 'underline' || d.kind === 'underline2') {
+    const yb = y1 + lw * 0.2;
+    strokePts(g, [x0 - 6, yb, x0 + w * 0.3, yb + 4, x0 + w * 0.62, yb - 3, x1 + 8, yb + 2], lw, C.hot, R);
+    if (d.kind === 'underline2') strokePts(g, [x1 + 2, yb + lw * 2.4, x0 + w * 0.55, yb + lw * 2.8, x0 + w * 0.12, yb + lw * 2.1], lw * 0.8, C.hot, R);
+  } else if (d.kind === 'circle') {
+    const pts = [], rx = w / 2 + pad * 0.42, ry = h / 2 + pad * 0.2, turns = 1.12;
+    for (let i = 0; i <= 26; i++) { const a = -2.3 + (i / 26) * TAU * turns, k = 1 + (i / 26) * 0.07; pts.push(xm + Math.cos(a) * rx * k, ym + Math.sin(a) * ry * k); }
+    strokePts(g, pts, lw, C.hot, R);
+  } else if (d.kind === 'scribble') {
+    const pts = []; const n = 9;
+    for (let i = 0; i <= n; i++) { const u = i / n; pts.push(x0 - 8 + u * (w + 16), (i % 2 ? y1 + lw : y1 + lw * 3.4)); }
+    strokePts(g, pts, lw * 0.8, C.yellow, R);
+  } else if (d.kind === 'burst') {
+    for (let i = 0; i < 9; i++) { const a = -Math.PI * 0.95 + (i / 8) * Math.PI * 0.9, r0 = Math.max(w, h) * 0.5 + 6, r1 = r0 + pad * (0.4 + (i % 2) * 0.35); strokePts(g, [xm + Math.cos(a) * r0 * (w / Math.max(w, h)) * 1.05, ym + Math.sin(a) * r0 * (h / Math.max(w, h)) * 1.25, xm + Math.cos(a) * r1 * (w / Math.max(w, h)) * 1.05, ym + Math.sin(a) * r1 * (h / Math.max(w, h)) * 1.25], lw * 0.7, col, R); }
+  } else if (d.kind === 'arrowdown') {
+    const ax = x1 + pad * 0.5, ay = ym - 4, bx = x1 + pad * 0.2, by = y1 + pad * 0.82;
+    strokePts(g, [x1 + 6, ym - 2, ax, ay, ax + 6, ym + h * 0.4, bx, by], lw * 0.8, col, R);
+    strokePts(g, [bx - 12, by - 9, bx, by, bx + 11, by - 12], lw * 0.8, col, R);
+  }
+}
+let doodleTick = 0, doodleLast = 0;
+function updDoodles(t) {
+  if (RM || t - doodleLast < 0.14) return; doodleLast = t; doodleTick = (doodleTick + 1) % 3;
+  for (const d of doodles) if (d.vis) drawDoodle(d, doodleTick);
+}
+function initDoodles() {
+  if (!('IntersectionObserver' in window)) { doodles.forEach(d => { d.vis = true; drawDoodle(d, 0); }); return; }
+  const io = new IntersectionObserver(es => { es.forEach(e => { const d = doodles.find(x => x.el === e.target); if (d) { d.vis = e.isIntersecting; if (d.vis) drawDoodle(d, doodleTick); } }); }, { rootMargin: '10% 0px 10% 0px' });
+  doodles.forEach(d => io.observe(d.el));
+}
+
+/* big words never leave the cloth: shrink any .fit line that would overflow its column */
+const fits = $$('.fit');
+function fitAll() {
+  for (const el of fits) {
+    el.style.fontSize = '';
+    const avail = el.parentElement.clientWidth, w = el.getBoundingClientRect().width;
+    if (w > avail && avail > 0) { const fs = parseFloat(getComputedStyle(el).fontSize); el.style.fontSize = (fs * avail / w * 0.985).toFixed(1) + 'px'; }
+  }
+}
+resizeHooks.push(() => {
+  fitAll(); doodles.forEach(d => { if (d.vis || !d.cv) drawDoodle(d, doodleTick); });
+  if (mqRow && mqRow.firstElementChild) mqW = mqRow.firstElementChild.getBoundingClientRect().width || 1;
+  measureFS(); measureRT(); buildMaze(); drawRug();
+});
+
+
+/* ───────────────────────── main loop ───────────────────────── */
+let restY = 0, lastT = 0, started = false, lastBandPx = -1, frames = 0, wordsOn = true;
+function bandHeight() { return W < 700 ? clamp(H * 0.15, 84, 130) : clamp(H * 0.2, 120, 210); }
+const bandZone = $('#bandzone');
+
+function frame(now) {
+  const rawDt = now - lastT || 16, dt = Math.min(50, rawDt); lastT = now; frames++;
+  const t = now / 1000; S.t = t; S.dt = dt;
+  const prev = S.sy;
+  S.sy += (S.y - S.sy) * (RM ? 1 : 1 - Math.exp(-Math.min(rawDt, 400) / 85));   // frame-rate independent
+  if (Math.abs(S.y - S.sy) < 0.05) S.sy = S.y;
+  S.v = (S.sy - prev) / Math.max(dt, Math.min(rawDt, 400));
+  if (PT.seen) { PT.vx = PT.x - PT.px; PT.vy = PT.y - PT.py; }
+
+  const s = screensInto(act1);
+  act1Timeline(s);
+  loomTimeline();
+  const bz = WS.fellY > 4 && WS.fellY < H ? Math.round(H - WS.fellY) : 0;
+  if (bz !== lastBandPx) { lastBandPx = bz; bandZone.style.height = bz + 'px'; }
+
+  strumFromPointer();
+  const ringing = stepStrings(dt);
+
+  const inAct1 = s < T.end;
+  const moving = Math.abs(S.y - S.sy) > 0.05 || Math.abs(S.v) > 0.0005;
+  if (inAct1 || moving || ringing || WS.beat > 0 || WS.dirty) {
+    WS.dirty = false;
+    cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    cx.clearRect(0, 0, W, H);
+    if (inAct1) { act1Sound(s, dt); drawAct1(s, t); }
+    else drawLoom(t);
+  }
+  const wordsLive = s < T.end + 0.5;                 // keep driving the words until every one has fully left
+  if (wordsLive || wordsOn) { act1Words(s, t); wordsOn = wordsLive; }
+  updHub(t); updYarns(); updQuestions(); updMaze(t); updFilm(); updRoute(); updPegs(dt); updKnot(); updSelvedge(); updDoodles(t);
+  for (const h of frameHooks) h(t, dt);
+
+  PT.px = PT.x; PT.py = PT.y;
+  requestAnimationFrame(frame);
+}
+
+function afterLayout() {
+  root.style.setProperty('--bandpx', Math.round(bandHeight()) + 'px');
+  relayout(); for (const h of resizeHooks) h(); relayout(); WS.dirty = true;
+}
+function rebuild() {
+  measure(); buildThreads(); buildCloth(); ropeReset(); layoutTags();
+  for (const k in TEXS) delete TEXS[k];
+  dressBands(); toyApply(); afterLayout();
+}
+
+function makeGrain() {            // paper grain as a plain alpha speckle: no blend modes, cheap to composite everywhere
+  const c = document.createElement('canvas'); c.width = c.height = 220; const g = c.getContext('2d');
+  const id = g.createImageData(220, 220), R = rng(5);
+  for (let i = 0; i < id.data.length; i += 4) {
+    const dark = R() < 0.62, v = R();
+    id.data[i] = dark ? 23 : 255; id.data[i + 1] = dark ? 12 : 255; id.data[i + 2] = dark ? 18 : 255;
+    id.data[i + 3] = dark ? v * v * 24 : v * v * 13;
+  }
+  g.putImageData(id, 0, 0);
+  $('#grain').style.backgroundImage = `url(${c.toDataURL('image/png')})`;
+}
+
+function init() {
+  measure(); buildThreads(); layoutTags(); makeGrain();
+  dressBands(); initToy(); toyApply(); initSelvedge(); initKnot();
+  logoImg = new Image();
+  logoImg.onload = () => { buildCloth(); ropeReset(); afterLayout(); };
+  logoImg.src = 'data:image/png;base64,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';
+  buildCloth(); ropeReset(); afterLayout();
+  initFigures(); initVideos(); initDoodles();
+  const snd = $('#snd'); let sndWasReady = false;
+  const sndLabel = () => { const live = AU.ready && AU.on; snd.setAttribute('aria-pressed', String(live)); snd.textContent = !AU.ready ? 'tap for sound' : AU.on ? 'sound: on' : 'sound: off'; };
+  snd.addEventListener('pointerdown', () => { sndWasReady = AU.ready; });
+  snd.addEventListener('click', () => { if (!sndWasReady) { AU.unlock(); AU.setOn(true); } else AU.setOn(!AU.on); sndWasReady = true; setTimeout(sndLabel, 60); });
+  ['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, () => setTimeout(sndLabel, 120), { passive: true }));
+  let rz = 0, lastW = W;
+  addEventListener('resize', () => {
+    clearTimeout(rz);
+    rz = setTimeout(() => {
+      const w = Math.max(320, root.clientWidth || innerWidth);
+      if (w !== lastW) { lastW = w; rebuild(); }
+      else { measure(); if (S.y < H * 3) buildCloth(); afterLayout(); }
+    }, 140);
+  });
+  addEventListener('load', afterLayout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(afterLayout);
+  if ('ResizeObserver' in window) { let ro = 0; new ResizeObserver(() => { clearTimeout(ro); ro = setTimeout(() => { relayout(); WS.dirty = true; }, 200); }).observe($('#cloth')); }
+  S.y = S.sy = window.scrollY || 0;
+  if (!started) { started = true; requestAnimationFrame(frame); }
+}
+init();
+
+})();
+
+</script>
+</body>
+</html>
