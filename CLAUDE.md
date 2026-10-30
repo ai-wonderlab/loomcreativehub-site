@@ -50,7 +50,7 @@ Sections, in order (ids in `index.html`):
 
 ## How to work on it
 
-1. Open the repo in Claude Code (or connect it to Claude on claude.ai) and say what you want changed. Everything is in `index.html`.
+1. Open the repo in ChatGPT Codex (chatgpt.com/codex) or Claude Code and say what you want changed. Everything is in `index.html`.
 2. To add an image or video: drop it in `a/` as WebP (images) or MP4 + a `_p.webp` poster (video), reference it from `index.html`.
 3. Commit and push to `main`. Check https://loomcreativehub.com a minute later (hard refresh: GitHub Pages caches for 10 minutes).
 4. If something breaks, `git revert` the last commit and push. Nothing else needs to be undone.
