@@ -1,6 +1,6 @@
 # LOOM Creative Hub — the website, handed over
 
-This file is the memory of the project. Read it first, whoever you are (Claude in Claude Code, Claude on claude.ai with GitHub, or a human).
+This file is the memory of the project. Read it first, whoever you are (ChatGPT Codex, Claude Code, any coding agent, or a human). CLAUDE.md is an identical copy for Claude.
 
 ## What this is
 
